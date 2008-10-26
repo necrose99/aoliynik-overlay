@@ -1,0 +1,13 @@
+--- Makefile.old	2008-05-07 17:28:04.000000000 +0300
++++ Makefile	2008-06-30 23:57:37.000000000 +0300
+@@ -41,8 +41,8 @@
+ 	as --32 -ahlsn=jpeg.lst -o $@ $<
+ 
+ install: all
+-	install -d -m 755 $(DESTDIR)/usr/sbin
+-	install -m 755 gfxboot gfxboot-compile gfxboot-font $(DESTDIR)/usr/sbin
++	install -d -m 755 $(DESTDIR)/usr/bin
++	install -m 755 gfxboot gfxboot-compile gfxboot-font $(DESTDIR)/usr/bin
+ 	@for i in $(THEMES) ; do \
+ 	  install -d -m 755 $(DESTDIR)/etc/bootsplash/$$i/{bootloader,cdrom} ; \
+ 	  cp $$i/bootlogo $(DESTDIR)/etc/bootsplash/$$i/cdrom ; \

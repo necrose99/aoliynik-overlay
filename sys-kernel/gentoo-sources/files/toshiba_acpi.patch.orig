@@ -1,0 +1,394 @@
+--- drivers/acpi/toshiba_acpi.c.orig	2008-07-14 00:51:29.000000000 +0300
++++ drivers/acpi/toshiba_acpi.c	2008-07-19 10:18:07.000000000 +0300
+@@ -1,4 +1,5 @@
+ /*
++ *
+  *  toshiba_acpi.c - Toshiba Laptop ACPI Extras
+  *
+  *
+@@ -23,6 +24,10 @@
+  *  http://memebeam.org/toys/ToshibaAcpiDriver.
+  *
+  *  Credits:
++ *      Rui Carmo for merging Nicolas's code with the kernel.org 0.18 version
++ *	Nicolas Bettenburg for original Bluetooth support:
++ *		http://nicolas.bettenburg.free.fr/linux/files/toshiba_acpi.c
++ *	John Belmonte for original Kernel patch 2.4.190 20021112
+  *	Jonathan A. Buzzard - Toshiba HCI info, and critical tips on reverse
+  *		engineering the Windows drivers
+  *	Yasushi Nagato - changes for linux kernel 2.4 -> 2.5
+@@ -33,7 +38,7 @@
+  *
+  */
+ 
+-#define TOSHIBA_ACPI_VERSION	"0.18"
++#define TOSHIBA_ACPI_VERSION	"0.19"
+ #define PROC_INTERFACE_VERSION	1
+ 
+ #include <linux/kernel.h>
+@@ -41,13 +46,11 @@
+ #include <linux/init.h>
+ #include <linux/types.h>
+ #include <linux/proc_fs.h>
+-#include <linux/backlight.h>
+-
+ #include <asm/uaccess.h>
+ 
+ #include <acpi/acpi_drivers.h>
+ 
+-MODULE_AUTHOR("John Belmonte");
++MODULE_AUTHOR("Rui Carmo");
+ MODULE_DESCRIPTION("Toshiba Laptop ACPI Extras Driver");
+ MODULE_LICENSE("GPL");
+ 
+@@ -90,6 +93,7 @@
+ #define HCI_VIDEO_OUT			0x001c
+ #define HCI_HOTKEY_EVENT		0x001e
+ #define HCI_LCD_BRIGHTNESS		0x002a
++#define HCI_BLUE				0x0056
+ 
+ /* field definitions */
+ #define HCI_LCD_BRIGHTNESS_BITS		3
+@@ -98,17 +102,29 @@
+ #define HCI_VIDEO_OUT_LCD		0x1
+ #define HCI_VIDEO_OUT_CRT		0x2
+ #define HCI_VIDEO_OUT_TV		0x4
+-
+-static const struct acpi_device_id toshiba_device_ids[] = {
+-	{"TOS6200", 0},
+-	{"TOS1900", 0},
+-	{"", 0},
+-};
+-MODULE_DEVICE_TABLE(acpi, toshiba_device_ids);
++#define HCI_BLUE_ACTIVATE		0x0080
++#define HCI_BLUE_ATTACH		0x0040
++#define HCI_BLUE_DX			0x0001
+ 
+ /* utility
+  */
+ 
++/* an sscanf that takes explicit string length */
++static int snscanf(const char* str, int n, const char* format, ...)
++{
++	va_list args;
++	int result;
++	char* str2 = kmalloc(n + 1, GFP_KERNEL);
++	if (str2 == 0) return 0;
++	strncpy(str2, str, n);
++	str2[n] = 0;
++	va_start(args, format);
++	result = vsscanf(str2, format, args);
++	va_end(args);
++	kfree(str2);
++	return result;
++}
++
+ static __inline__ void _set_bit(u32 * word, u32 mask, int value)
+ {
+ 	*word = (*word & ~mask) | (mask * value);
+@@ -132,7 +148,7 @@
+ 	union acpi_object in_objs[1];
+ 	acpi_status status;
+ 
+-	params.count = ARRAY_SIZE(in_objs);
++	params.count = sizeof(in_objs) / sizeof(in_objs[0]);
+ 	params.pointer = in_objs;
+ 	in_objs[0].type = ACPI_TYPE_INTEGER;
+ 	in_objs[0].integer.value = val;
+@@ -157,7 +173,6 @@
+ 	return (status == AE_OK) && (out_objs[0].type == ACPI_TYPE_INTEGER);
+ }
+ #endif
+-
+ static const char *method_hci /*= 0*/ ;
+ 
+ /* Perform a raw HCI call.  Here we don't care about input or output buffer
+@@ -218,11 +233,32 @@
+ 	return status;
+ }
+ 
++static acpi_status // ADDED FOR BLUETOOTH
++hci_read2(u32 reg, u32* out1, u32 out2, u32* result)
++{
++	u32 in[HCI_WORDS] = { HCI_GET, reg, 0, out2, 0, 0 };
++	u32 out[HCI_WORDS];
++	acpi_status status = hci_raw(in, out);
++	*out1 = out[2];
++	*result = (status == AE_OK) ? out[0] : HCI_FAILURE;
++	return status;
++}
++static acpi_status // ADDED FOR BLUETOOTH
++hci_write2(u32 reg, u32 in1, u32 in2, u32* result)
++{
++	u32 in[HCI_WORDS] = { HCI_SET, reg, in1, in2, 0, 0 };
++	u32 out[HCI_WORDS];
++	acpi_status status = hci_raw(in, out);
++	*result = (status == AE_OK) ? out[0] : HCI_FAILURE;
++	return status;
++}
++
++
+ static struct proc_dir_entry *toshiba_proc_dir /*= 0*/ ;
+-static struct backlight_device *toshiba_backlight_device;
+ static int force_fan;
+ static int last_key_event;
+ static int key_event_valid;
++static int blue_on;
+ 
+ typedef struct _ProcItem {
+ 	const char *name;
+@@ -230,6 +266,7 @@
+ 	unsigned long (*write_func) (const char *, unsigned long);
+ } ProcItem;
+ 
++
+ /* proc file handlers
+  */
+ 
+@@ -281,23 +318,14 @@
+ 	return result;
+ }
+ 
+-static int get_lcd(struct backlight_device *bd)
++static char *read_lcd(char *p)
+ {
+ 	u32 hci_result;
+ 	u32 value;
+ 
+ 	hci_read1(HCI_LCD_BRIGHTNESS, &value, &hci_result);
+ 	if (hci_result == HCI_SUCCESS) {
+-		return (value >> HCI_LCD_BRIGHTNESS_SHIFT);
+-	} else
+-		return -EFAULT;
+-}
+-
+-static char *read_lcd(char *p)
+-{
+-	int value = get_lcd(NULL);
+-
+-	if (value >= 0) {
++		value = value >> HCI_LCD_BRIGHTNESS_SHIFT;
+ 		p += sprintf(p, "brightness:              %d\n", value);
+ 		p += sprintf(p, "brightness_levels:       %d\n",
+ 			     HCI_LCD_BRIGHTNESS_LEVELS);
+@@ -308,37 +336,22 @@
+ 	return p;
+ }
+ 
+-static int set_lcd(int value)
+-{
+-	u32 hci_result;
+-
+-	value = value << HCI_LCD_BRIGHTNESS_SHIFT;
+-	hci_write1(HCI_LCD_BRIGHTNESS, value, &hci_result);
+-	if (hci_result != HCI_SUCCESS)
+-		return -EFAULT;
+-
+-	return 0;
+-}
+-
+-static int set_lcd_status(struct backlight_device *bd)
+-{
+-	return set_lcd(bd->props.brightness);
+-}
+-
+ static unsigned long write_lcd(const char *buffer, unsigned long count)
+ {
+ 	int value;
+-	int ret;
++	u32 hci_result;
+ 
+ 	if (sscanf(buffer, " brightness : %i", &value) == 1 &&
+ 	    value >= 0 && value < HCI_LCD_BRIGHTNESS_LEVELS) {
+-		ret = set_lcd(value);
+-		if (ret == 0)
+-			ret = count;
++		value = value << HCI_LCD_BRIGHTNESS_SHIFT;
++		hci_write1(HCI_LCD_BRIGHTNESS, value, &hci_result);
++		if (hci_result != HCI_SUCCESS)
++			return -EFAULT;
+ 	} else {
+-		ret = -EINVAL;
++		return -EINVAL;
+ 	}
+-	return ret;
++
++	return count;
+ }
+ 
+ static char *read_video(char *p)
+@@ -369,7 +382,7 @@
+ 	int crt_out = -1;
+ 	int tv_out = -1;
+ 	u32 hci_result;
+-	u32 video_out;
++	int video_out;
+ 
+ 	/* scan expression.  Multiple expressions may be delimited with ;
+ 	 *
+@@ -500,6 +513,66 @@
+ /* proc and module init
+  */
+ 
++
++/* NICOLAS CODE FOR BLUETOOTH */
++static int
++read_blue(char* p)
++{
++	u32 hci_result;
++	u32 value;
++
++	// First Read Toshiba Bluetooth key From HCI
++	hci_read1(HCI_BLUE, &value, &hci_result); // HCI_BLUE = 0x0056 as in dmabt.c from Author: Martl <btenable@yahoo.de>
++	if (hci_result == HCI_SUCCESS) {
++		p += sprintf(p, "blue_available:                 %i\n", value );
++	} else {
++		p += sprintf(p, "blue_available:                 %i\n", 0 );
++                return p;
++	}
++	// Second Read Wireless on Switch key From HCI with dx=0x0001 and modified hci_read2 procedure
++	hci_read2(HCI_BLUE, &value,HCI_BLUE_DX,&hci_result);
++	if (hci_result == HCI_SUCCESS) {
++		p += sprintf(p, "wireless_switch:              %i\n", (value > 512) );
++		p += sprintf(p, "blue_on:                          %i\n",blue_on);
++	} else {
++		p += sprintf(p, "blue_on:                          %i\n",blue_on);
++		p += sprintf(p , "ERROR\n");
++	}
++
++    return p;
++}
++
++static unsigned long write_blue(const char *buffer, unsigned long count)
++{
++	int value;
++	u32 hci_result;
++
++	if (snscanf(buffer, count, " blue_on : %i", &value) == 1 &&
++			value >= 0 && value <= 1) {
++		// First Activate Bluetoot device with hci_write2 and dx = 0x0080
++		hci_write2(HCI_BLUE, value, HCI_BLUE_ACTIVATE ,&hci_result);
++		if (hci_result != HCI_SUCCESS)
++			return -EFAULT;
++		else {
++			// Second we write NULL to close HCI, Sleep 3 seconds and attach the device with hci_write2 and dx = 0x0040
++			hci_write1(0,0,&hci_result);  // Close HCI Device
++			//wait for 2s
++			//sleep ( 2 );
++			hci_write2(HCI_BLUE,value,HCI_BLUE_ATTACH, &hci_result);
++			if (hci_result != HCI_SUCCESS)
++				return -EFAULT;
++			else {
++				hci_write1(0,0,&hci_result); // Close HCI Device
++				blue_on = value;
++				}
++			}
++	} else {
++		return -EINVAL;
++	}
++
++	return count;
++}
++
+ #define PROC_TOSHIBA		"toshiba"
+ 
+ static ProcItem proc_items[] = {
+@@ -508,14 +581,15 @@
+ 	{"fan", read_fan, write_fan},
+ 	{"keys", read_keys, write_keys},
+ 	{"version", read_version, NULL},
++	{"bluetooth", read_blue, write_blue},
+ 	{NULL}
+ };
+ 
++
+ static acpi_status __init add_device(void)
+ {
+ 	struct proc_dir_entry *proc;
+ 	ProcItem *item;
+-
+ 	for (item = proc_items; item->name; ++item) {
+ 		proc = create_proc_read_entry(item->name,
+ 					      S_IFREG | S_IRUGO | S_IWUSR,
+@@ -527,11 +601,10 @@
+ 		if (proc && item->write_func)
+ 			proc->write_proc = (write_proc_t *) dispatch_write;
+ 	}
+-
+ 	return AE_OK;
+ }
+ 
+-static acpi_status remove_device(void)
++static acpi_status __exit remove_device(void)
+ {
+ 	ProcItem *item;
+ 
+@@ -540,24 +613,6 @@
+ 	return AE_OK;
+ }
+ 
+-static struct backlight_ops toshiba_backlight_data = {
+-        .get_brightness = get_lcd,
+-        .update_status  = set_lcd_status,
+-};
+-
+-static void toshiba_acpi_exit(void)
+-{
+-	if (toshiba_backlight_device)
+-		backlight_device_unregister(toshiba_backlight_device);
+-
+-	remove_device();
+-
+-	if (toshiba_proc_dir)
+-		remove_proc_entry(PROC_TOSHIBA, acpi_root_dir);
+-
+-	return;
+-}
+-
+ static int __init toshiba_acpi_init(void)
+ {
+ 	acpi_status status = AE_OK;
+@@ -566,6 +621,10 @@
+ 	if (acpi_disabled)
+ 		return -ENODEV;
+ 
++	if (!acpi_specific_hotkey_enabled) {
++		printk(MY_INFO "Using generic hotkey driver\n");
++		return -ENODEV;
++	}
+ 	/* simple device detection: look for HCI method */
+ 	if (is_valid_acpi_path(METHOD_HCI_1))
+ 		method_hci = METHOD_HCI_1;
+@@ -594,21 +653,19 @@
+ 			remove_proc_entry(PROC_TOSHIBA, acpi_root_dir);
+ 	}
+ 
+-	toshiba_backlight_device = backlight_device_register("toshiba",NULL,
+-						NULL,
+-						&toshiba_backlight_data);
+-        if (IS_ERR(toshiba_backlight_device)) {
+-		int ret = PTR_ERR(toshiba_backlight_device);
+-
+-		printk(KERN_ERR "Could not register toshiba backlight device\n");
+-		toshiba_backlight_device = NULL;
+-		toshiba_acpi_exit();
+-		return ret;
+-	}
+-        toshiba_backlight_device->props.max_brightness = HCI_LCD_BRIGHTNESS_LEVELS - 1;
+-
+ 	return (ACPI_SUCCESS(status)) ? 0 : -ENODEV;
+ }
+ 
++static void __exit toshiba_acpi_exit(void)
++{
++	remove_device();
++
++	if (toshiba_proc_dir)
++		remove_proc_entry(PROC_TOSHIBA, acpi_root_dir);
++
++	return;
++}
++
++
+ module_init(toshiba_acpi_init);
+ module_exit(toshiba_acpi_exit);
