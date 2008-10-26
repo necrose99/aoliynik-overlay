@@ -1,0 +1,10 @@
+--- configure.ac	2008-06-25 15:16:31.000000000 +0300
++++ configure.ac	2008-06-25 15:18:20.000000000 +0300
+@@ -43,6 +43,7 @@
+ 
+ AC_DISABLE_STATIC
+ AC_PROG_LIBTOOL
++AC_PROG_CXX
+ 
+ dnl check for python
+ AM_PATH_PYTHON(2.3)

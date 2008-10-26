@@ -1,0 +1,11 @@
+--- kicker/kicker/core/container_extension.cpp	2008-09-15 13:55:49.000000000 +0200
++++ kicker/kicker/core/container_extension.cpp	2008-09-15 13:44:30.000000000 +0200
+@@ -1688,7 +1688,7 @@
+ 
+ bool ExtensionContainer::needsBorder() const
+ {
+-    return !KickerSettings::transparent();
++    return false;
+            //&& !KickerSettings::useBackgroundTheme();
+ }
+ 

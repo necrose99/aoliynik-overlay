@@ -1,0 +1,23 @@
+#!/sbin/runscript
+# Copyright 1999-2006 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+	need net
+}
+
+start() {
+	local OPT="-jar /usr/share/toonel/toonel.jar -t"
+	ebegin "Starting toonel.net"
+
+	export LIBXCB_ALLOW_SLOPPY_LOCK=1 
+	cd /usr/share/toonel
+	start-stop-daemon --quiet --background --start --make-pid --pidfile /var/run/toonel.pid --exec /usr/bin/java -- ${OPT}
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping toonel.net"
+	start-stop-daemon --stop --quiet --pidfile /var/run/toonel.pid
+	eend $?
+}
