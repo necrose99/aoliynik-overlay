@@ -6,8 +6,7 @@ inherit eutils
 
 DESCRIPTION="simplified/streamlined version of wine geared towards games"
 HOMEPAGE="http://www.codeweavers.com/products/cxgames/"
-SRC_URI="http://media.codeweavers.com/pub/crossover/cxgames/demo/install-crossover-games-demo-${PV}.sh"
-
+SRC_URI="http://media.codeweavers.com/pub/crossover/lameduck/install-crossover-games-${PV}.sh"
 LICENSE="CROSSOVER"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
