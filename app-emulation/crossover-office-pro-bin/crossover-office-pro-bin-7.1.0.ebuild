@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="simplified/streamlined version of wine with commercial support"
 HOMEPAGE="http://www.codeweavers.com/products/cxoffice/"
-SRC_URI="install-crossover-pro-demo-${PV}.sh"
+SRC_URI="http://media.codeweavers.com/pub/crossover/lameduck/install-crossover-pro-${PV}.sh"
 
 LICENSE="CROSSOVER"
 SLOT="0"
