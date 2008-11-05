@@ -38,7 +38,11 @@ S="${WORKDIR}/${MY_P}/platform/gtk-x11"
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
+	cd "${WORKDIR}/${MY_P}"
+	epatch ${FILESDIR}/${PN}-gcc.4.3.patch || die
+
+	cd "${S}" && \
+        find . \( -name "*.h" -o -name "*.c" \) -exec sed -i "s/\([^t][^ ]\)char[ ]*\*/\1const char */g" {} \;
 
 	# Force <xulrunner-1.9
 	epatch ${FILESDIR}/setup.py.patch
