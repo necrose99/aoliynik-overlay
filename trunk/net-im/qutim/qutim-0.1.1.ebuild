@@ -10,7 +10,7 @@ MY_PN="${PN/im/IM}"
 DESCRIPTION="New Instant Messenger (ICQ) written in C++ with Qt."
 HOMEPAGE="http://www.qutim.org"
 LICENSE="GPL-2"
-SRC_URI="http://www.qutim.org/download/${PN}_${PV}.tar.gz"
+SRC_URI="http://www.qutim.org/phocadownload/stable/${PN}_${PV}.tar.gz"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
