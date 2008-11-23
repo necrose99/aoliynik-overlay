@@ -1,0 +1,64 @@
+diff -u -N --recursive NVIDIA-Linux-x86-96.43.07-pkg1/usr/src/nv/nv-linux.h patched/usr/src/nv/nv-linux.h
+--- NVIDIA-Linux-x86-96.43.07-pkg1/usr/src/nv/nv-linux.h patched/usr/src/nv/nv-linux.h
++++ usr/src/nv/nv-linux.h	2008-10-31 16:11:53.000000000 +0200
+@@ -103,7 +103,10 @@
+ #endif
+ 
+ #include <linux/spinlock.h>
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 27)
++#else
+ #include <asm/semaphore.h>
++#endif
+ #include <linux/completion.h>
+ #include <linux/highmem.h>
+ 
+@@ -618,13 +621,21 @@
+ #if defined(preempt_disable)
+     preempt_disable();
+ #endif
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 27)
++    ret = smp_call_function(func, info, 1);
++#else
+     ret = smp_call_function(func, info, 1, 1);
++#endif
+     func(info);
+ #if defined(preempt_enable)
+     preempt_enable();
+ #endif
+ #else
+-    ret = on_each_cpu(func, info, 1, 1);
++    #if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 27)
++	ret = on_each_cpu(func, info, 1);
++    #else
++	ret = on_each_cpu(func, info, 1, 1);
++    #endif
+ #endif
+     return ret;
+ }
+diff -u -N --recursive NVIDIA-Linux-x86-96.43.07-pkg1/usr/src/nv/os-interface.c patched/usr/src/nv/os-interface.c
+--- NVIDIA-Linux-x86-96.43.07-pkg1/usr/src/nv/os-interface.c patched/usr/src/nv/os-interface.c
++++ usr/src/nv/os-interface.c	2008-10-31 16:15:53.000000000 +0200
+@@ -48,7 +48,11 @@
+ #endif
+     local_bh_disable();
+     atomic_set(&os_smp_barrier, 1);
+-    ret = smp_call_function(ipi_handler, NULL, 1, 0);
++    #if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 27)
++	ret = smp_call_function(ipi_handler, NULL, 0);
++    #else
++	ret = smp_call_function(ipi_handler, NULL, 1, 0);
++    #endif
+ #endif
+     return (ret == 0) ? RM_OK : RM_ERROR;
+ }
+@@ -632,7 +636,9 @@
+     U032 sig
+ )
+ {
+-    return kill_proc(pid, sig, 1) ? RM_ERR_OPERATING_SYSTEM : RM_OK;
++    #if LINUX_VERSION_CODE <= KERNEL_VERSION(2, 6, 26)
++	return kill_proc(pid, sig, 1) ? RM_ERR_OPERATING_SYSTEM : RM_OK;
++    #endif
+ }
+ 
+ /*******************************************************************************/
