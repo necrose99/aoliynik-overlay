@@ -55,14 +55,15 @@ IUSE="themes doc ${IUSE_LINGUAS}"
 
 MY_PV=$(replace_version_separator 3 '-')
 VC=$(get_version_components)
-MY_S="${WORKDIR}/${PN}-"
-for i in ${VC}; do MY_S="${MY_S}${i}."; done
-MY_S=${MY_S%.}
-MY_S=${MY_S%.*}
+MY_V="4.1.16"
+MY_S="${WORKDIR}/${PN}-${MY_V}"
+#for i in ${VC}; do MY_S="${MY_S}${i}."; done
+#MY_S=${MY_S%.}
+#MY_S=${MY_S%.*}
 
 DESCRIPTION="gfxboot allows you to create gfx menus for bootmanagers."
 HOMEPAGE="http://suse.com"
-SRC_URI="http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/suse/src/gfxboot-${MY_PV}.src.rpm"
+SRC_URI="http://download.opensuse.org/factory/repo/src-oss/suse/src/${PN}-${MY_PV}.src.rpm"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -82,16 +83,16 @@ src_unpack () {
 			LANGS="${LANGS} ${LNG#linguas_}"
 		fi;
 	done;
+
 	LANGS="${LANGS# }"
 	einfo "${LANGS}"
 
 	rpm_src_unpack ${A}
-	mv ${MY_S} ${S}
+	mv ${MY_S} "${S}"
 	cd "${WORKDIR}"
 	mv themes "${S}/"
 	cd "${S}"
 	epatch "${FILESDIR}"/bininstall.patch
-
 	local FTRANS;
 	local DND;
 	find themes/openSUSE/ -type f -name "help-boot.*.html" | while read f ; do
