@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="1"
 inherit eutils games qt4
-MY_PN=PokerTH
 
+MY_PN=PokerTH
 S="${WORKDIR}/${MY_PN}-${PV}-src"
 
 DESCRIPTION="Texas Hold'em poker game."
@@ -16,18 +17,18 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="$(qt4_min_version 4.3.3)
-	>=dev-libs/boost-1.34
-	net-libs/gnutls
-	media-libs/libmikmod
+DEPEND=">=x11-libs/qt-4.3.2:4
+	>=net-misc/curl-7.16
+	>=dev-libs/boost-1.34.1
+	>=net-libs/gnutls-2.2.2
 	media-libs/libsdl
 	media-libs/sdl-mixer"
 RDEPEND="${DEPEND}"
 
 pkg_setup() {
-	if has_version "<dev-libs/boost-1.34" && ! built_with_use "dev-libs/boost" threads ; then
-		eerror "dev-libs/boost has to be compiled with USE=threads"
-		die "Needed USE-flag for dev-libs/boost not found."
+	if ! built_with_use "media-libs/sdl-mixer" mikmod ; then
+	eerror "media-libs/sdl-mixer has to be compiled with USE=mikmod"
+	die "Needed USE-flag for sdl-mixer not found."
 	fi
 	games_pkg_setup
 }
@@ -45,7 +46,9 @@ src_install() {
 	dogamesbin ${PN} || die "dogamesbin failed."
 	insinto "${GAMES_DATADIR}/${PN}/data"
 	doins -r data/* || die "doins data failed."
-	doicon pokerth.png "${PN}.png" || "doicon failed."
+
+	newicon pokerth.png "${PN}.png"
 	make_desktop_entry "${PN}" "PokerTH" "${PN}.png" || die "make_desktop_entry failed."
+
 	prepgamesdirs
 }
