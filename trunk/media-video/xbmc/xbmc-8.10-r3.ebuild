@@ -3,24 +3,23 @@
 # $Header: $
 
 EAPI="1"
-inherit autotools eutils flag-o-matic subversion
+inherit autotools eutils flag-o-matic
 
-ESVN_REPO_URI="https://xbmc.svn.sourceforge.net/svnroot/xbmc/tags/8.10_Atlantis-linux-osx-win32/XBMC"
+SRC_URI="mirror://sourceforge/${PN}/XBMC-${PV}.src.tar.gz"
 DESCRIPTION="XBMC is a free and open source media-player and entertainment hub"
 HOMEPAGE="http://xbmc.org/"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="autostart ccache +debug gprof joystick mms opengl"
 RDEPEND="ccache? ( dev-util/ccache )
 	mms? ( media-libs/libmms )
-	opengl? ( virtual/opengl )
+	opengl? ( virtual/opengl media-libs/ftgl )
 	app-arch/bzip2
 	app-arch/unrar
 	app-arch/unzip
 	app-arch/zip
 	app-i18n/enca
-	dev-lang/nasm
 	>=dev-lang/python-2.4
 	dev-libs/boost
 	dev-libs/fribidi
@@ -28,8 +27,7 @@ RDEPEND="ccache? ( dev-util/ccache )
 	dev-libs/lzo
 	dev-libs/tre
 	=dev-python/pysqlite-2*
-	dev-util/cmake
-	media-libs/alsa-lib
+	media-libs/alsa-lib[debug]
 	media-libs/faac
 	media-libs/fontconfig
 	media-libs/freetype
@@ -38,8 +36,9 @@ RDEPEND="ccache? ( dev-util/ccache )
 	media-libs/libmad
 	media-libs/libogg
 	media-libs/libvorbis
+	media-libs/libsdl[alsa,X]
 	media-libs/sdl-gfx
-	media-libs/sdl-image
+	media-libs/sdl-image[gif,png,jpeg]
 	media-libs/sdl-mixer
 	media-libs/sdl-sound
 	net-misc/curl
@@ -53,7 +52,12 @@ RDEPEND="ccache? ( dev-util/ccache )
 	x11-libs/libXrender
 	x11-proto/xineramaproto
 	"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/cmake
+	dev-lang/nasm
+	"
+
+S="${WORKDIR}/XBMC"
 
 pkg_setup() {
 	# Video playback gives either segfaults or floating point exceptions #
@@ -87,12 +91,16 @@ pkg_setup() {
 }
 
 src_unpack() {
-	subversion_src_unpack
+	unpack ${A}
+	cd ${S}
 
 	# XBMC's autotools files (configure.{ac,in}, Makefile.{ac,in}, ltmain.sh, etc.) can be distro specific #
 	# and in need of some love. If we need to regenerate 'configure', 'Makefile', 'ltmain.sh', etc., #
 	# (in the case where we don't run Debian/Ubuntu or have a version of libtool greater than 1.5*), #
 	# we run into problems, so let's clean this up #
+	for file in {configure,*.pl}; do
+		find . -name "${file}" -exec chmod +x {} \;
+	done
 	for file in `find . -name configure.ac`; do
 		echo 'AC_PROG_CXX' >> "${file}"
 	done
@@ -142,8 +150,8 @@ src_unpack() {
 	done
 	cd ${S}
 
-	# Fix XBMC's final version string showing as "exported" instead of the SVN revision number #
-	sed -e "s/\$(svnversion -n .)/${ESVN_WC_REVISION}/g" \
+	# Fix XBMC's final version string showing as "exported" instead of the version number #
+	sed -e "s/\$(svnversion -n .)/${PV}/g" \
 		-i configure || die "Sed failed for '"${S}/configure"'"
 
 	# Disable problem building of internal linked libraries' API docs if latex/doxygen are present #
@@ -154,7 +162,9 @@ src_unpack() {
 
 src_compile() {
 	# Strip out the use of custom C{XX}FLAGS to make debugging easier for upstream #
-	use debug && strip-flags
+	# This is needed regardless of whether USE="debug" is set otherwise segfaults result #
+	# Tested to happen with MP3 playback when MACDll-i486-linux.so loads + fails trying to read ID3 info #
+        strip-flags
 
 	econf \
 		$(use_enable ccache) \
@@ -163,6 +173,7 @@ src_compile() {
 		$(use_enable joystick) \
 		$(use_enable mms) \
 		$(use_enable opengl gl) \
+		$(use_enable opengl ftgl) \
 		|| die "Configure failed!"
 
 	# Libtool greater than 1.5* has 'autoconf' creating a corrupt 'configure' script in these #
@@ -187,11 +198,18 @@ src_compile() {
 	done
 
 	emake || die "Make failed!"
+	cd "${S}"
+
+	if use autostart; then
+		echo 'int main() {' > autologinxbmc.c
+		echo '  execlp("login", "login", "-f", "xbmc", 0);' >> autologinxbmc.c
+		echo '}' >> autologinxbmc.c
+		$(tc-getCC) -w -o autologinxbmc autologinxbmc.c
+	fi
 
 	einfo
 	einfo "Generating textures..."
 	einfo
-	cd "${S}"
 	for skin in skin/* ; do
 		./tools/XBMCTex/XBMCTex -input "\"${skin}/media/\"" \
 			-output "\"${skin}/media/Textures.xpr\"" || die "XBMCTex failed..."
@@ -219,16 +237,16 @@ src_install() {
 	dodir /etc/env.d
         if use autostart; then
 		echo 'CONFIG_PROTECT="/usr/share/xbmc/userdata /home/xbmc"' > "${D}/etc/env.d/95xbmc"
+
+		echo '/usr/bin/xbmc' > .xinitrc
 		echo 'case "`tty`" in' > .bash_profile
-		echo '	*tty8) xinit /usr/bin/xbmc -- :$(echo $[`(ls /tmp/.X?-lock 2> /dev/null) | tail -n1 | sed "s,^/tmp/.X\(.*\)-lock$,\1,"` + 1]); logout ;;' >> .bash_profile
+		echo '	*tty8) xinit -- :$(echo $[`(ls /tmp/.X?-lock 2> /dev/null) | tail -n1 | sed "s,^/tmp/.X\(.*\)-lock$,\1,"` + 1]); logout ;;' >> .bash_profile
 		echo 'esac' >> .bash_profile
+
 		insinto /home/xbmc
 		doins .bash_profile
+		doins .xinitrc
 
-		echo 'int main() {' >> autologinxbmc.c
-		echo '	execlp("login", "login", "-f", "xbmc", 0);' >> autologinxbmc.c
-		echo '}' >> autologinxbmc.c
-		gcc -w -o autologinxbmc autologinxbmc.c
 		exeinto /usr/sbin
 		doexe autologinxbmc
 	else
@@ -254,8 +272,10 @@ pkg_postinst() {
 		elog "Please add the following to your /etc/inittab file"
 		elog "at the end of the TERMINALS section"
 		elog "c8:2345:respawn:/sbin/agetty -n -l /usr/sbin/autologinxbmc 38400 tty8"
+		elog
 		elog "To have the system reload /etc/inittab without rebooting,"
 		elog "issue 'init q' as root"
+		elog
 		elog "For the security conscious, please note that this automatically"
 		elog "logins the user 'xbmc' with no authentication password necessary"
 		elog
