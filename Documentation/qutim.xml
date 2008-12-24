@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layman>
+	<overlay
+		type = "svn"
+		contact="aoliynik@gmail.com"
+		src  = "http://qutim-overlay.googlecode.com/svn/trunk"
+		name = "qutim-overlay">
+		<link>
+		    http://qutim.org/forum/
+		</link>
+		<description>qutim overlay</description>
+	</overlay>
+</layman> 
