@@ -1,0 +1,12 @@
+net-im/qutim icq jabber -mrim debug -phonon -qt-phonon
+
+x11-plugins/qutim-icq -debug
+x11-plugins/qutim-jabber -openssl debug gnutls
+x11-plugins/qutim-mrim -debug
+x11-plugins/qutim-protocolicon -debug
+x11-plugins/qutim-imagepub -debug
+x11-plugins/qutim-yandexnarod -debug
+x11-plugins/qutim-qimhm -debug
+x11-plugins/qutim-weather -debug
+x11-plugins/qutim-plugins-nonprotocol-meta qimhm -protocolicon -yandexnarod -imagepub -weather
+x11-themes/qutim-artwork-meta smileys sounds traythemes chatstyles

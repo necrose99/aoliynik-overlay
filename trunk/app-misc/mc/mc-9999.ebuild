@@ -73,7 +73,9 @@ src_compile() {
 		ewarn "You are highly encouraged to use UTF-8 compatible system locale."
 	fi
 
-	./autogen.sh
+	./autogen.sh || die "autogen.sh failed"
+	export MCREVISION="r$ESVN_WC_REVISION"
+
 	econf --disable-dependency-tracking \
 			$(use_enable background) \
 			$(use_enable network netcode) \
