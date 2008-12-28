@@ -1,0 +1,3 @@
+app-emulation/libvirt -xen qemu kvm iscsi parted
+app-emulation/kvm kvm sdl qemu
+app-emulation/qemu-softmmu sdl
