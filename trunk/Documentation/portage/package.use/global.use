@@ -48,7 +48,7 @@ kde-base/kdenetwork vnc
 kde-base/kicker -kdehiddenvisibility kickoff
 kde-base/konsole transparency
 kde-base/krdc vnc rdektop qca decibel
-kde-misc/knetworkmanager dialup openvpn pptp -cisco networksettings
+kde-misc/knetworkmanager -dialup -openvpn pptp -cisco networksettings
 kde-misc/krd vnc rdesktop
 mail-client/mail-notification pop gmail mbox
 mail-client/mozilla-thunderbird -ldap moznopango java -crypt
