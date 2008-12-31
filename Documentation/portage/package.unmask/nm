@@ -1,0 +1,6 @@
+=net-misc/networkmanager-0.7.0
+=gnome-extra/nm-applet-0.7.0
+
+>=sys-auth/policykit-0.8
+>=gnome-extra/policykit-gnome-0.8
+
