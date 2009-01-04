@@ -127,3 +127,4 @@ x11-themes/gtk-engines-kde4 themes
 x11-themes/qtcurve gtk gtk1
 
 www-servers/pound dynscaler
+net-p2p/deluge gtk
