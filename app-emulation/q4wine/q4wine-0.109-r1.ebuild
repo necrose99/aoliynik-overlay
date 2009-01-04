@@ -6,8 +6,8 @@ inherit eutils
 
 DESCRIPTION="Qt4 GUI for wine (W.I.N.E)"
 HOMEPAGE="http://sourceforge.net/projects/q4wine/"
-SRC_URI="http://heanet.dl.sourceforge.net/sourceforge/q4wine/$P.tar.gz
-http://kent.dl.sourceforge.net/sourceforge/q4wine/$P.tar.gz"
+SRC_URI="http://heanet.dl.sourceforge.net/sourceforge/q4wine/$P-r1.tar.bz2
+http://kent.dl.sourceforge.net/sourceforge/q4wine/$P-r1.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
