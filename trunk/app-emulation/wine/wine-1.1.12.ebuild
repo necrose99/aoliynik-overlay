@@ -7,12 +7,12 @@ EAPI="1"
 inherit eutils flag-o-matic multilib versionator
 
 MY_PV=$(replace_version_separator 3 -)
-
+GV="0.9.0"
 DESCRIPTION="free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
 SRC_URI="http://ibiblio.org/pub/linux/system/emulators/${PN}/${PN}-${MY_PV}.tar.bz2
 	mirror://sourceforge/${PN}/${PN}-${MY_PV}.tar.bz2
-	gecko? ( mirror://sourceforge/wine/wine_gecko-0.1.0.cab )"
+	gecko? ( mirror://sourceforge/wine/wine_gecko-${GV}.cab )"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -148,7 +148,8 @@ src_install() {
 	dodoc ANNOUNCE AUTHORS ChangeLog DEVELOPERS-HINTS README
 	if use gecko ; then
 		insinto /usr/share/wine/gecko
-		doins "${DISTDIR}"/wine_gecko-*.cab || die
+		doins "${DISTDIR}"/wine_gecko-${GV}.cab || die
+
 	fi
 }
 
