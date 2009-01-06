@@ -9,4 +9,4 @@ x11-plugins/qutim-yandexnarod -debug
 x11-plugins/qutim-qimhm -debug
 x11-plugins/qutim-weather -debug
 x11-plugins/qutim-plugins-nonprotocol-meta qimhm -protocolicon -yandexnarod -imagepub -weather
-x11-themes/qutim-artwork-meta smileys sounds traythemes chatstyles
+x11-themes/qutim-artwork sounds
