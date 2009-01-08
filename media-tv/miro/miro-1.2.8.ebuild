@@ -1,72 +1,61 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils multilib distutils confutils fdo-mime
+inherit distutils fdo-mime flag-o-matic multilib
+
+EAPI="2"
 
 MY_P="${P/m/M}"
 DESCRIPTION="Open source video player"
 HOMEPAGE="http://www.getmiro.com/"
-SRC_URI="http://ftp.osuosl.org/pub/pculture.org/miro/src/${MY_P}.tar.gz"
+SRC_URI="http://ftp.osuosl.org/pub/pculture.org/${PN}/src/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-#IUSE="doc libnotify"
+KEYWORDS="~x86"
+IUSE=""
 
-# FIXME: This is simply rewritten from setup.cfg. Adding version requirements is strongly recommended.
-# FIXME: the following deps were removed because setup.py isn't clear about it.
-# dev-libs/nss -> present through xulrunner
-# media-libs/libfame
-# libnotify ( dev-python/notify-python )
-# doc? ( dev-util/devhelp )
-# net-libs/xulrunner -> gecko is present through g-p-e check
-RDEPEND=">=dev-python/pygtk-2.10
-	|| ( >=dev-lang/python-2.5
-	     >=dev-python/pysqlite-2 )
-	>=dev-libs/boost-1.34.1-r1
-	dev-python/gnome-python-extras
+RDEPEND=" || ( >=dev-lang/python-2.5[sqlite]
+		=dev-python/pysqlite-2* )
 	dev-python/dbus-python
-	<net-libs/xulrunner-1.9
-	>=dev-python/pyrex-0.9.6.4
-	media-libs/xine-lib"
+	dev-python/gconf-python
+	dev-python/gnome-vfs-python
+	>=dev-python/gtkmozembed-python-2.19.1-r11
+	>=dev-python/pygtk-2.10
+	>=net-libs/xulrunner-1.9"
 DEPEND="${RDEPEND}
-	sys-devel/gettext
-	dev-util/pkgconfig"
+	>=dev-lang/python-2.5[berkdb,ssl]
+	>=dev-python/pyrex-0.9.6.4
+	dev-util/pkgconfig
+	media-libs/xine-lib
+	sys-devel/gettext"
 
 S="${WORKDIR}/${MY_P}/platform/gtk-x11"
 
-src_unpack() {
-	unpack ${A}
+src_prepare() {
 	cd "${WORKDIR}/${MY_P}"
-	epatch ${FILESDIR}/${PN}-gcc.4.3.patch || die
+	epatch "${FILESDIR}/${PN}-gcc.4.3.patch"
 
-	cd "${S}" && \
-        find . \( -name "*.h" -o -name "*.c" \) -exec sed -i "s/\([^t][^ ]\)char[ ]*\*/\1const char */g" {} \;
-
-	# Force <xulrunner-1.9
-	epatch ${FILESDIR}/setup.py.patch
-	
 	# Generate MozillaBrowser.c first, for patching
+	# FIXME: A proper patch to the pyrex source would be better
+	cd "${S}"
 	pyrexc platform/frontends/html/MozillaBrowser.pyx
-	mv platform/frontends/html/MozillaBrowser.c	platform/frontends/html/MozillaBrowser.c.orig
-	sed -f ${FILESDIR}/MozillaBrowser.sed platform/frontends/html/MozillaBrowser.c.orig > platform/frontends/html/MozillaBrowser.c
+	sed -i -f "${FILESDIR}"/MozillaBrowser.sed \
+		platform/frontends/html/MozillaBrowser.c || \
+		die "Failed to patch MozillaBrowser.c for gcc 4.3"
 }
 
-pkg_setup() {
-	confutils_require_built_with_any dev-python/gnome-python-extras xulrunner firefox seamonkey
+src_compile() {
+	filter-ldflags -Wl,--as-needed
+	distutils_src_compile
+}
 
-	if ! built_with_use dev-lang/python berkdb; then
-		eerror "You must reemerge dev-lang/python with \"berkdb\" flag set."
-		die "berkbd missing in dev-lang/python"
-	fi
-
-	if has_version ">=dev-lang/python-2.5" &&
-		! has_version ">=dev-python/pysqlite-2" &&
-		! built_with_use dev-lang/python sqlite ; then
-		eerror "You must reemerge dev-lang/python with \"sqlite\" flag set."
-		die "sqlite missing in dev-lang/python"
-	fi
+src_install() {
+	# Make sure both READMEs get installed
+	mv README README.GTK-X11
+	distutils_src_install
+	dodoc README.GTK-X11 ../../{CREDITS,README} || die "dodoc failed"
 }
 
 pkg_postinst() {
