@@ -13,7 +13,6 @@ net-im/skype
 =sys-apps/baselayout-2.0.0*
 
 >=dev-java/java-config-2.1
->=x11-drivers/nvidia-drivers-173.08
 
 >=app-portage/rep-rebuild-0.1
 >=net-wireless/wpa_supplicant-0.6.0

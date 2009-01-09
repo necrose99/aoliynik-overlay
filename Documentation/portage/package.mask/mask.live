@@ -1,4 +1,9 @@
 ~app-text/scrollkeeper-9999
-=net-im/sim-0.9.9999
-=app-emulation/wine-9999
+~app-emulation/wine-9999
 #=kde-misc/knetworkmanager-9999
+~media-video/avidemux-9999
+~media-video/mplayer-9999
+~app-misc/screen-9999
+~media-video/smplayer-9999
+~media-libs/x264-9999
+~media-video/ffmpeg-20099999

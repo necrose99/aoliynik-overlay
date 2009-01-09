@@ -116,9 +116,9 @@ www-client/mozilla java mozdevelop
 
 x11-base/xorg-server nptl
 x11-base/xorg-x11 3dnow bitmap-fonts cjk -dlloader mmx opengl pam truetype-fonts xv -font-server		
-x11-libs/cairo newspr
+x11-libs/cairo cleartype 
 x11-libs/libX11 xcb
-x11-libs/libXft newspr
+x11-libs/libXft cleartype
 x11-libs/pixman -sse2
 x11-libs/qt mysql dbus accessibility qt-copy
 x11-misc/google-gadgets qt4
