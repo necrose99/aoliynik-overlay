@@ -13,6 +13,4 @@ sys-libs/ss
 =sys-apps/busybox-1.12.1
 =sys-apps/openrc-0.4.1
 
-#>=app-emulation/virtualbox-ose-2.0.4
-#>=app-emulation/virtualbox-modules-2.0.4
-
+>=x11-drivers/nvidia-drivers-180.18
