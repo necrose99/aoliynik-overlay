@@ -38,7 +38,7 @@ DEPEND="amd64? ( >=app-emulation/emul-linux-x86-xlibs-1.2
 				x11-libs/libXrandr
 				x11-libs/libXrender
 				x11-libs/libX11 )
-		!qt-static? ( $(qt4_min_version 4.2.3)
+		!qt-static? (   >=x11-libs/qt-4.3.2
 				x11-libs/libX11
 				x11-libs/qt-dbus
 				x11-libs/libXau
