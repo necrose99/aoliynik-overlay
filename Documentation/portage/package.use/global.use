@@ -54,7 +54,7 @@ mail-client/mail-notification pop gmail mbox
 mail-client/mozilla-thunderbird -ldap moznopango java -crypt
 mail-filter/spamassassin berkdb qmail ssl
 
-media-gfx/gfxboot themes
+media-gfx/gfxboot themes animate speech beep
 media-gfx/gimp -gtkhtml python
 media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf xml2
 media-gfx/splashutils fbcondecor
@@ -105,7 +105,7 @@ net-wireless/wpa_supplicant gsm
 sys-apps/dbus gtk python mono qt3 qt4
 sys-apps/file -python
 sys-apps/pciutils -zlib
-sys-boot/grub netboot static
+sys-boot/grub netboot static 
 sys-devel/gcc -gtk
 sys-fs/e2fsprogs -diet -static
 sys-kernel/gentoo-sources -symlink
