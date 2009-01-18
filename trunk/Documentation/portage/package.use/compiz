@@ -1,4 +1,4 @@
 #Compiz
-x11-wm/compiz -metacity gtk  dbus kde fuse svg kde4
+x11-wm/compiz -metacity gtk  dbus kde fuse svg -kde4
 x11-plugins/compiz-fusion-plugins-main vidcap dbus
 x11-wm/compiz-fusion unsupported kde -gnome emerald 
