@@ -129,3 +129,5 @@ x11-themes/qtcurve gtk gtk1
 www-servers/pound dynscaler
 net-p2p/deluge gtk
 sys-devel/distcc gtk
+dev-lang/mono moonlight
+ 
