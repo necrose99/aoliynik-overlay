@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layman>
+	<overlay
+		type = "git"
+		contact="aoliynik@gmail.com"
+		src  = "git://repo.or.cz/overlay-watzke-cz.git"
+		name = "watzke">
+		<link>
+		    http://overlay.watzke.cz/
+		</link>
+		<description>David Watzke overlay</description>
+	</overlay>
+</layman> 
