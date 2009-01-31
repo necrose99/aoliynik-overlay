@@ -5,12 +5,7 @@
 >=dev-util/xdelta-3.0
 =x11-libs/qt-3.3.8b*
 
-sys-libs/com_err
-sys-libs/ss
-
 =dev-libs/xerces-c-3.0.0
 =dev-libs/xerces-c-3.0.0-r1
-=sys-apps/busybox-1.12.1
-=sys-apps/openrc-0.4.1
 
 >=x11-drivers/nvidia-drivers-180.18
