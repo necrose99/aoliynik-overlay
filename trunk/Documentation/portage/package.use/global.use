@@ -130,4 +130,4 @@ www-servers/pound dynscaler
 net-p2p/deluge gtk
 sys-devel/distcc gtk
 dev-lang/mono moonlight
- 
+net-misc/fatrat webinterface jabber bittorrent

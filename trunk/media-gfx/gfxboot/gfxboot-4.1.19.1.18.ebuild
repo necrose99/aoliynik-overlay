@@ -55,7 +55,7 @@ IUSE="themes doc ${IUSE_LINGUAS}"
 
 MY_PV=$(replace_version_separator 3 '-')
 VC=$(get_version_components)
-MY_V="4.1.16"
+MY_V="4.1.19"
 MY_S="${WORKDIR}/${PN}-${MY_V}"
 #for i in ${VC}; do MY_S="${MY_S}${i}."; done
 #MY_S=${MY_S%.}

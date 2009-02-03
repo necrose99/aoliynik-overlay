@@ -20,3 +20,4 @@ net-im/skype
 >=x11-libs/gtk+-2.14
 =app-crypt/truecrypt-6.0a
 =sys-apps/portage-2.2_rc16
+net-libs/rb_libtorrent
