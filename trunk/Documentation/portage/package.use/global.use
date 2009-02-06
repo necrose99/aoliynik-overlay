@@ -35,12 +35,12 @@ dev-python/gnome-python-desktop -nognome rsvg wnck
 dev-python/gnome-python-extras xulrunner
 dev-python/pyrex python
 
-dev-util/kdevelop perl php python sql subversion java
-dev-util/subversion berkdb python -nowebdav java
+dev-util/kdevelop perl php python sql subversion -java
+dev-util/subversion berkdb python -nowebdav -java
 gnome-extra/evolution-data-server ldap kerberos
 
 kde-base/kdebase-workspace network_manager xcomposite newxkb 
-kde-base/kdebase xcomposite bzip2 java
+kde-base/kdebase xcomposite bzip2 -java
 kde-base/kdegraphics djvu
 kde-base/kdelibs pertty lua bzip2
 kde-base/kdemultimedia taglib
@@ -112,7 +112,6 @@ sys-kernel/gentoo-sources -symlink
 sys-libs/glibc -erandom nls nptl nptlonly pic -userlocales
 sys-libs/pam pam_chroot pam_console pam_timestamp
 www-client/mozilla-firefox java mozdevelop moznopango
-www-client/mozilla java mozdevelop 
 
 x11-base/xorg-server nptl
 x11-base/xorg-x11 3dnow bitmap-fonts cjk -dlloader mmx opengl pam truetype-fonts xv -font-server		
