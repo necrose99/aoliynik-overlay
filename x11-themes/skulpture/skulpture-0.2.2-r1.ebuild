@@ -15,5 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="$(qt4_min_version 4.1)"
+
+DEPEND="|| ( x11-libs/qt-gui:4[dbus] <x11-libs/qt-4.4:4[dbus] )"
 RDEPEND="${DEPEND}"
