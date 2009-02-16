@@ -41,7 +41,6 @@ gnome-extra/evolution-data-server ldap kerberos
 
 kde-base/kdebase-workspace network_manager xcomposite newxkb 
 kde-base/kdebase xcomposite bzip2 -java
-kde-base/kdegraphics djvu
 kde-base/kdelibs pertty lua bzip2
 kde-base/kdemultimedia taglib
 kde-base/kdenetwork vnc
@@ -130,3 +129,4 @@ net-p2p/deluge gtk
 sys-devel/distcc gtk
 dev-lang/mono moonlight
 net-misc/fatrat webinterface jabber bittorrent
+app-text/djvu -kde -nsplugin -qt3
