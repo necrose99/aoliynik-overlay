@@ -1,1 +1,2 @@
 gnome-base/gnome-panel networkmanager
+net-misc/networkmanager dhclient

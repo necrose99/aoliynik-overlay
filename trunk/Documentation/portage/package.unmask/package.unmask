@@ -21,3 +21,4 @@ net-im/skype
 =app-crypt/truecrypt-6.0a
 =sys-apps/portage-2.2_rc16
 net-libs/rb_libtorrent
+www-client/opera
