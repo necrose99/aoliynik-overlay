@@ -1,2 +1,1 @@
-media-video/xbmc -debug
-media-libs/alsa-lib debug
+media-tv/xbmc -debug -pvr -vdpau
