@@ -22,3 +22,10 @@ net-im/skype
 =sys-apps/portage-2.2_rc16
 net-libs/rb_libtorrent
 www-client/opera
+
+=net-wireless/blueman-1.0*
+net-wireless/bluez
+app-mobilephone/obex-data-server
+
+
+
