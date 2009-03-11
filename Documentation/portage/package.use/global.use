@@ -133,3 +133,4 @@ app-text/djvu -kde -nsplugin -qt3
 www-client/opera -qt3
 app-dicts/qstardict plugin_stardict
 net-wireless/bluez old-daemons
+sys-auth/pambase consolekit
