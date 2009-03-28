@@ -134,3 +134,4 @@ www-client/opera -qt3
 app-dicts/qstardict plugin_stardict
 net-wireless/bluez old-daemons
 sys-auth/pambase consolekit
+dev-util/qt-creator subversion git debugger designer cmake
