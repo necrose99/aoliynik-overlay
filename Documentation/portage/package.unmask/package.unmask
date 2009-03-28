@@ -28,3 +28,4 @@ net-wireless/bluez
 app-mobilephone/obex-data-server
 
 =x11-drivers/nvidia-drivers-180.35
+=x11-libs/qt-3.3.8-r4
