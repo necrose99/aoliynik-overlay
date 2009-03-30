@@ -8,4 +8,5 @@ app-portage/portage **
 www-client/opera **
 net-wireless/blueman **
 
+#net-im/qutim **
 
