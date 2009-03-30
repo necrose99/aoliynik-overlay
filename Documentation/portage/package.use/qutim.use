@@ -1,4 +1,4 @@
-net-im/qutim icq jabber -mrim debug -phonon -qt-phonon
+net-im/qutim icq jabber -mrim debug -phonon -qt-phonon -protocolicon 
 
 x11-plugins/qutim-icq -debug
 x11-plugins/qutim-jabber -openssl debug gnutls
