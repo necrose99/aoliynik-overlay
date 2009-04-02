@@ -73,7 +73,7 @@ media-video/mplayer  compiz 3dnow -3dnowex divx4linux -esd mmx  nvidia -oss rtc 
 media-video/nvclock -qt3 -qt
 media-video/realplayer X nsplugin
 media-video/totem -nsplugin
-media-video/vlc dvd ffmpeg mpeg mad wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm -httpd cdda vcd cdio live rtsp shout upnp skins -dts nsplugin qt4 xulrunner twolame
+media-video/vlc dvd ffmpeg mpeg mad wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm httpd cdda vcd cdio live rtsp shout upnp -skins -dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd
 
 net-analyzer/nmap -gtk
 net-analyzer/openvas-client gtk
@@ -135,3 +135,4 @@ app-dicts/qstardict plugin_stardict
 net-wireless/bluez old-daemons
 sys-auth/pambase consolekit
 dev-util/qt-creator subversion git debugger designer cmake
+dev-java/antlr java
