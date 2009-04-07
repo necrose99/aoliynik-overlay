@@ -133,6 +133,9 @@ app-text/djvu -kde -nsplugin -qt3
 www-client/opera -qt3
 app-dicts/qstardict plugin_stardict
 net-wireless/bluez old-daemons
+media-sound/lossless2lossy ape
 sys-auth/pambase consolekit
 dev-util/qt-creator subversion git debugger designer cmake
+mail-client/evolution ldap
 dev-java/antlr java
+
