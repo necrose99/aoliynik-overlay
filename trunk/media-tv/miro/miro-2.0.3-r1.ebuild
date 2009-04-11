@@ -10,7 +10,7 @@ HOMEPAGE="http://www.getmiro.com/"
 SRC_URI="http://ftp.osuosl.org/pub/pculture.org/miro/src/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="x86 amd64"
 
 EAPI="2"
 
@@ -31,6 +31,7 @@ RDEPEND=">=dev-python/pygtk-2.10
 	|| ( =net-libs/rb_libtorrent-0.13
 		>=net-libs/rb_libtorrent-0.14[python] )
 	dev-python/gst-python
+	dev-python/bsddb3
 	libnotify? ( dev-python/notify-python )"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
