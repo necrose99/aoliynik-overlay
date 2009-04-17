@@ -9,6 +9,7 @@
 =dev-libs/xerces-c-3.0.0-r1
 media-video/xbmc
 
-kde-misc/yakuake:4.1
+kde-misc/yakuake:0
+=app-arch/libarchive-2.7.0
 
 
