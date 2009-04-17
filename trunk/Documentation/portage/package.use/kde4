@@ -1,5 +1,5 @@
 kde-base/okular djvu
-app-cdr/k3b -ffmpeg
+app-cdr/k3b ffmpeg lame
 kde-base/plasma-workspace google-gadgets
 kde-base/solid networkmanager
 x11-misc/google-gadgets networkmanager
