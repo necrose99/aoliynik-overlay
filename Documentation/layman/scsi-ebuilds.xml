@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layman>
+	<overlay
+		type = "svn"
+		contact="aoliynik@gmail.com"
+		src  = "http://scsi-ebuilds.googlecode.com/svn/trunk/"
+		name = "scsi-ebuilds">
+		<link>
+		http://code.google.com/p/scsi-ebuilds
+		</link>
+		<description>scsi-ebuilds</description>
+	</overlay>
+</layman> 
