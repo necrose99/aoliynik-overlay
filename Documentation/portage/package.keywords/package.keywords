@@ -6,9 +6,7 @@ app-office/openoffice-bin **
 x11-themes/skulpture **
 app-portage/portage **
 www-client/opera **
-net-wireless/blueman **
 
-#net-im/qutim **
-#app-cdr/k3b **
-
+app-cdr/k3b **
+sys-auth/policykit-qt **
 
