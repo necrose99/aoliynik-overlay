@@ -12,9 +12,11 @@ app-misc/strigi inotify
 app-mobilephone/kmobiletools obex
 
 app-office/mozilla-sunbird moznopango
-app-office/openoffice-bin java kde
-app-office/openoffice-infra-bin java kde
-app-office/openoffice java kde
+app-office/openoffice-bin java -kde
+app-office/openoffice-infra-bin java -kde
+app-office/openoffice-infra java -kde
+app-office/openoffice java -kde
+dev-db/hsqldb java6
 
 app-text/cuneiform imagemagick
 app-text/poppler-bindings gtk
@@ -101,7 +103,7 @@ net-wireless/rt2x00-git rt73usb
 net-wireless/rt2x00 rt73usb
 net-wireless/wpa_supplicant gsm
 
-sys-apps/dbus gtk python mono qt3 qt4
+sys-apps/dbus gtk python mono -qt3 qt4
 sys-apps/file -python
 sys-apps/pciutils -zlib
 sys-boot/grub netboot static 
@@ -138,4 +140,7 @@ sys-auth/pambase consolekit
 dev-util/qt-creator subversion git debugger designer cmake
 mail-client/evolution ldap
 dev-java/antlr java
+
+app-cdr/brasero -nautilus -beagle -totem cdrtools
+gnome-base/gvfs -bluetooth -gphoto2
 
