@@ -1,0 +1,74 @@
+--- /dev/null	2009-03-25 22:08:42.351503632 +0300
++++ CMakeLists.txt	2009-03-29 23:22:15.000000000 +0400
+@@ -0,0 +1,6 @@
++project(sysinfo)
++
++find_package(KDE4 REQUIRED)
++
++add_subdirectory( src )
++add_subdirectory( po )
+--- /dev/null	2009-03-25 22:08:42.351503632 +0300
++++ po/CMakeLists.txt	2009-03-29 23:23:23.000000000 +0400
+@@ -0,0 +1,30 @@
++FIND_PROGRAM(GETTEXT_MSGFMT_EXECUTABLE msgfmt)
++ 
++IF(NOT GETTEXT_MSGFMT_EXECUTABLE)
++
++	MESSAGE( "------ NOTE: msgfmt not found. Translations will *not* be installed ------")
++
++ELSE(NOT GETTEXT_MSGFMT_EXECUTABLE)
++	
++	SET(catalogname sysinfo)
++	ADD_CUSTOM_TARGET(translations ALL)
++	FILE(GLOB PO_FILES *.po)
++
++	FOREACH(_poFile ${PO_FILES})
++		GET_FILENAME_COMPONENT(_poFileName ${_poFile} NAME)
++		STRING(REGEX REPLACE "^${catalogname}_?" "" _langCode ${_poFileName} )
++		STRING(REGEX REPLACE "\\.po$" "" _langCode ${_langCode} )
++
++		IF( _langCode )
++			GET_FILENAME_COMPONENT(_lang ${_poFile} NAME_WE)
++			SET(_gmoFile ${CMAKE_CURRENT_BINARY_DIR}/${_lang}.gmo)
++
++			ADD_CUSTOM_COMMAND(TARGET translations
++								COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} --check -o ${_gmoFile} ${_poFile}
++								DEPENDS ${_poFile})
++			INSTALL(FILES ${_gmoFile} DESTINATION ${LOCALE_INSTALL_DIR}/${_langCode}/LC_MESSAGES/ RENAME ${catalogname}.mo)
++		ENDIF( _langCode )
++ 
++	ENDFOREACH(_poFile ${PO_FILES})
++
++ENDIF(NOT GETTEXT_MSGFMT_EXECUTABLE)
+--- src/CMakeLists.txt~	2009-03-29 23:35:59.000000000 +0400
++++ src/CMakeLists.txt	2009-03-29 23:33:58.000000000 +0400
+@@ -1,3 +1,9 @@
++include( KDE4Defaults )
++
++find_package(DBus REQUIRED)
++
++include_directories( ${KDE4_INCLUDES} ${QT4_INCLUDES} ${DBUS_INCLUDE_DIR} ${DBUS_ARCH_INCLUDE_DIR}  )
++
+ add_subdirectory(about/suse)
+ 
+ set(kio_sysinfo_SRCS
+@@ -5,7 +11,7 @@
+ )
+ 
+ kde4_add_plugin(kio_sysinfo ${kio_sysinfo_SRCS})
+-target_link_libraries(kio_sysinfo ${KDE4_KIO_LIBS} hd hal dbus-1 GL ${KDE4_SOLID_LIBS} X11)
++target_link_libraries(kio_sysinfo ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS} ${DBUS_LIBRARIES} hd hal GL X11)
+ install(TARGETS kio_sysinfo DESTINATION ${PLUGIN_INSTALL_DIR})
+ 
+ set(libksysinfopart_SRCS
+@@ -16,8 +22,8 @@
+ target_link_libraries(libksysinfopart ${KDE4_KHTML_LIBS} ${KDE4_KPART_LIBS} )
+ install(TARGETS libksysinfopart DESTINATION ${PLUGIN_INSTALL_DIR})
+ 
+-install( FILES sysinfo.protocol ksysinfopart.desktop DESTINATION  ${SERVICES_INSTALL_DIR} )
+-install( FILES kfmclient_sysinfo.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
++install( FILES sysinfo.protocol ksysinfopart.desktop DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
++install( FILES kfmclient_sysinfo.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR} )
+ 
+ find_package(SharedMimeInfo REQUIRED)
+ install(FILES x-sysinfo.xml DESTINATION ${XDG_MIME_INSTALL_DIR})
