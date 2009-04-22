@@ -143,4 +143,4 @@ dev-java/antlr java
 
 app-cdr/brasero -nautilus -beagle -totem cdrtools
 gnome-base/gvfs -bluetooth -gphoto2
-
+media-libs/vigra -fftw
