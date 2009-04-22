@@ -1,10 +1,7 @@
 kde-base/okular djvu
 app-cdr/k3b ffmpeg lame
 kde-base/plasma-workspace google-gadgets
-kde-base/solid networkmanager
+kde-base/solid bluetooth
 x11-misc/google-gadgets networkmanager
 x11-themes/gtk-engines-qtcurve firefox3
 kde-base/kdelibs plasma
-
-
-
