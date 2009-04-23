@@ -16,7 +16,6 @@ net-im/skype
 
 >=app-portage/rep-rebuild-0.1
 >=net-wireless/wpa_supplicant-0.6.0
-=app-office/openoffice-bin-3.0.0*
 >=x11-libs/gtk+-2.14
 =app-crypt/truecrypt-6.0a
 =sys-apps/portage-2.2_rc16
@@ -26,6 +25,4 @@ www-client/opera
 =net-wireless/blueman-1.0*
 net-wireless/bluez
 app-mobilephone/obex-data-server
-
-=x11-drivers/nvidia-drivers-180.35
 =x11-libs/qt-3.3.8-r4
