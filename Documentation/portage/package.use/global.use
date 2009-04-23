@@ -93,8 +93,7 @@ net-misc/openssh sftplogging -ldap
 net-misc/openvpn iproute2
 net-misc/tsclient vnc
 net-misc/vnc -server
-net-nds/openldap samba
-net-p2p/transmission gtk
+net-nds/openldap -samba gdbm -berkdb
 
 net-wireless/bluez-utils -gtk udev old-daemons hal test-programs
 net-wireless/btsco ao skype
@@ -143,4 +142,4 @@ dev-java/antlr java
 
 app-cdr/brasero -nautilus -beagle -totem cdrtools
 gnome-base/gvfs -bluetooth -gphoto2
-media-libs/vigra -fftw
+dev-util/eclipse-sdk java6
