@@ -19,11 +19,12 @@ DEPEND="${RDEPEND}
 	>=x11-libs/qt-webkit-4.5"
 RDEPEND="dev-libs/libzip
 	media-libs/libvorbis
-	app-text/hunspell"
+	>=app-text/hunspell-1.2.0"
 
 S=${WORKDIR}/${P}-src
 
 src_compile() {
+        sed 's/-lhunspell/-lhunspell-1.2' -i "${PN}.pro"
 	eqmake4 || die "eqmake failed"
 	emake || die "emake failed"
 }
