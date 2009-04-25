@@ -7,7 +7,7 @@ inherit eutils versionator rpm
 MY_P="picasa-$(replace_version_separator 3 '-')"
 DESCRIPTION="Google's photo organizer"
 HOMEPAGE="http://picasa.google.com"
-SRC_URI="http://dl.google.com/linux/rpm/testing/i386/${MY_P}.i386.rpm"
+SRC_URI="http://dl.google.com/linux/rpm/testing/i386/picasa-3.0-current.i386.rpm"
 LICENSE="google-picasa"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
@@ -74,3 +74,4 @@ src_install() {
 	doicon picasa.xpm picasa-fontcfg.xpm
 	domenu {picasa{,-fontcfg},picasascr}.desktop
 }
+
