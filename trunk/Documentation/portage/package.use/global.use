@@ -5,7 +5,6 @@ app-crypt/truecrypt -X
 app-emulation/virtualbox-ose additions
 app-emulation/wine gphoto glu openssl
 
-app-misc/beagle -ole thunderbird 
 app-misc/mc -X samba nls -dnotify attrs
 app-misc/strigi inotify
 
@@ -23,8 +22,8 @@ app-text/poppler-bindings gtk
 
 dev-cpp/gtkmm accessibility
 dev-db/mysql -cluster big-tables -berkdb embedded
-dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode -cli -cgi pear ctype
-dev-lang/python X tk
+dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli -cgi pear ctype
+dev-lang/python X -tk
 dev-libs/gdl gnome
 dev-libs/libxml2 python
 dev-libs/libxslt python
@@ -63,7 +62,7 @@ media-gfx/splashutils fbcondecor
 media-libs/freetype newspr -bindist filter_light
 media-libs/libsdl -nojoystick
 media-libs/mlt sdl
-media-libs/pdflib perl python tcltk
+media-libs/pdflib perl python -tcltk
 media-libs/xine-lib modplug
 
 media-sound/amarok gstreamer xine opengl visualization -xmms real -noamazon -daap mtp mp4 
@@ -123,23 +122,19 @@ x11-libs/qt mysql dbus accessibility qt-copy
 x11-misc/google-gadgets qt4
 
 x11-themes/gtk-engines-kde4 themes
-x11-themes/qtcurve gtk gtk1
+x11-themes/qtcurve gtk -gtk1
 
 www-servers/pound dynscaler
 net-p2p/deluge gtk
 sys-devel/distcc gtk
 dev-lang/mono moonlight
-net-misc/fatrat webinterface jabber bittorrent
 app-text/djvu -kde -nsplugin -qt3
 www-client/opera -qt3
-app-dicts/qstardict plugin_stardict
 net-wireless/bluez old-daemons
 media-sound/lossless2lossy ape
 sys-auth/pambase consolekit
 dev-util/qt-creator subversion git debugger designer cmake
 mail-client/evolution ldap
 dev-java/antlr java
-
-app-cdr/brasero -nautilus -beagle -totem cdrtools
-gnome-base/gvfs -bluetooth -gphoto2
 dev-util/eclipse-sdk java6
+gnome-base/gvfs -bluetooth -gphoto2
