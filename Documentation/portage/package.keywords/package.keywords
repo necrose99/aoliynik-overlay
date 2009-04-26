@@ -5,6 +5,7 @@ x11-drivers/nvidia-drivers **
 x11-themes/skulpture **
 app-portage/portage **
 www-client/opera **
+x11-themes/bespin **
 
 app-cdr/k3b **
 sys-auth/policykit-qt **
