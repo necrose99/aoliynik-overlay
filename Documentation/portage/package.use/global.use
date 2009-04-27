@@ -138,3 +138,5 @@ mail-client/evolution ldap
 dev-java/antlr java
 dev-util/eclipse-sdk java6
 gnome-base/gvfs -bluetooth -gphoto2
+app-arch/p7zip rar -kde -wxwindows
+
