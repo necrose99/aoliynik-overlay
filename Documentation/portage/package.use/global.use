@@ -101,7 +101,7 @@ net-wireless/rt2x00-git rt73usb
 net-wireless/rt2x00 rt73usb
 net-wireless/wpa_supplicant gsm
 
-sys-apps/dbus gtk python mono -qt3 qt4
+sys-apps/dbus gtk python -mono -qt3 qt4
 sys-apps/file -python
 sys-apps/pciutils -zlib
 sys-boot/grub netboot static 
@@ -127,7 +127,6 @@ x11-themes/qtcurve gtk -gtk1
 www-servers/pound dynscaler
 net-p2p/deluge gtk
 sys-devel/distcc gtk
-dev-lang/mono moonlight
 app-text/djvu -kde -nsplugin -qt3
 www-client/opera -qt3
 net-wireless/bluez old-daemons

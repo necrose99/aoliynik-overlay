@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-portage/getdelta/getdelta-0.7.8.ebuild,v 1.2 2007/10/13 11:39:03 genstef Exp $
 
+inherit eutils
+
 DESCRIPTION="dynamic deltup client"
 HOMEPAGE="http://linux01.gwdg.de/~nlissne/"
 SRC_URI="http://linux01.gwdg.de/~nlissne/${P}.tar.bz2"
