@@ -31,6 +31,7 @@ RDEPEND=">=dev-python/pygtk-2.10
 	|| ( =net-libs/rb_libtorrent-0.13
 		>=net-libs/rb_libtorrent-0.14[python] )
 	dev-python/gst-python
+	dev-python/bsddb3
 	libnotify? ( dev-python/notify-python )"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
@@ -40,6 +41,6 @@ S="${WORKDIR}/${MY_P}/platform/gtk-x11"
 
 
 pkg_postinst() {
+	ebeep 5
 	ewarn "The dbus service must be installed and running for this package to work"
 }
-

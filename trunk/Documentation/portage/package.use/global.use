@@ -22,7 +22,7 @@ app-text/poppler-bindings gtk
 
 dev-cpp/gtkmm accessibility
 dev-db/mysql -cluster big-tables -berkdb embedded
-dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli -cgi pear ctype
+dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli -cgi pear ctype pcre
 dev-lang/python X -tk
 dev-libs/gdl gnome
 dev-libs/libxml2 python
@@ -36,7 +36,6 @@ dev-python/gnome-python-desktop -nognome rsvg wnck
 dev-python/gnome-python-extras xulrunner
 dev-python/pyrex python
 
-dev-util/kdevelop perl php python sql subversion -java
 dev-util/subversion berkdb python -nowebdav -java
 gnome-extra/evolution-data-server ldap kerberos
 
