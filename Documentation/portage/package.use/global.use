@@ -49,7 +49,6 @@ kde-base/konsole transparency
 kde-base/krdc vnc rdektop qca decibel
 kde-misc/knetworkmanager -dialup -openvpn pptp -cisco networksettings
 kde-misc/krd vnc rdesktop
-mail-client/mail-notification pop gmail mbox
 mail-client/mozilla-thunderbird -ldap moznopango java -crypt
 mail-filter/spamassassin berkdb qmail ssl
 
@@ -73,7 +72,7 @@ media-video/mplayer  compiz 3dnow -3dnowex divx4linux -esd mmx  nvidia -oss rtc 
 media-video/nvclock -qt3 -qt
 media-video/realplayer X nsplugin
 media-video/totem -nsplugin
-media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm -httpd cdda vcd cdio live rtsp shout upnp -skins -dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd
+media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm -httpd cdda vcd cdio live rtsp shout upnp -skins -dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd -libnotify
 
 net-analyzer/nmap -gtk
 net-analyzer/openvas-client gtk
@@ -138,3 +137,4 @@ dev-util/eclipse-sdk java6
 gnome-base/gvfs -bluetooth -gphoto2
 app-arch/p7zip rar -kde -wxwindows
 
+media-tv/miro -libnotify
