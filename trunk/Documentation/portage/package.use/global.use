@@ -1,71 +1,67 @@
 app-admin/sudo -skey
+app-arch/p7zip rar -kde -wxwindows
+app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
 app-crypt/truecrypt -X
-
 app-emulation/virtualbox-ose additions
 app-emulation/wine gphoto glu openssl
-
 app-misc/mc -X samba nls -dnotify attrs
 app-misc/strigi inotify
-
 app-mobilephone/kmobiletools obex
-
 app-office/mozilla-sunbird moznopango
 app-office/openoffice-bin java -kde
 app-office/openoffice-infra-bin java -kde
 app-office/openoffice-infra java -kde
 app-office/openoffice java -kde
-dev-db/hsqldb java6
-
+app-portage/eix
 app-text/cuneiform imagemagick
+app-text/djvu -kde -nsplugin -qt3
 app-text/poppler-bindings gtk
-
 dev-cpp/gtkmm accessibility
+dev-db/hsqldb java6
 dev-db/mysql -cluster big-tables -berkdb embedded
+dev-java/antlr java
 dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli -cgi pear ctype pcre
 dev-lang/python X -tk
 dev-libs/gdl gnome
 dev-libs/libxml2 python
 dev-libs/libxslt python
 dev-libs/xerces-c -icu
-
 dev-perl/catalystframework -apache -apache2
 dev-perl/Catalyst-Runtime -apache -apache2
-
 dev-python/gnome-python-desktop -nognome rsvg wnck
 dev-python/gnome-python-extras xulrunner
 dev-python/pyrex python
-
+dev-util/eclipse-sdk java6
+dev-util/qt-creator subversion git debugger designer cmake
 dev-util/subversion berkdb python -nowebdav -java
+gnome-base/gvfs -bluetooth -gphoto2
 gnome-extra/evolution-data-server ldap kerberos
-
-kde-base/kdebase-workspace network_manager xcomposite newxkb 
+kde-base/kdebase-workspace xcomposite newxkb 
 kde-base/kdebase xcomposite bzip2 -java
-kde-base/kdelibs pertty lua bzip2
+kde-base/kdelibs plasma bzip2
 kde-base/kdemultimedia taglib
 kde-base/kdenetwork vnc
-kde-base/kicker -kdehiddenvisibility kickoff
-kde-base/konsole transparency
-kde-base/krdc vnc rdektop qca decibel
-kde-misc/knetworkmanager -dialup -openvpn pptp -cisco networksettings
-kde-misc/krd vnc rdesktop
+kde-base/krdc vnc rdesktop qca decibel
+kde-base/okular djvu
+kde-base/solid bluetooth
+mail-client/evolution ldap -nntp -hal -crypt
 mail-client/mozilla-thunderbird -ldap moznopango java -crypt
 mail-filter/spamassassin berkdb qmail ssl
-
 media-gfx/gfxboot themes animate speech beep
 media-gfx/gimp -gtkhtml python
 media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf xml2
 media-gfx/splashutils fbcondecor
-
 media-libs/freetype newspr -bindist filter_light
 media-libs/libsdl -nojoystick
 media-libs/mlt sdl
 media-libs/pdflib perl python -tcltk
 media-libs/xine-lib modplug
-
 media-sound/amarok gstreamer xine opengl visualization -xmms real -noamazon -daap mtp mp4 
 media-sound/audacity flac id3tag soundtouch twolame vamp libsamplerate
+media-sound/lossless2lossy ape
 media-sound/transkode amarok wavpack
+media-tv/miro -libnotify
 media-video/ffmpeg amr sdl
 media-video/handbrake sys-libs
 media-video/mplayer  compiz 3dnow -3dnowex divx4linux -esd mmx  nvidia -oss rtc  -xmms xv xvid -xvmc -gtk compiz mp2 amrnb amrwb srt enca teletext
@@ -73,7 +69,6 @@ media-video/nvclock -qt3 -qt
 media-video/realplayer X nsplugin
 media-video/totem -nsplugin
 media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm -httpd cdda vcd cdio live rtsp shout upnp -skins -dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd -libnotify
-
 net-analyzer/nmap -gtk
 net-analyzer/openvas-client gtk
 net-analyzer/zabbix server agent frontend curl snmp mysql jabber -sqlite3
@@ -82,7 +77,6 @@ net-dialup/rp-pppoe -X
 net-dns/bind -threads -ldap -mysql -odbc -postgres ssl
 net-fs/samba  acl -ldap winbind -xml xml2 winbind async -ads syslog
 net-im/skype -qt-static
-
 net-libs/webkitgtk -svg
 net-mail/dovecot mbox pop3d -vpopmail
 net-misc/aria2 metalink bittorrent
@@ -91,25 +85,28 @@ net-misc/openvpn iproute2
 net-misc/tsclient vnc
 net-misc/vnc -server
 net-nds/openldap -samba gdbm -berkdb
-
+net-p2p/deluge gtk
+net-wireless/bluez old-daemons
 net-wireless/bluez-utils -gtk udev old-daemons hal test-programs
 net-wireless/btsco ao skype
 net-wireless/irda-utils -gtk
 net-wireless/rt2x00-git rt73usb
 net-wireless/rt2x00 rt73usb
 net-wireless/wpa_supplicant gsm
-
 sys-apps/dbus gtk python -mono -qt3 qt4
 sys-apps/file -python
 sys-apps/pciutils -zlib
+sys-auth/pambase consolekit
 sys-boot/grub netboot static 
+sys-devel/distcc gtk
 sys-devel/gcc -gtk
 sys-fs/e2fsprogs -diet -static
 sys-kernel/gentoo-sources -symlink
 sys-libs/glibc -erandom nls nptl nptlonly pic -userlocales
 sys-libs/pam pam_chroot pam_console pam_timestamp
 www-client/mozilla-firefox java mozdevelop moznopango
-
+www-client/opera -qt3
+www-servers/pound dynscaler
 x11-base/xorg-server nptl
 x11-base/xorg-x11 3dnow bitmap-fonts cjk -dlloader mmx opengl pam truetype-fonts xv -font-server		
 x11-libs/cairo cleartype 
@@ -117,24 +114,6 @@ x11-libs/libX11 xcb
 x11-libs/libXft cleartype
 x11-libs/pixman -sse2
 x11-libs/qt mysql dbus accessibility qt-copy
-x11-misc/google-gadgets qt4
-
 x11-themes/gtk-engines-kde4 themes
+x11-themes/gtk-engines-qtcurve firefox3
 x11-themes/qtcurve gtk -gtk1
-
-www-servers/pound dynscaler
-net-p2p/deluge gtk
-sys-devel/distcc gtk
-app-text/djvu -kde -nsplugin -qt3
-www-client/opera -qt3
-net-wireless/bluez old-daemons
-media-sound/lossless2lossy ape
-sys-auth/pambase consolekit
-dev-util/qt-creator subversion git debugger designer cmake
-mail-client/evolution ldap -nntp -hal -crypt
-dev-java/antlr java
-dev-util/eclipse-sdk java6
-gnome-base/gvfs -bluetooth -gphoto2
-app-arch/p7zip rar -kde -wxwindows
-
-media-tv/miro -libnotify
