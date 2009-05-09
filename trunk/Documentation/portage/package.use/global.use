@@ -131,7 +131,7 @@ net-wireless/bluez old-daemons
 media-sound/lossless2lossy ape
 sys-auth/pambase consolekit
 dev-util/qt-creator subversion git debugger designer cmake
-mail-client/evolution ldap
+mail-client/evolution ldap -nntp -hal -crypt
 dev-java/antlr java
 dev-util/eclipse-sdk java6
 gnome-base/gvfs -bluetooth -gphoto2
