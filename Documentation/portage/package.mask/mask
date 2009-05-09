@@ -3,7 +3,6 @@
 
 #bugs
 >=dev-util/xdelta-3.0
-=x11-libs/qt-3.3.8b*
 
 =dev-libs/xerces-c-3.0.0
 =dev-libs/xerces-c-3.0.0-r1
