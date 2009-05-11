@@ -1,5 +1,6 @@
 >=perl-core/ExtUtils-MakeMaker-6.30.01
 www-apache/mod_perl
+app-crypt/truecrypt
 
 >=net-mail/mailbase-1
 
@@ -26,3 +27,4 @@ www-client/opera
 net-wireless/bluez
 app-mobilephone/obex-data-server
 =x11-libs/qt-3.3.8-r4
+>=sys-apps/portage-2.2_pre
