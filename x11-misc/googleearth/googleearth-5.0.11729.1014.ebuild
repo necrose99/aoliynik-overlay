@@ -1,16 +1,21 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/googleearth/googleearth-4.2.205.5730.ebuild,v 1.2 2007/12/22 16:17:09 genstef Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/googleearth/googleearth-5.0.11729.1014.ebuild,v 1.1 2009/04/29 18:55:44 caster Exp $
+
+EAPI=2
 
 inherit eutils fdo-mime
 
 DESCRIPTION="A 3D interface to the planet"
 HOMEPAGE="http://earth.google.com/"
-SRC_URI="http://dl.google.com/earth/client/current/GoogleEarthLinux.bin"
+# no upstream versioning, version determined from help/about
+# incorrect digest means upstream bump and a need for version bump
+SRC_URI="http://dl.google.com/earth/client/current/GoogleEarthLinux.bin
+			-> GoogleEarthLinux-${PV}.bin"
 
 LICENSE="googleearth MIT X11 SGI-B-1.1 openssl as-is ZLIB"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror strip"
 IUSE=""
 
@@ -24,6 +29,7 @@ RDEPEND="x86? (
 	x11-libs/libXcursor
 	x11-libs/libXext
 	x11-libs/libXft
+	x11-libs/libXinerama
 	x11-libs/libXrender )
 	amd64? (
 	app-emulation/emul-linux-x86-xlibs
@@ -35,6 +41,18 @@ RDEPEND="x86? (
 	media-fonts/ttf-bitstream-vera"
 
 S="${WORKDIR}"
+
+QA_TEXTRELS="opt/googleearth/libgps.so
+opt/googleearth/libgooglesearch.so
+opt/googleearth/libevll.so
+opt/googleearth/librender.so
+opt/googleearth/libinput_plugin.so
+opt/googleearth/libflightsim.so
+opt/googleearth/libcollada.so
+opt/googleearth/libminizip.so
+opt/googleearth/libauth.so
+opt/googleearth/libbasicingest.so
+opt/googleearth/libmeasure.so"
 
 src_unpack() {
 	unpack_makeself
@@ -58,20 +76,15 @@ src_install() {
 	dodoc README.linux
 
 	cd bin
-	tar xf ${WORKDIR}/${PN}-linux-x86.tar
+	tar xf "${WORKDIR}"/${PN}-linux-x86.tar
 	exeinto /opt/${PN}
 	doexe *
 
-	cd ${D}/opt/${PN}
-	tar xf ${WORKDIR}/${PN}-data.tar
+	cd "${D}"/opt/${PN}
+	tar xf "${WORKDIR}"/${PN}-data.tar
 
-	cd ${D}
-	# mime magic for gnome by Ed Catmur in bug 141371
-	epatch ${FILESDIR}/mime-magic.patch
-
-	# make sure we install with correct permissions
 	fowners -R root:root /opt/${PN}
-	fperms -R a-x,a+X /opt/googleearth/{xml,res{,ources}}
+	fperms -R a-x,a+X /opt/googleearth/{xml,resources}
 }
 
 pkg_postinst() {
