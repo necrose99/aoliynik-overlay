@@ -45,6 +45,7 @@ kde-base/kdenetwork vnc
 kde-base/krdc vnc rdesktop qca decibel
 kde-base/okular djvu
 kde-base/solid bluetooth
+kde-base/knotes -kontact
 mail-client/evolution ldap -nntp -hal -crypt
 mail-client/mozilla-thunderbird -ldap moznopango java -crypt
 mail-filter/spamassassin berkdb qmail ssl
@@ -117,3 +118,4 @@ x11-libs/qt mysql dbus accessibility qt-copy
 x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3
 x11-themes/qtcurve gtk -gtk1
+net-libs/libsoup gnome
