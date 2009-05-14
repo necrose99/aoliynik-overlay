@@ -58,6 +58,7 @@ media-libs/libsdl -nojoystick
 media-libs/mlt sdl
 media-libs/pdflib perl python -tcltk
 media-libs/xine-lib modplug
+media-plugins/audacious-plugins projectm mtp icacast
 media-sound/amarok gstreamer xine opengl visualization -xmms real -noamazon -daap mtp mp4 
 media-sound/audacity flac id3tag soundtouch twolame vamp libsamplerate
 media-sound/lossless2lossy ape
