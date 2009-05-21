@@ -2,7 +2,6 @@ app-admin/sudo -skey
 app-arch/p7zip rar -kde -wxwindows
 app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
-app-crypt/truecrypt -X
 app-emulation/virtualbox-ose additions
 app-emulation/wine gphoto glu openssl
 app-misc/mc -X samba nls -dnotify attrs
