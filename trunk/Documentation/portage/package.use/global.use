@@ -119,3 +119,4 @@ x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3
 x11-themes/qtcurve gtk -gtk1
 net-libs/libsoup gnome
+kde-base/kdebase-kioslaves samba
