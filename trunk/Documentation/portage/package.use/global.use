@@ -2,6 +2,7 @@ app-admin/sudo -skey
 app-arch/p7zip rar -kde -wxwindows
 app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
+app-dicts/goldendict -addons
 app-emulation/virtualbox-ose additions
 app-emulation/wine gphoto glu openssl
 app-misc/mc -X samba nls -dnotify attrs
@@ -36,15 +37,16 @@ dev-util/qt-creator subversion git debugger designer cmake
 dev-util/subversion berkdb python -nowebdav -java
 gnome-base/gvfs -bluetooth -gphoto2
 gnome-extra/evolution-data-server ldap kerberos
+kde-base/kdebase-kioslaves samba
 kde-base/kdebase-workspace xcomposite newxkb 
 kde-base/kdebase xcomposite bzip2 -java
 kde-base/kdelibs plasma bzip2
 kde-base/kdemultimedia taglib
 kde-base/kdenetwork vnc
+kde-base/knotes -kontact
 kde-base/krdc vnc rdesktop qca decibel
 kde-base/okular djvu
 kde-base/solid bluetooth
-kde-base/knotes -kontact
 mail-client/evolution ldap -nntp -hal -crypt
 mail-client/mozilla-thunderbird -ldap moznopango java -crypt
 mail-filter/spamassassin berkdb qmail ssl
@@ -78,6 +80,7 @@ net-dialup/rp-pppoe -X
 net-dns/bind -threads -ldap -mysql -odbc -postgres ssl
 net-fs/samba  acl -ldap winbind -xml xml2 winbind async -ads syslog
 net-im/skype -qt-static
+net-libs/libsoup gnome
 net-libs/webkitgtk -svg
 net-libs/xulrunner java -qt
 net-mail/dovecot mbox pop3d -vpopmail
@@ -119,5 +122,3 @@ x11-libs/qt mysql dbus accessibility qt-copy
 x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3
 x11-themes/qtcurve gtk -gtk1
-net-libs/libsoup gnome
-kde-base/kdebase-kioslaves samba
