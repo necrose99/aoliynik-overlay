@@ -95,8 +95,6 @@ net-wireless/bluez old-daemons
 net-wireless/bluez-utils -gtk udev old-daemons hal test-programs
 net-wireless/btsco ao skype
 net-wireless/irda-utils -gtk
-net-wireless/rt2x00-git rt73usb
-net-wireless/rt2x00 rt73usb
 net-wireless/wpa_supplicant gsm
 sys-apps/dbus gtk python -mono -qt3 qt4
 sys-apps/file -python
@@ -122,3 +120,4 @@ x11-libs/qt mysql dbus accessibility qt-copy
 x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3
 x11-themes/qtcurve gtk -gtk1
+dev-util/git -cgi
