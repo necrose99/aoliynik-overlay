@@ -9,4 +9,5 @@ x11-themes/bespin **
 
 app-cdr/k3b **
 sys-auth/policykit-qt **
+#net-wireless/kdebluetooth4 **
 

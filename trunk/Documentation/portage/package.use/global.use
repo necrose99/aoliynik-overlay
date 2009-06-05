@@ -6,7 +6,7 @@ app-dicts/goldendict -addons
 app-emulation/virtualbox-ose additions
 app-emulation/wine gphoto glu openssl
 app-misc/mc -X samba nls -dnotify attrs
-app-misc/strigi inotify
+app-misc/strigi inotify -fam
 app-mobilephone/kmobiletools obex
 app-office/mozilla-sunbird moznopango
 app-office/openoffice-bin java -kde
@@ -37,6 +37,7 @@ dev-util/qt-creator subversion git debugger designer cmake
 dev-util/subversion berkdb python -nowebdav -java
 gnome-base/gvfs -bluetooth -gphoto2
 gnome-extra/evolution-data-server ldap kerberos
+kde-base/dolphin thumbnail
 kde-base/kdebase-kioslaves samba
 kde-base/kdebase-workspace xcomposite newxkb 
 kde-base/kdebase xcomposite bzip2 -java
