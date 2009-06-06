@@ -1,8 +1,8 @@
-net-im/qutim icq jabber -mrim debug -phonon -qt-phonon -protocolicon -kdenotification connectioncheck
+net-im/qutim icq jabber -mrim debug -phonon -qt-phonon -protocolicon -kdenotification -connectioncheck
 
 x11-plugins/qutim-icq -debug
 #x11-plugins/qutim-jabber -openssl debug gnutls
-x11-plugins/qutim-jabber gloox-static openssl debug -gnutls
+x11-plugins/qutim-jabber gloox-static -openssl debug gnutls
 x11-plugins/qutim-mrim -debug
 x11-plugins/qutim-protocolicon -debug
 x11-plugins/qutim-imagepub -debug
