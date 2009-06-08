@@ -1,5 +1,6 @@
-net-im/qutim icq jabber -mrim debug -phonon -qt-phonon -protocolicon -kdenotification -connectioncheck
+net-im/qutim icq jabber -mrim debug -phonon -qt-phonon -protocolicon plugman vkontakte kdeintegration -connectioncheck
 
+x11-plugins/qutim-kdeintegration -debug phonon
 x11-plugins/qutim-icq -debug
 #x11-plugins/qutim-jabber -openssl debug gnutls
 x11-plugins/qutim-jabber gloox-static -openssl debug gnutls
