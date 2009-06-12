@@ -9,12 +9,3 @@
 media-video/xbmc
 
 =app-arch/libarchive-2.7.0
-
-#Temporary
-=dev-python/PyQt4-4.5
-=dev-python/sip-4.8
-=dev-python/PyQt-3.18
-=dev-python/qscintilla-python-2.4
-=x11-libs/qscintilla-2.4
-
-
