@@ -1,5 +1,5 @@
 app-admin/sudo -skey
-app-arch/p7zip rar -kde -wxwindows
+app-arch/p7zip rar kde -wxwindows
 app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
 app-dicts/goldendict -addons
@@ -38,6 +38,7 @@ dev-util/subversion berkdb python -nowebdav -java
 gnome-base/gvfs -bluetooth -gphoto2
 gnome-extra/evolution-data-server ldap kerberos
 kde-base/dolphin thumbnail
+kde-base/konqueror thumbnail
 kde-base/kdebase-kioslaves samba
 kde-base/kdebase-workspace xcomposite newxkb 
 kde-base/kdebase xcomposite bzip2 -java
