@@ -1,70 +1,61 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="1"
-inherit eutils
+inherit eutils autotools
 
+MY_P="${P/handbrake/HandBrake}"
+S="${WORKDIR}/${MY_P}"
 DESCRIPTION="Open-source DVD to MPEG-4 converter."
 HOMEPAGE="http://handbrake.fr/"
 LICENSE="GPL-2"
 SLOT="0"
+SRC_URI="http://download.handbrake.fr/handbrake/releases/${MY_P}.tar.gz
+http://download.m0k.org/handbrake/contrib/libtheora-1.0.tar.gz
+http://download.m0k.org/handbrake/contrib/libdca-r81-strapped.tar.gz
+http://download.m0k.org/handbrake/contrib/ffmpeg-r15462.tar.gz
+http://download.m0k.org/handbrake/contrib/libmkv-0.6.3.tar.gz
+http://download.m0k.org/handbrake/contrib/mpeg4ip-1.3.tar.gz
+http://download.m0k.org/handbrake/contrib/mpeg2dec-0.5.1.tar.gz
+http://download.m0k.org/handbrake/contrib/libvorbis-aotuv_b5.tar.gz
+http://download.m0k.org/handbrake/contrib/a52dec-0.7.4.tar.gz
+http://download.m0k.org/handbrake/contrib/faac-1.26.tar.gz
+http://download.m0k.org/handbrake/contrib/lame-3.98.tar.gz
+http://download.m0k.org/handbrake/contrib/libsamplerate-0.1.4.tar.gz
+http://download.m0k.org/handbrake/contrib/bzip2-1.0.5.tar.gz
+http://download.m0k.org/handbrake/contrib/libquicktime-0.9.10.tar.gz
+http://download.m0k.org/handbrake/contrib/zlib-1.2.3.tar.gz
+http://download.m0k.org/handbrake/contrib/faad2-2.6.1.tar.gz
+http://download.m0k.org/handbrake/contrib/libogg-1.1.3.tar.gz
+http://download.m0k.org/handbrake/contrib/libdvdread-0.9.7.tar.gz
+http://download.m0k.org/handbrake/contrib/xvidcore-1.1.3.tar.gz
+http://download.m0k.org/handbrake/contrib/x264-r1028-83baa7f.tar.gz
+http://download.m0k.org/handbrake/contrib/libmp4v2-r45.tar.gz
+"
 
-#real link is http://handbrake.fr/rotation.php?file=HandBrake-0.9.3.tar.gz
-#However, wget does not treat this correctly, and neither does the unpack process.
-SRC_URI="http://handbrake.fr/HandBrake-${PV}.tar.gz"
+KEYWORDS="~amd64"
 
-KEYWORDS="x86 amd64"
-RESTRICT="fetch"
-
-#qt4 UI is broke, may just need dependancies. This USE flag does nothing.
-#Maybe you have better luck ;
-IUSE="-gtk -qt4"
-RDEPEND="
-	gtk? (	>=x11-libs/gtk+-2.8
-		>=gnome-extra/gtkhtml-3.14
-	)"
+IUSE="gtk"
+RDEPEND="gtk? (	>=x11-libs/gtk+-2.8
+		>=gnome-extra/gtkhtml-3.14 )"
 DEPEND="sys-libs/zlib
 	dev-util/ftjam
-	$RDEPEND"
-
-
-S="${WORKDIR}/HandBrake-${PV}"
-GTK="${S}/gtk/src"
-
-pkg_nofetch() {
-	einfo "Just download the source code from"
-	einfo "${HOMEPAGE}"
-	einfo "and save it in ${DISTDIR} "
-}
+	${RDEPEND}"
 
 src_unpack() {
-   unpack "${A}"
+	unpack "${MY_P}.tar.gz"
+	cp "${DISTDIR}"/*.tar.gz "${S}"/contrib
+	cd "${S}"
+	epatch "${FILESDIR}/${PV}-no-wget-ktnxbye.patch"
 }
 
 src_compile() {
-
-	cd "${S}"
-
-#for local testing purposes; to prevent redownload of contribs.
-#	cp -v /tmp/handbrake/HandBrake-0.9.3/contrib/*.tar.gz ./contrib	
-	
-	einfo "Building HandBrakeCLI."
-	make || die "make HandBrakeCLI failed"
-
+	emake || die "Compilation of HandBrakeCLI failed"
 	if use gtk ; then
 		cd ${S}/gtk
-		einfo "Building ghb."
-		./autogen.sh || die "gtk autogen.sh failed"
-		make || die "make ghb failed"
+		eautoreconf
+		emake || die "Compilation of ghb failed"
 	fi
-	
-#	if use qt4 ; then
-#		cd ${S}/qt4
-#		einfo "Building qtHB."
-#		qmake || die "qmake failed"
-#		make || die "make qtHB failed"
-#	fi
 }
 
 src_install() {
@@ -72,20 +63,14 @@ src_install() {
 	dobin HandBrakeCLI
 	dodoc AUTHORS BUILD CREDITS NEWS THANKS TRANSLATIONS
 	if use gtk ; then
-		dobin ${GTK}/ghb
-		
+		dobin "${S}/gtk/ghb"
 		insinto /usr/share/applications/
-		newins ${GTK}/ghb.desktop ghb.desktop
+		doins "${S}/gtk/ghb.desktop"
 		for res in 64 128; do
         	        insinto /usr/share/icons/hicolor/${res}x${res}/apps/
                 	newins ${GTK}/hb-icon${res}.png handbrake.png
         	done
 	fi
-	
-#	if use qt4 ; then
-#		dobin ./qt4/qtHB
-#	fi
-	
 }
 
 pkg_postinst() {
@@ -96,4 +81,3 @@ pkg_postinst() {
                 einfo "/usr/share/applications/"
         fi
 }
-
