@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layman>
+	<overlay
+		type = "svn"
+		contact="aoliynik@gmail.com"
+		src  = "http://svn.ak-team.com/svn/Portage/trunk"
+		name = "ak-team">
+		<link>
+		    http://trac.ak-team.com/wiki
+		</link>
+		<description>ak-team overlay</description>
+	</overlay>
+</layman> 
