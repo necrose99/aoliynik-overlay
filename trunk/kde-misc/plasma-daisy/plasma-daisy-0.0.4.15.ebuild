@@ -13,8 +13,7 @@ LICENSE="GPL"
 KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 SLOT="4.2"
 
-SRC_URI="http://lechio.freehostia.com/downloads/daisy-${PV}.tar.gz"
-
+SRC_URI="http://lechio.freehostia.com/downloads/plasma-applet-daisy-${PV}.tar.gz"
 DEPEND="kde-base/kdelibs:${SLOT}"
 
-S="${WORKDIR}/daisy-${PV}"
+S="${WORKDIR}/plasma-applet-daisy-${PV}"
