@@ -3,12 +3,6 @@ www-apache/mod_perl
 app-crypt/truecrypt
 
 >=net-mail/mailbase-1
-
->=media-libs/freetype-2.2.1
-
->=media-libs/libmtp-0.1.1
->=net-misc/dhcdbd-1.4
-
 net-im/skype
 
 =sys-apps/baselayout-2.0.0*
@@ -22,8 +16,6 @@ net-im/skype
 net-libs/rb_libtorrent
 www-client/opera
 
-=net-wireless/blueman-1.0*
 net-wireless/bluez
 app-mobilephone/obex-data-server
-=x11-libs/qt-3.3.8-r4
 >=sys-apps/portage-2.2_pre
