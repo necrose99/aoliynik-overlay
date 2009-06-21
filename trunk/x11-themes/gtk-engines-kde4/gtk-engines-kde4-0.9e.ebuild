@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE=""
+IUSE="kdeprefix"
 
 RDEPEND=">=x11-libs/qt-gui-4.4.2:4
 	>=x11-libs/qt-svg-4.4.2:4
