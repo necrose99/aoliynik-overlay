@@ -16,7 +16,7 @@ HOMEPAGE="http://bluetooth.kmobiletools.org/"
 LICENSE="GPL-2"
 KEYWORDS=""
 SLOT="0"
-IUSE="debug"
+IUSE="debug kdeprefix"
 
 DEPEND="
 	>=app-mobilephone/obex-data-server-0.4.2
