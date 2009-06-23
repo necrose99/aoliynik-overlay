@@ -15,14 +15,15 @@ SRC_URI="mirror://sourceforge/kde-bluetooth/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
-SLOT="4.2"
-IUSE="kdeprefix"
+SLOT="0"
+IUSE="debug"
 
 DEPEND="
 	>=app-mobilephone/obex-data-server-0.4.2
 	>=app-mobilephone/obexftp-0.23_alpha[bluetooth]
-	kde-base/solid:${SLOT}[bluetooth]
+	>=kde-base/solid-${KDE_MINIMAL}[bluetooth]
 "
 RDEPEND="${DEPEND}
-	        || ( ( kde-base/kdialog:${SLOT} kde-base/konqueror:${SLOT} )
-	                kde-base/kdelibs:${SLOT} )"
+	>=kde-base/kdialog-${KDE_MINIMAL}
+	>=kde-base/konqueror-${KDE_MINIMAL}
+"

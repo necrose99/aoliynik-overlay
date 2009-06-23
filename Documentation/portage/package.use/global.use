@@ -124,3 +124,5 @@ x11-themes/gtk-engines-qtcurve firefox3
 x11-themes/qtcurve gtk -gtk1
 dev-util/git -cgi
 kde-base/kopete oscar -msn
+net-p2p/transmission gtk -qt4 -libnotify
+

@@ -6,7 +6,7 @@ EAPI="2"
 
 KMNAME="playground/network"
 KMMODULE="kbluetooth4"
-KDE_MINIMAL="4.2"
+KDE_MINIMAL="4.3"
 inherit kde4-base
 
 DESCRIPTION="KDE Bluetooth Framework"
@@ -16,7 +16,7 @@ HOMEPAGE="http://bluetooth.kmobiletools.org/"
 LICENSE="GPL-2"
 KEYWORDS=""
 SLOT="0"
-IUSE="debug kdeprefix"
+IUSE="debug"
 
 DEPEND="
 	>=app-mobilephone/obex-data-server-0.4.2
@@ -24,8 +24,8 @@ DEPEND="
 	>=kde-base/solid-${KDE_MINIMAL}[bluetooth]
 	>=kde-base/kdelibs-${KDE_MINIMAL}[semantic-desktop]
 "
-
 RDEPEND="${DEPEND}
 	>=kde-base/kdialog-${KDE_MINIMAL}
+	>=kde-base/konqueror-${KDE_MINIMAL}
 	>=kde-base/nepomuk-${KDE_MINIMAL}
 "
