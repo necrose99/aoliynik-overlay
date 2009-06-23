@@ -14,7 +14,7 @@ SRC_URI="http://home.freeuk.com/cpdrummond/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
-IUSE="kde"
+IUSE="kde kdeprefix"
 
 DEPEND="x11-libs/qt-gui:4[dbus]
 	kde? ( >=kde-base/kwin-4.1.0 )"
