@@ -18,4 +18,9 @@ www-client/opera
 
 net-wireless/bluez
 app-mobilephone/obex-data-server
+
+=net-libs/xulrunner-1.9.1_rc2*
+www-client/mozilla-firefox
+=dev-libs/nspr-4.8
+
 >=sys-apps/portage-2.2_pre
