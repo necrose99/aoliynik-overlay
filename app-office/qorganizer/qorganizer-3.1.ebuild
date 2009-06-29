@@ -11,7 +11,10 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~ia64"
 IUSE="dbus nls"
-RDEPEND=">=x11-libs/qt-4.2"
+
+RDEPEND=">=x11-libs/qt-gui-4.5
+	>=x11-libs/qt-webkit-4.5"
+
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_PN}"
