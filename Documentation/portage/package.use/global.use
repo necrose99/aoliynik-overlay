@@ -66,6 +66,7 @@ media-sound/amarok gstreamer xine opengl visualization -xmms real -noamazon -daa
 media-sound/audacity flac id3tag soundtouch twolame vamp libsamplerate
 media-sound/lossless2lossy ape
 media-sound/transkode amarok wavpack
+media-video/transcode mmx
 media-tv/miro -libnotify
 media-video/ffmpeg amr sdl
 media-video/handbrake sys-libs
