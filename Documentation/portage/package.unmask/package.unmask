@@ -19,7 +19,7 @@ www-client/opera
 net-wireless/bluez
 app-mobilephone/obex-data-server
 
-=net-libs/xulrunner-1.9.1_rc3*
+=net-libs/xulrunner-1.9.1*
 www-client/mozilla-firefox
 =dev-libs/nspr-4.8
 
