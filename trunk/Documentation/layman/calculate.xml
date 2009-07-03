@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<layman>
+	<overlay
+		type = "svn"
+		contact="aoliynik@gmail.com"
+		src  = "http://svn.calculate.ru/overlay"
+		name = "calculate">
+		<link>http://www.calculate-linux.ru/Calculate_Overlay
+		</link>
+		<description>calculate overlay</description>
+	</overlay>
+</layman> 
