@@ -1,6 +1,5 @@
 ~app-text/scrollkeeper-9999
 ~app-emulation/wine-9999
-#=kde-misc/knetworkmanager-9999
 ~media-video/avidemux-9999
 ~media-video/mplayer-9999
 ~app-misc/screen-9999
@@ -9,5 +8,5 @@
 ~media-video/ffmpeg-20099999
 ~net-wireless/blueman-9999
 ~app-misc/mc-9999
-
+~app-cdr/k3b-9999
 

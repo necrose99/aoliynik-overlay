@@ -83,7 +83,7 @@ net-dialup/rp-pppoe -X
 net-dns/bind -threads -ldap -mysql -odbc -postgres ssl
 net-fs/samba  acl -ldap winbind -xml xml2 winbind async -ads syslog
 net-im/skype -qt-static
-net-libs/libsoup gnome
+net-libs/libsoup -gnome
 net-libs/webkitgtk -svg
 net-libs/xulrunner java -qt
 net-mail/dovecot mbox pop3d -vpopmail
