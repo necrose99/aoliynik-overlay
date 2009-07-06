@@ -1,5 +1,4 @@
 >=perl-core/ExtUtils-MakeMaker-6.30.01
-www-apache/mod_perl
 app-crypt/truecrypt
 
 >=net-mail/mailbase-1

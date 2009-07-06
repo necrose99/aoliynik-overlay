@@ -1,11 +1,6 @@
 #Grub with SuSE patches
 >sys-boot/grub-0.98-r8
 
-#bugs
 >=dev-util/xdelta-3.0
-
-=dev-libs/xerces-c-3.0.0
-=dev-libs/xerces-c-3.0.0-r1
 media-video/xbmc
 
-=app-arch/libarchive-2.7.0
