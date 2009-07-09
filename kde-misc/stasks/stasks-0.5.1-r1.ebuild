@@ -19,3 +19,7 @@ RDEPEND="
 	!kde-plasmoids/stasks
 	>=kde-base/plasma-workspace-${KDE_MINIMAL}
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-peek.patch"
+)
