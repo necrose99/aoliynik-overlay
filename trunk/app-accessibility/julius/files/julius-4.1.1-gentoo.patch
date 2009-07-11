@@ -1,0 +1,700 @@
+diff -Naur julius-4.1.1.orig/Makefile.in julius-4.1.1/Makefile.in
+--- julius-4.1.1.orig/Makefile.in	2008-10-02 17:57:01.000000000 +0900
++++ julius-4.1.1/Makefile.in	2009-01-25 01:47:04.000000000 +0900
+@@ -17,6 +17,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ INSTALL=@INSTALL@
++DESTDIR=
+ 
+ all:
+ 	for d in $(SUBDIRS); do \
+diff -Naur julius-4.1.1.orig/adinrec/Makefile.in julius-4.1.1/adinrec/Makefile.in
+--- julius-4.1.1.orig/adinrec/Makefile.in	2008-10-02 17:57:01.000000000 +0900
++++ julius-4.1.1/adinrec/Makefile.in	2009-01-24 16:08:59.000000000 +0900
+@@ -18,9 +18,18 @@
+ CPPFLAGS=-I. -I$(LIBJULIUS)/include -I$(LIBSENT)/include @CPPFLAGS@ `$(LIBSENT)/libsent-config --cflags` `$(LIBJULIUS)/libjulius-config --cflags`
+ LDFLAGS=@LDFLAGS@ -L$(LIBJULIUS) `$(LIBJULIUS)/libjulius-config --libs` -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
++mandir=@mandir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ ############################################################
+ 
+@@ -36,8 +45,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ ############################################################
+ 
+diff -Naur julius-4.1.1.orig/adintool/Makefile.in julius-4.1.1/adintool/Makefile.in
+--- julius-4.1.1.orig/adintool/Makefile.in	2008-10-02 17:57:01.000000000 +0900
++++ julius-4.1.1/adintool/Makefile.in	2009-01-24 16:09:39.000000000 +0900
+@@ -18,9 +18,18 @@
+ CPPFLAGS=-I. -I$(LIBJULIUS)/include -I$(LIBSENT)/include @CPPFLAGS@ `$(LIBSENT)/libsent-config --cflags` `$(LIBJULIUS)/libjulius-config --cflags`
+ LDFLAGS=@LDFLAGS@ -L$(LIBJULIUS) `$(LIBJULIUS)/libjulius-config --libs` -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
++mandir=@mandir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ ############################################################
+ 
+@@ -36,8 +45,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ ############################################################
+ 
+diff -Naur julius-4.1.1.orig/generate-ngram/Makefile.in julius-4.1.1/generate-ngram/Makefile.in
+--- julius-4.1.1.orig/generate-ngram/Makefile.in	2008-10-02 17:57:01.000000000 +0900
++++ julius-4.1.1/generate-ngram/Makefile.in	2009-01-25 01:06:40.000000000 +0900
+@@ -17,9 +17,17 @@
+ CPPFLAGS=-I$(LIBSENT)/include @CPPFLAGS@ @DEFS@ `$(LIBSENT)/libsent-config --cflags`
+ LDFLAGS=@LDFLAGS@ -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ OBJ=generate-ngram.o
+ TARGET=generate-ngram
+@@ -32,8 +40,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ clean:
+ 	$(RM) $(OBJ) *~ core
+diff -Naur julius-4.1.1.orig/gramtools/Makefile.in julius-4.1.1/gramtools/Makefile.in
+--- julius-4.1.1.orig/gramtools/Makefile.in	2008-10-02 17:57:02.000000000 +0900
++++ julius-4.1.1/gramtools/Makefile.in	2009-01-25 01:46:53.000000000 +0900
+@@ -8,9 +8,17 @@
+ #
+ SHELL=/bin/sh
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ SUBDIRS=mkdfa dfa_minimize generate accept_check nextword yomi2voca gram2sapixml dfa_determinize 
+ 
+diff -Naur julius-4.1.1.orig/gramtools/accept_check/Makefile.in julius-4.1.1/gramtools/accept_check/Makefile.in
+--- julius-4.1.1.orig/gramtools/accept_check/Makefile.in	2008-10-02 17:57:02.000000000 +0900
++++ julius-4.1.1/gramtools/accept_check/Makefile.in	2009-01-25 01:41:59.000000000 +0900
+@@ -16,9 +16,9 @@
+ LDFLAGS=@LDFLAGS@ @LIBS@ -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ 
+ RM=@RM@ -f
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-INSTALL=@INSTALL@
++## installprefix=@prefix@
++exec_prefix=@exec_prefix@bindir=@bindir@libdir=@libdir@includedir=@includedir@mandir=@mandir@
++INSTALL=@INSTALL@INSTALL_DATA=@INSTALL_DATA@INSTALL_PROGRAM=@INSTALL_PROGRAM@DESTDIR=
+ 
+ ############################################################
+ 
+@@ -35,8 +35,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ ############################################################
+ 
+diff -Naur julius-4.1.1.orig/gramtools/dfa_determinize/Makefile.in julius-4.1.1/gramtools/dfa_determinize/Makefile.in
+--- julius-4.1.1.orig/gramtools/dfa_determinize/Makefile.in	2008-10-02 17:57:02.000000000 +0900
++++ julius-4.1.1/gramtools/dfa_determinize/Makefile.in	2009-01-25 01:41:59.000000000 +0900
+@@ -15,9 +15,9 @@
+ CPPFLAGS=@CPPFLAGS@ @DEFS@ -I$(LIBSENT)/include `$(LIBSENT)/libsent-config --cflags`
+ LDFLAGS=@LDFLAGS@ @LIBS@ -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-INSTALL=@INSTALL@
++## installprefix=@prefix@
++exec_prefix=@exec_prefix@bindir=@bindir@libdir=@libdir@includedir=@includedir@mandir=@mandir@
++INSTALL=@INSTALL@INSTALL_DATA=@INSTALL_DATA@INSTALL_PROGRAM=@INSTALL_PROGRAM@DESTDIR=
+ 
+ ############################################################
+ 
+@@ -34,8 +34,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ ############################################################
+ 
+diff -Naur julius-4.1.1.orig/gramtools/dfa_minimize/Makefile.in julius-4.1.1/gramtools/dfa_minimize/Makefile.in
+--- julius-4.1.1.orig/gramtools/dfa_minimize/Makefile.in	2008-10-02 17:57:02.000000000 +0900
++++ julius-4.1.1/gramtools/dfa_minimize/Makefile.in	2009-01-25 01:41:59.000000000 +0900
+@@ -15,9 +15,9 @@
+ CPPFLAGS=@CPPFLAGS@ @DEFS@ -I$(LIBSENT)/include `$(LIBSENT)/libsent-config --cflags`
+ LDFLAGS=@LDFLAGS@ @LIBS@ -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-INSTALL=@INSTALL@
++## installprefix=@prefix@
++exec_prefix=@exec_prefix@bindir=@bindir@libdir=@libdir@includedir=@includedir@mandir=@mandir@
++INSTALL=@INSTALL@INSTALL_DATA=@INSTALL_DATA@INSTALL_PROGRAM=@INSTALL_PROGRAM@DESTDIR=
+ 
+ ############################################################
+ 
+@@ -34,8 +34,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ ############################################################
+ 
+diff -Naur julius-4.1.1.orig/gramtools/generate/Makefile.in julius-4.1.1/gramtools/generate/Makefile.in
+--- julius-4.1.1.orig/gramtools/generate/Makefile.in	2008-10-02 17:57:02.000000000 +0900
++++ julius-4.1.1/gramtools/generate/Makefile.in	2009-01-25 01:41:59.000000000 +0900
+@@ -15,9 +15,9 @@
+ CPPFLAGS=@CPPFLAGS@ @DEFS@ -I$(LIBSENT)/include `$(LIBSENT)/libsent-config --cflags`
+ LDFLAGS=@LDFLAGS@ @LIBS@ -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-INSTALL=@INSTALL@
++## installprefix=@prefix@
++exec_prefix=@exec_prefix@bindir=@bindir@libdir=@libdir@includedir=@includedir@mandir=@mandir@
++INSTALL=@INSTALL@INSTALL_DATA=@INSTALL_DATA@INSTALL_PROGRAM=@INSTALL_PROGRAM@DESTDIR=
+ 
+ ############################################################
+ 
+@@ -34,8 +34,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ ############################################################
+ 
+diff -Naur julius-4.1.1.orig/gramtools/gram2sapixml/Makefile.in julius-4.1.1/gramtools/gram2sapixml/Makefile.in
+--- julius-4.1.1.orig/gramtools/gram2sapixml/Makefile.in	2007-12-18 17:45:47.000000000 +0900
++++ julius-4.1.1/gramtools/gram2sapixml/Makefile.in	2009-01-25 01:41:59.000000000 +0900
+@@ -5,9 +5,9 @@
+ 
+ SHELL=/bin/sh
+ RM=@RM@ -f
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-INSTALL=@INSTALL@
++## installprefix=@prefix@
++exec_prefix=@exec_prefix@bindir=@bindir@libdir=@libdir@includedir=@includedir@mandir=@mandir@
++INSTALL=@INSTALL@INSTALL_DATA=@INSTALL_DATA@INSTALL_PROGRAM=@INSTALL_PROGRAM@DESTDIR=
+ 
+ TARGET=gram2sapixml.pl
+ 
+@@ -17,8 +17,8 @@
+ install: install.bin
+ 
+ install.bin:
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ clean:
+ 	echo nothing to do
+diff -Naur julius-4.1.1.orig/gramtools/mkdfa/Makefile.in julius-4.1.1/gramtools/mkdfa/Makefile.in
+--- julius-4.1.1.orig/gramtools/mkdfa/Makefile.in	2007-12-18 17:45:47.000000000 +0900
++++ julius-4.1.1/gramtools/mkdfa/Makefile.in	2009-01-25 01:41:59.000000000 +0900
+@@ -5,9 +5,9 @@
+ 
+ SHELL=/bin/sh
+ RM=@RM@ -f
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-INSTALL=@INSTALL@
++## installprefix=@prefix@
++exec_prefix=@exec_prefix@bindir=@bindir@libdir=@libdir@includedir=@includedir@mandir=@mandir@
++INSTALL=@INSTALL@INSTALL_DATA=@INSTALL_DATA@INSTALL_PROGRAM=@INSTALL_PROGRAM@DESTDIR=
+ 
+ TARGET=mkdfa.pl
+ SUBDIR=mkfa-1.44-flex
+@@ -18,13 +18,13 @@
+ 
+ install:
+ 	(cd $(SUBDIR); $(MAKE) install)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ install.bin:
+ 	(cd $(SUBDIR); $(MAKE) install.bin)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ clean:
+ 	(cd $(SUBDIR); $(MAKE) clean)
+diff -Naur julius-4.1.1.orig/gramtools/mkdfa/mkfa-1.44-flex/Makefile.in julius-4.1.1/gramtools/mkdfa/mkfa-1.44-flex/Makefile.in
+--- julius-4.1.1.orig/gramtools/mkdfa/mkfa-1.44-flex/Makefile.in	2007-12-18 17:45:47.000000000 +0900
++++ julius-4.1.1/gramtools/mkdfa/mkfa-1.44-flex/Makefile.in	2009-01-25 01:42:02.000000000 +0900
+@@ -18,9 +18,9 @@
+ RM=@RM@ -f
+ #BISON=@BISON@
+ #FLEX=@FLEX@
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-INSTALL=@INSTALL@
++## installprefix=@prefix@
++exec_prefix=@exec_prefix@bindir=@bindir@libdir=@libdir@includedir=@includedir@mandir=@mandir@
++INSTALL=@INSTALL@INSTALL_DATA=@INSTALL_DATA@INSTALL_PROGRAM=@INSTALL_PROGRAM@DESTDIR=
+ 
+ ######################################################################
+ #YACS = gram.y
+@@ -43,8 +43,8 @@
+ install: install.bin
+ 
+ install.bin:
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ clean:
+ 	$(RM) *.o *~ core
+diff -Naur julius-4.1.1.orig/gramtools/nextword/Makefile.in julius-4.1.1/gramtools/nextword/Makefile.in
+--- julius-4.1.1.orig/gramtools/nextword/Makefile.in	2008-10-02 17:57:02.000000000 +0900
++++ julius-4.1.1/gramtools/nextword/Makefile.in	2009-01-25 01:41:59.000000000 +0900
+@@ -16,9 +16,9 @@
+ CPPFLAGS=@CPPFLAGS@ @DEFS@ -I$(LIBSENT)/include `$(LIBSENT)/libsent-config --cflags`
+ LDFLAGS=@LDFLAGS@ @LIBS@ @READLINE_LIBS@ -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-INSTALL=@INSTALL@
++## installprefix=@prefix@
++exec_prefix=@exec_prefix@bindir=@bindir@libdir=@libdir@includedir=@includedir@mandir=@mandir@
++INSTALL=@INSTALL@INSTALL_DATA=@INSTALL_DATA@INSTALL_PROGRAM=@INSTALL_PROGRAM@DESTDIR=
+ 
+ ############################################################
+ 
+@@ -35,8 +35,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ ############################################################
+ 
+diff -Naur julius-4.1.1.orig/gramtools/yomi2voca/Makefile.in julius-4.1.1/gramtools/yomi2voca/Makefile.in
+--- julius-4.1.1.orig/gramtools/yomi2voca/Makefile.in	2007-12-18 17:45:48.000000000 +0900
++++ julius-4.1.1/gramtools/yomi2voca/Makefile.in	2009-01-25 01:41:59.000000000 +0900
+@@ -5,9 +5,9 @@
+ 
+ SHELL=/bin/sh
+ RM=@RM@ -f
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-INSTALL=@INSTALL@
++## installprefix=@prefix@
++exec_prefix=@exec_prefix@bindir=@bindir@libdir=@libdir@includedir=@includedir@mandir=@mandir@
++INSTALL=@INSTALL@INSTALL_DATA=@INSTALL_DATA@INSTALL_PROGRAM=@INSTALL_PROGRAM@DESTDIR=
+ 
+ TARGET=yomi2voca.pl
+ 
+@@ -17,8 +17,8 @@
+ install: install.bin
+ 
+ install.bin:
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ clean:
+ 	echo nothing to do
+diff -Naur julius-4.1.1.orig/jclient-perl/Makefile.in julius-4.1.1/jclient-perl/Makefile.in
+--- julius-4.1.1.orig/jclient-perl/Makefile.in	2008-10-02 17:57:03.000000000 +0900
++++ julius-4.1.1/jclient-perl/Makefile.in	2009-01-25 01:07:36.000000000 +0900
+@@ -5,9 +5,17 @@
+ 
+ SHELL=/bin/sh
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ TARGET=jclient.pl
+ 
+@@ -17,8 +25,8 @@
+ install: install.bin
+ 
+ install.bin:
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ clean:
+ 	echo nothing to do
+diff -Naur julius-4.1.1.orig/jcontrol/Makefile.in julius-4.1.1/jcontrol/Makefile.in
+--- julius-4.1.1.orig/jcontrol/Makefile.in	2008-10-02 17:57:03.000000000 +0900
++++ julius-4.1.1/jcontrol/Makefile.in	2009-01-24 16:12:40.000000000 +0900
+@@ -16,9 +16,17 @@
+ CPPFLAGS=@CPPFLAGS@ @DEFS@
+ LDFLAGS=@LIBS@ @EXTRALIB@
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ OBJ=jcontrol.o server.o japi_misc.o japi_grammar.o japi_process.o
+ TARGET=jcontrol
+@@ -31,8 +39,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ clean:
+ 	$(RM) $(OBJ)
+diff -Naur julius-4.1.1.orig/julius/Makefile.in julius-4.1.1/julius/Makefile.in
+--- julius-4.1.1.orig/julius/Makefile.in	2008-10-02 17:57:03.000000000 +0900
++++ julius-4.1.1/julius/Makefile.in	2009-01-24 16:05:36.000000000 +0900
+@@ -33,6 +33,7 @@
+ INSTALL=@INSTALL@
+ INSTALL_DATA=@INSTALL_DATA@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ ############################################################
+ 
+@@ -61,8 +62,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	${INSTALL_PROGRAM} $(TARGET) ${bindir}/${INSTALLTARGET}
++	${INSTALL} -d $(DESTDIR)${bindir}
++	${INSTALL_PROGRAM} $(TARGET) $(DESTDIR)${bindir}/${INSTALLTARGET}
+ 
+ depend:
+ 	makedepend -- $(CFLAGS) -- $(OBJSENT)
+diff -Naur julius-4.1.1.orig/libjulius/Makefile.in julius-4.1.1/libjulius/Makefile.in
+--- julius-4.1.1.orig/libjulius/Makefile.in	2008-10-03 00:01:59.000000000 +0900
++++ julius-4.1.1/libjulius/Makefile.in	2009-01-24 16:04:46.000000000 +0900
+@@ -32,6 +32,7 @@
+ INSTALL=@INSTALL@
+ INSTALL_DATA=@INSTALL_DATA@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ ############################################################
+ 
+@@ -90,16 +91,16 @@
+ install: install.lib install.include install.bin
+ 
+ install.lib: $(TARGET)
+-	${INSTALL} -d ${libdir}
+-	${INSTALL_DATA} $(TARGET) ${libdir}
++	${INSTALL} -d $(DESTDIR)${libdir}
++	${INSTALL_DATA} $(TARGET) $(DESTDIR)${libdir}
+ 
+ install.include:
+-	${INSTALL} -d ${includedir}/julius
+-	${INSTALL_DATA} include/julius/*.h ${includedir}/julius 
++	${INSTALL} -d $(DESTDIR)${includedir}/julius
++	${INSTALL_DATA} include/julius/*.h $(DESTDIR)${includedir}/julius 
+ 
+ install.bin: libjulius-config-dist
+-	${INSTALL} -d ${bindir}
+-	${INSTALL_PROGRAM} libjulius-config-dist ${bindir}/libjulius-config
++	${INSTALL} -d $(DESTDIR)${bindir}
++	${INSTALL_PROGRAM} libjulius-config-dist $(DESTDIR)${bindir}/libjulius-config
+ 
+ depend:
+ 	makedepend -- $(CFLAGS) -- $(OBJSENT)
+diff -Naur julius-4.1.1.orig/libsent/Makefile.in julius-4.1.1/libsent/Makefile.in
+--- julius-4.1.1.orig/libsent/Makefile.in	2008-10-03 00:01:59.000000000 +0900
++++ julius-4.1.1/libsent/Makefile.in	2009-01-24 16:11:54.000000000 +0900
+@@ -31,6 +31,7 @@
+ INSTALL=@INSTALL@
+ INSTALL_DATA=@INSTALL_DATA@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ ## rules
+ OBJ = \
+@@ -144,16 +145,16 @@
+ install: install.lib install.include install.bin
+ 
+ install.lib: $(TARGET)
+-	${INSTALL} -d ${libdir}
+-	${INSTALL_DATA} $(TARGET) ${libdir}
++	${INSTALL} -d $(DESTDIR)${libdir}
++	${INSTALL_DATA} $(TARGET) $(DESTDIR)${libdir}
+ 
+ install.include:
+-	${INSTALL} -d ${includedir}/sent
+-	${INSTALL_DATA} include/sent/*.h ${includedir}/sent
++	${INSTALL} -d $(DESTDIR)${includedir}/sent
++	${INSTALL_DATA} include/sent/*.h $(DESTDIR)${includedir}/sent
+ 
+ install.bin: libsent-config-dist
+-	${INSTALL} -d ${bindir}
+-	${INSTALL_PROGRAM} libsent-config-dist ${bindir}/libsent-config
++	${INSTALL} -d $(DESTDIR)${bindir}
++	${INSTALL_PROGRAM} libsent-config-dist $(DESTDIR)${bindir}/libsent-config
+ 
+ clean:
+ 	$(RM) *~ src/*/*~ src/*/*.o src/*/*/*.o include/sent/*~ 
+diff -Naur julius-4.1.1.orig/man/Makefile.in julius-4.1.1/man/Makefile.in
+--- julius-4.1.1.orig/man/Makefile.in	2008-10-03 00:01:59.000000000 +0900
++++ julius-4.1.1/man/Makefile.in	2009-01-25 01:45:45.000000000 +0900
+@@ -9,7 +9,9 @@
+ RM=@RM@ -f
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++mandir=@mandir@
+ INSTALL=@INSTALL@
++DESTDIR=
+ 
+ ############################################################
+ 
+@@ -19,16 +21,16 @@
+ install: install.man install.man.ja
+ 
+ install.man:
+-	${INSTALL} -d @mandir@/man1
++	${INSTALL} -d $(DESTDIR)${mandir}/man1
+ 	for f in *.1; do \
+-	  @INSTALL_DATA@ $$f @mandir@/man1/$$f; \
++	  @INSTALL_DATA@ $$f $(DESTDIR)${mandir}/man1/$$f; \
+ 	done
+ 
+ install.man.ja:
+-	${INSTALL} -d @mandir@/man1/ja
++	${INSTALL} -d $(DESTDIR)${mandir}/man1/ja
+ 	cd ja;
+ 	for f in *.1; do \
+-	  @INSTALL_DATA@ $$f @mandir@/man1/ja/$$f; \
++	  @INSTALL_DATA@ $$f $(DESTDIR)${mandir}/man1/ja/$$f; \
+ 	done
+ 	cd ..
+ 
+diff -Naur julius-4.1.1.orig/mkbingram/Makefile.in julius-4.1.1/mkbingram/Makefile.in
+--- julius-4.1.1.orig/mkbingram/Makefile.in	2008-10-02 17:57:03.000000000 +0900
++++ julius-4.1.1/mkbingram/Makefile.in	2009-01-24 16:07:13.000000000 +0900
+@@ -17,9 +17,18 @@
+ CPPFLAGS=-I$(LIBSENT)/include @CPPFLAGS@ @DEFS@ `$(LIBSENT)/libsent-config --cflags`
+ LDFLAGS=@LDFLAGS@ -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
++mandir=@mandir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ OBJ=mkbingram.o
+ TARGET=mkbingram
+@@ -32,8 +41,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d ${DESTDIR}${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ clean:
+ 	$(RM) $(OBJ)
+diff -Naur julius-4.1.1.orig/mkbinhmm/Makefile.in julius-4.1.1/mkbinhmm/Makefile.in
+--- julius-4.1.1.orig/mkbinhmm/Makefile.in	2008-10-02 17:57:04.000000000 +0900
++++ julius-4.1.1/mkbinhmm/Makefile.in	2009-01-24 16:08:03.000000000 +0900
+@@ -17,9 +17,18 @@
+ CPPFLAGS=-I$(LIBSENT)/include @CPPFLAGS@ @DEFS@ `$(LIBSENT)/libsent-config --cflags`
+ LDFLAGS=@LDFLAGS@ -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
++mandir=@mandir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ all: mkbinhmm mkbinhmmlist
+ 
+@@ -32,8 +41,8 @@
+ install: install.bin
+ 
+ install.bin: mkbinhmm mkbinhmmlist
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ mkbinhmm mkbinhmmlist @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ mkbinhmm mkbinhmmlist $(DESTDIR)${bindir}
+ 
+ clean:
+ 	$(RM) mkbinhmm.o mkbinhmmlist.o
+diff -Naur julius-4.1.1.orig/mkgshmm/Makefile.in julius-4.1.1/mkgshmm/Makefile.in
+--- julius-4.1.1.orig/mkgshmm/Makefile.in	2008-10-02 17:57:04.000000000 +0900
++++ julius-4.1.1/mkgshmm/Makefile.in	2009-01-24 16:10:32.000000000 +0900
+@@ -5,9 +5,18 @@
+ 
+ SHELL=/bin/sh
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
++mandir=@mandir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ ############################################################
+ 
+@@ -23,8 +32,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ ############################################################
+ 
+diff -Naur julius-4.1.1.orig/mkss/Makefile.in julius-4.1.1/mkss/Makefile.in
+--- julius-4.1.1.orig/mkss/Makefile.in	2008-10-02 17:57:04.000000000 +0900
++++ julius-4.1.1/mkss/Makefile.in	2009-01-24 16:11:46.000000000 +0900
+@@ -18,9 +18,18 @@
+ CPPFLAGS=-I. -I$(LIBJULIUS)/include -I$(LIBSENT)/include @CPPFLAGS@ `$(LIBSENT)/libsent-config --cflags` `$(LIBJULIUS)/libjulius-config --cflags`
+ LDFLAGS=@LDFLAGS@ -L$(LIBJULIUS) `$(LIBJULIUS)/libjulius-config --libs` -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs`
+ RM=@RM@ -f
++
++## install
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++bindir=@bindir@
++libdir=@libdir@
++includedir=@includedir@
++mandir=@mandir@
+ INSTALL=@INSTALL@
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++DESTDIR=
+ 
+ ############################################################
+ 
+@@ -36,8 +45,8 @@
+ install: install.bin
+ 
+ install.bin: $(TARGET)
+-	${INSTALL} -d @bindir@
+-	@INSTALL_PROGRAM@ $(TARGET) @bindir@
++	${INSTALL} -d $(DESTDIR)${bindir}
++	@INSTALL_PROGRAM@ $(TARGET) $(DESTDIR)${bindir}
+ 
+ ############################################################
+ 

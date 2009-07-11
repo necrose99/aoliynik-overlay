@@ -23,3 +23,5 @@ www-client/mozilla-firefox
 =dev-libs/nspr-4.8
 
 >=sys-apps/portage-2.2_pre
+=media-sound/amarok-2.1.1*
+
