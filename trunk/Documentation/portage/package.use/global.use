@@ -129,3 +129,4 @@ kde-base/kopete oscar -msn
 net-p2p/transmission gtk -qt4 -libnotify
 media-sound/qmmp projectm
 media-video/ushare dlna
+media-sound/pulseaudio -bluetooth -dbus -lirc -glib
