@@ -47,7 +47,7 @@ kde-base/kdelibs plasma bzip2
 kde-base/kdemultimedia taglib
 kde-base/kdenetwork vnc
 kde-base/knotes -kontact
-kde-base/krdc vnc rdesktop qca decibel
+kde-base/krdc vnc rdp qca decibel
 kde-base/okular djvu
 kde-base/solid bluetooth
 mail-client/evolution ldap -nntp -hal -crypt
