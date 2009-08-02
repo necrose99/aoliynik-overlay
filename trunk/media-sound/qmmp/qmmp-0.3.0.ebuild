@@ -30,8 +30,7 @@ RDEPEND="x11-libs/qt-gui:4
 	flac? ( media-libs/flac )
 	libsamplerate? ( media-libs/libsamplerate )
 	mad? ( media-libs/libmad )
-	musepack? ( >=media-libs/libmpcdec-1.2.5
-		media-sound/musepack-tools )
+	musepack? ( >=media-libs/libmpcdec-1.2.5)
 	modplug? ( >=media-libs/libmodplug-0.8.4 )
 	vorbis? ( media-libs/libvorbis
 		media-libs/libogg )
