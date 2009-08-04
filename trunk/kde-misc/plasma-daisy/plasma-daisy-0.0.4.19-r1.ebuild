@@ -9,11 +9,10 @@ inherit kde4-base
 DESCRIPTION="A simple application launcher for Plasma"
 HOMEPAGE="http://lechio.freehostia.com/daisy.html"
 LICENSE="GPL"
-
+SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-SLOT="4.2"
 
 SRC_URI="http://lechio.freehostia.com/downloads/plasma-applet-daisy-${PV}.tar.gz"
-DEPEND="kde-base/kdelibs:${SLOT}"
+DEPEND=">=kde-base/kdelibs-4.2"
 
 S="${WORKDIR}/plasma-applet-daisy-${PV}"
