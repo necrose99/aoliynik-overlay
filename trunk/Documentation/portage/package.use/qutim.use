@@ -1,4 +1,4 @@
-net-im/qutim icq jabber -mrim debug -phonon -qt-phonon -protocolicon plugman -vkontakte -kdeintegration -connectioncheck
+net-im/qutim icq jabber -mrim phonon -qt-phonon -protocolicon plugman -vkontakte kdeintegration -connectioncheck
 
 x11-plugins/qutim-kdeintegration -debug phonon
 x11-plugins/qutim-icq -debug
