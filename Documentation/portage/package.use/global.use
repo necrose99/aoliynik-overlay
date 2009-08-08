@@ -1,3 +1,4 @@
+net-misc/vpnc hybrid-auth
 app-admin/conky audacious hddtemp wifi
 app-admin/sudo -skey
 app-arch/p7zip rar kde -wxwindows
