@@ -8,7 +8,7 @@ inherit kde4-base
 
 DESCRIPTION="KDE plasmoid. Shows an icon-only taskbar"
 HOMEPAGE="http://kde-look.org/content/show.php/STasks+patched?content=101586"
-SRC_URI="http://bitbucket.org/panzi/stasks-patched-by-panzi/get/4650fdadd9d8.zip -> ${P}.zip"
+SRC_URI="http://bitbucket.org/panzi/smooth-tasks/get/ad5b808f6601.bz2 -> ${P}-2009-08-18.tar.bz2"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
@@ -17,10 +17,8 @@ IUSE="debug"
 
 RDEPEND="
 	!kde-plasmoids/stasks
+	!kde-misc/stasks
 	>=kde-base/plasma-workspace-4.3
 "
-S=${WORKDIR}/${PN}-patched-by-panzi
+S=${WORKDIR}/${PN}
 
-#PATCHES=(
-#	"${FILESDIR}/${P}-peek.patch"
-#)
