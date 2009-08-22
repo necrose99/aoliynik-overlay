@@ -24,4 +24,6 @@ www-client/mozilla-firefox
 
 >=sys-apps/portage-2.2_pre
 =media-sound/amarok-2.1.1*
+=x11-wm/compiz-0.8.2-r3
+
 
