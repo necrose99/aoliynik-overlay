@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="2"
 
 inherit eutils autotools libtool toolchain-funcs flag-o-matic
 
@@ -52,7 +52,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-ubuntu-07_no_bitmaps.patch
 	fi
 
-	# Neeeded to get a sane .so versionning on fbsd, please dont drop
+	# Needed to get a sane .so versionning on fbsd, please dont drop
 	# If you have to run eautoreconf, you can also leave the elibtoolize call as
 	# it will be a no-op.
 	eautoreconf
@@ -102,6 +102,11 @@ src_install() {
 	# <azarah@gentoo.org> (11 Dec 2002)
 	echo 'CONFIG_PROTECT_MASK="/etc/fonts/fonts.conf"' > "${T}"/37fontconfig
 	doenvd "${T}"/37fontconfig
+
+
+	# As of fontconfig 2.7, everything sticks their noses in here.
+	dodir /etc/sandbox.d
+	echo 'SANDBOX_PREDICT="/var/cache/fontconfig"' > "${D}"/etc/sandbox.d/37fontconfig
 }
 
 pkg_preinst() {
