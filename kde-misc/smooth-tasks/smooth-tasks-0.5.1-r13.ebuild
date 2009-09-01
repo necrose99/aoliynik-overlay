@@ -7,8 +7,8 @@ EAPI="2"
 inherit kde4-base
 
 DESCRIPTION="KDE plasmoid. Shows an icon-only taskbar"
-HOMEPAGE="http://kde-look.org/content/show.php/STasks+patched?content=101586"
-SRC_URI="http://bitbucket.org/panzi/smooth-tasks/get/b9ec16c80292.bz2 -> ${P}-2009-08-25.tar.bz2"
+HOMEPAGE="http://kde-look.org/content/show.php/Smooth+Tasks?content=101586"
+SRC_URI="http://bitbucket.org/panzi/smooth-tasks/get/0b986bca54cb.bz2 -> ${P}-2009-09-02.tar.bz2"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
