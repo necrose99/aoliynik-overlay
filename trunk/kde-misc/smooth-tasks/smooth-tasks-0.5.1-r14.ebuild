@@ -22,3 +22,8 @@ RDEPEND="
 "
 S=${WORKDIR}/${PN}
 
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch "${FILESDIR}/qtime.patch"
+}
