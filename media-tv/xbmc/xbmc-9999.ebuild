@@ -97,8 +97,8 @@ src_unpack() {
 
 src_prepare() {
 	# Tweak autotool timestamps to avoid regeneration
-	find . -type f -print0 | xargs -0 touch -r configure
-
+	#find . -type f -print0 | xargs -0 touch -r configure
+        autoconf
 	# use internal faad2 as mp4ff is dead and xbmc hasnt
 	# switched to libmp4v2 yet
 	sed -i \

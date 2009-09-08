@@ -85,7 +85,7 @@ net-dialup/rp-pppoe -X
 net-dns/bind -threads -ldap -mysql -odbc -postgres ssl
 net-fs/samba  acl -ldap winbind -xml xml2 winbind async -ads syslog
 net-im/skype -qt-static
-net-libs/libsoup -gnome
+net-libs/libsoup gnome
 net-libs/webkitgtk -svg
 net-libs/xulrunner java -qt
 net-mail/dovecot mbox pop3d -vpopmail
@@ -123,7 +123,7 @@ x11-libs/libXft cleartype
 x11-libs/pixman -sse2
 x11-libs/qt mysql dbus accessibility qt-copy
 x11-themes/gtk-engines-kde4 themes
-x11-themes/gtk-engines-qtcurve firefox3
+x11-themes/gtk-engines-qtcurve firefox3 mozilla
 x11-themes/qtcurve gtk -gtk1
 dev-util/git -cgi
 kde-base/kopete oscar -msn
@@ -131,3 +131,7 @@ net-p2p/transmission gtk -qt4 -libnotify
 media-sound/qmmp projectm
 media-video/ushare dlna
 media-sound/pulseaudio -bluetooth -dbus -lirc -glib
+net-wireless/wpa_supplicant wps
+net-misc/wicd -ncurses
+net-misc/networkmanager dhclient
+
