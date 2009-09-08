@@ -10,3 +10,4 @@ kde-misc/basket **
 app-cdr/k3b **
 sys-auth/policykit-qt **
 #net-wireless/kdebluetooth4 **
+kde-misc/networkmanager-applet **
