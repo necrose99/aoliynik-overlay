@@ -8,7 +8,7 @@ inherit kde4-base
 
 MY_P="kde4-windeco-${P}-Source"
 
-DESCRIPTION="A window decoration for KDE 4"
+DESCRIPTION="A window decoration for KDE 4.2.x"
 HOMEPAGE="http://www.kde-look.org/content/show.php/Nitrogen?content=99551"
 SRC_URI="http://www.kde-look.org/CONTENT/content-files/99551-${MY_P}.tar.gz"
 
