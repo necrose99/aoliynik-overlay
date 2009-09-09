@@ -1,0 +1,17 @@
+diff -Naur bluez-4.50~orig/Makefile.audio bluez-4.50/Makefile.audio
+--- bluez-4.50~orig/Makefile.audio	2009-08-27 22:04:15.000000000 +0200
++++ bluez-4.50/Makefile.audio	2009-08-27 22:14:05.000000000 +0200
+@@ -47,10 +47,13 @@
+ 						$(AM_CFLAGS) @GSTREAMER_CFLAGS@
+ endif
+ 
++if SBC
+ noinst_PROGRAMS += audio/ipctest
+ 
+ audio_ipctest_SOURCES = audio/ipctest.c audio/ipc.h audio/ipc.c
+ audio_ipctest_LDADD= sbc/libsbc.la @GLIB_LIBS@
+ endif
+ 
++endif
++
+ EXTRA_DIST += audio/bluetooth.conf
