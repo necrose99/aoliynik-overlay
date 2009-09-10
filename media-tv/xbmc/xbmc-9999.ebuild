@@ -127,15 +127,12 @@ src_configure() {
 	export HELP2MAN=$(type -P help2man || echo true)
 
 	econf \
-		--disable-ccache \
-		--disable-optimizations \
-		--enable-external-libraries \
+                --enable-external-python \
 		$(use_enable debug) \
 		$(use_enable joystick) \
 		$(use_enable opengl gl) \
 		$(use_enable profile profiling) \
-		$(use_enable pulseaudio pulse) \
-		$(use_enable vdpau)
+		$(use_enable pulseaudio pulse) 
 }
 
 src_install() {
