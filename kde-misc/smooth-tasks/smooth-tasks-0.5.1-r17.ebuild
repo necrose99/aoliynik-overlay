@@ -8,7 +8,7 @@ inherit kde4-base
 
 DESCRIPTION="KDE plasmoid. Shows an icon-only taskbar"
 HOMEPAGE="http://kde-look.org/content/show.php/Smooth+Tasks?content=101586"
-SRC_URI="http://bitbucket.org/panzi/smooth-tasks/get/5973a37d0ff3.bz2 -> ${P}-2009-09-05b.tar.bz2"
+SRC_URI="http://kde-look.org/CONTENT/content-files/101586-${PN}-src-wip-2009-09-12.tar.bz2"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
@@ -20,10 +20,5 @@ RDEPEND="
 	!kde-misc/stasks
 	>=kde-base/plasma-workspace-4.3
 "
-S=${WORKDIR}/${PN}
+S=${WORKDIR}/stasks-5167e053ed0f
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch "${FILESDIR}/qtime.patch"
-}
