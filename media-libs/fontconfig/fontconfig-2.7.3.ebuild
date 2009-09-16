@@ -41,7 +41,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-latin-reorder.patch   #130466
+	epatch "${FILESDIR}"/${PN}-2.7.1-latin-reorder.patch   #130466
 	epunt_cxx   
 	if use ubuntu; then
 		epatch "${FILESDIR}"/${PN}-ubuntu-00_old_diff_gz.patch

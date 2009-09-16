@@ -87,7 +87,7 @@ net-fs/samba  acl -ldap winbind -xml xml2 winbind async -ads syslog
 net-im/skype -qt-static
 net-libs/libsoup gnome
 net-libs/webkitgtk -svg
-net-libs/xulrunner java -qt
+net-libs/xulrunner java -qt -sqlite
 net-mail/dovecot mbox pop3d -vpopmail
 net-misc/aria2 metalink bittorrent
 net-misc/openssh sftplogging -ldap
@@ -112,7 +112,7 @@ sys-fs/e2fsprogs -diet -static
 sys-kernel/gentoo-sources -symlink
 sys-libs/glibc -erandom nls nptl nptlonly pic -userlocales
 sys-libs/pam pam_chroot pam_console pam_timestamp
-www-client/mozilla-firefox java mozdevelop moznopango -qt
+www-client/mozilla-firefox java moznopango -qt -sqlite
 www-client/opera -qt3
 www-servers/pound dynscaler
 x11-base/xorg-server nptl
