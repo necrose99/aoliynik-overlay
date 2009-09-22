@@ -132,7 +132,8 @@ src_configure() {
 		$(use_enable joystick) \
 		$(use_enable opengl gl) \
 		$(use_enable profile profiling) \
-		$(use_enable pulseaudio pulse) 
+		$(use_enable pulseaudio pulse) \
+		$(use_enable vdpau)
 }
 
 src_install() {

@@ -13,7 +13,6 @@ net-im/skype
 >=x11-libs/gtk+-2.14
 =sys-apps/portage-2.2_rc16
 net-libs/rb_libtorrent
-www-client/opera
 
 net-wireless/bluez
 app-mobilephone/obex-data-server
@@ -23,6 +22,5 @@ app-mobilephone/obex-data-server
 
 >=sys-apps/portage-2.2_pre
 =media-sound/amarok-2.1.1*
-=x11-wm/compiz-0.8.2-r3
 
 

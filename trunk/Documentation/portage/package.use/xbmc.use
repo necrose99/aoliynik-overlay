@@ -1,1 +1,1 @@
-media-tv/xbmc -debug -pvr -vdpau
+media-tv/xbmc -debug -pvr vdpau
