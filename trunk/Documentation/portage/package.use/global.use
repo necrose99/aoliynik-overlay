@@ -23,7 +23,7 @@ dev-cpp/gtkmm accessibility
 dev-db/hsqldb java6
 dev-db/mysql -cluster big-tables -berkdb embedded
 dev-java/antlr java
-dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli -cgi pear ctype pcre
+dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli fpm force-cgi-redirect cgi pear ctype pcre
 dev-lang/python X -tk
 dev-libs/gdl gnome
 dev-libs/libxml2 python
