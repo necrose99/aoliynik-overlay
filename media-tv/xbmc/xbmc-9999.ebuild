@@ -10,7 +10,7 @@ EAPI="2"
 inherit eutils
 
 # Use XBMC_ESVN_REPO_URI to track a different branch
-ESVN_REPO_URI=${XBMC_ESVN_REPO_URI:-http://xbmc.svn.sourceforge.net/svnroot/xbmc/branches/linuxport/XBMC}
+ESVN_REPO_URI=${XBMC_ESVN_REPO_URI:-http://xbmc.svn.sourceforge.net/svnroot/xbmc/trunk/}
 ESVN_PROJECT=${ESVN_REPO_URI##*/svnroot/}
 ESVN_PROJECT=${ESVN_PROJECT%/XBMC}
 if [[ ${PV} == "9999" ]] ; then
@@ -87,6 +87,8 @@ src_unpack() {
 		subversion_src_unpack
 		cd "${S}"
 		eautoreconf
+                
+		"${S}"/bootstrap
 	else
 		unpack ${A}
 		cd "${S}"
