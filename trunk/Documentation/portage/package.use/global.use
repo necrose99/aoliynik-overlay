@@ -1,12 +1,12 @@
 net-misc/vpnc hybrid-auth
 app-admin/conky audacious hddtemp wifi
 app-admin/sudo -skey
-app-arch/p7zip rar kde -wxwindows
+app-arch/p7zip rar -kde -wxwindows
 app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
 app-dicts/goldendict -addons
 app-emulation/virtualbox-ose additions
-app-emulation/wine gphoto glu openssl
+app-emulation/wine gphoto2 glu openssl fontconfig
 app-misc/mc -X samba nls -dnotify attrs
 app-misc/strigi inotify -fam
 app-mobilephone/kmobiletools obex
@@ -136,4 +136,6 @@ net-misc/wicd -ncurses
 net-misc/networkmanager dhclient
 
 sys-fs/udev extras
+app-crypt/truecrypt -X
+
 
