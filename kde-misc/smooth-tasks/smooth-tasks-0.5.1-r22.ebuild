@@ -6,7 +6,7 @@ EAPI="2"
 
 inherit kde4-base
 
-V="2009-09-21"
+V="2009-09-27"
 DESCRIPTION="KDE plasmoid. Shows an icon-only taskbar"
 HOMEPAGE="http://kde-look.org/content/show.php/Smooth+Tasks?content=101586"
 SRC_URI="http://kde-look.org/CONTENT/content-files/101586-${PN}-src-wip-${V}.tar.bz2"
@@ -15,6 +15,7 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="debug"
+RESTRICT="nomirror"
 
 RDEPEND="
 	!kde-plasmoids/stasks
