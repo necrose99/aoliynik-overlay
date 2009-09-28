@@ -6,7 +6,7 @@ app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
 app-dicts/goldendict -addons
 app-emulation/virtualbox-ose additions
-app-emulation/wine gphoto2 glu openssl fontconfig
+app-emulation/wine -threads gphoto2 glu openssl fontconfig
 app-misc/mc -X samba nls -dnotify attrs
 app-misc/strigi inotify -fam
 app-mobilephone/kmobiletools obex
