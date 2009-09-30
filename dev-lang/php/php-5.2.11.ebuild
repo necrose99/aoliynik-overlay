@@ -167,9 +167,6 @@ src_unpack() {
 		fi
 	fi
 
-	# Quick fix for bug #279576
-	epatch "${FILESDIR}"/php-${PV}-pdo_dblib.patch
-
 	# fastbuild support
 	if use fastbuild ; then
 		if [[ -n "${FASTBUILD_PATCH}" ]] && [[ -f "${WORKDIR}/${FASTBUILD_PATCH}" ]] ; then
