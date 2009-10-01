@@ -137,5 +137,7 @@ net-misc/networkmanager dhclient
 
 sys-fs/udev extras
 app-crypt/truecrypt -X
+dev-libs/soprano java
+
 
 
