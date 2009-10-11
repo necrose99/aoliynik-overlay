@@ -17,9 +17,10 @@ SLOT="2"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="X bindist debug doc utils fontforge +cleartype ubuntu"
 
-DEPEND="X?	( x11-libs/libX11
-			  x11-libs/libXau
-			  x11-libs/libXdmcp )"
+DEPEND="sys-libs/zlib
+	X?	( x11-libs/libX11
+		  x11-libs/libXau
+		  x11-libs/libXdmcp )"
 
 # We also need a recent fontconfig version to prevent segfaults. #166029
 # July 3 2007 dirtyepic
