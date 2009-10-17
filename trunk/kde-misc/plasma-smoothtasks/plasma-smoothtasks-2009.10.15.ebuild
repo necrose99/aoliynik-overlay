@@ -7,7 +7,7 @@ EAPI="2"
 KDE_LINGUAS="cs de fr hu pl ru"
 inherit kde4-base
 
-MY_P="smooth-tasks-src-wip-2009-10-13"
+MY_P="smooth-tasks-src-wip-2009-10-15"
 
 DESCRIPTION="Smooth Tasks Plasmoid"
 HOMEPAGE="http://www.kde-look.org/content/show.php/Smooth+Tasks?content=101586"
@@ -24,8 +24,3 @@ RDEPEND="
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	cp "${FILESDIR}/ru.po" "${S}/po"
-
-	kde4-base_src_prepare
-}

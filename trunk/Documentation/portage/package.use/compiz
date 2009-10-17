@@ -1,6 +1,6 @@
 #Compiz
 x11-wm/compiz -metacity -gtk  dbus kde -fuse svg -kde3
 x11-plugins/compiz-fusion-plugins-main vidcap dbus
-x11-wm/compiz-fusion -unsupported -kde -kde3 -gnome emerald
+x11-wm/compiz-fusion -unsupported kde -kde3 -gnome emerald
 
 
