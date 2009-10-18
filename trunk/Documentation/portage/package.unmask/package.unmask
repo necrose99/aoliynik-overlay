@@ -11,16 +11,18 @@ net-im/skype
 >=app-portage/rep-rebuild-0.1
 >=net-wireless/wpa_supplicant-0.6.0
 >=x11-libs/gtk+-2.14
-=sys-apps/portage-2.2_rc16
 net-libs/rb_libtorrent
 
 net-wireless/bluez
 app-mobilephone/obex-data-server
 
-=net-libs/xulrunner-1.9.1*
+=net-libs/xulrunner-1.9.2_beta1
+=www-client/mozilla-firefox-3.6_beta1
+
+
 =dev-libs/nspr-4.8
 
 >=sys-apps/portage-2.2_pre
 =media-sound/amarok-2.1.1*
-
+=media-libs/libmpcdec-1.2.6-r2
 

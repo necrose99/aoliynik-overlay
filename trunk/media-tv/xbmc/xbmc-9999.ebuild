@@ -53,7 +53,7 @@ RDEPEND="opengl? ( virtual/opengl )
 	media-libs/libdca
 	media-libs/libmad
 	media-libs/libmms
-	media-libs/libmpcdec
+	media-sound/musepack-tools
 	media-libs/libmpeg2
 	media-libs/libogg
 	media-libs/libsamplerate
