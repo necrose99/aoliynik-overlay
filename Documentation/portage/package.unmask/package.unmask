@@ -24,5 +24,5 @@ app-mobilephone/obex-data-server
 
 >=sys-apps/portage-2.2_pre
 =media-sound/amarok-2.1.1*
-=media-libs/libmpcdec-1.2.6-r2
+~kde-misc/basket-9999
 
