@@ -6,7 +6,7 @@ app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
 app-dicts/goldendict -addons
 app-emulation/virtualbox-ose additions
-app-emulation/wine -threads gphoto2 glu openssl fontconfig
+app-emulation/wine threads gphoto2 glu openssl fontconfig -openal
 app-misc/mc -X samba nls -dnotify attrs
 app-misc/strigi inotify -fam
 app-mobilephone/kmobiletools obex
@@ -72,7 +72,7 @@ media-video/transcode mmx
 media-tv/miro -libnotify xine -gstreamer
 media-video/ffmpeg amr sdl
 media-video/handbrake sys-libs
-media-video/mplayer  compiz 3dnow -3dnowex divx4linux -esd mmx  nvidia -oss rtc  -xmms xv xvid -xvmc -gtk compiz mp2 amrnb amrwb srt enca teletext
+media-video/mplayer  compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk compiz mp2 amrnb amrwb srt enca teletext
 media-video/nvclock -qt3 -qt
 media-video/realplayer X nsplugin
 media-video/totem -nsplugin
