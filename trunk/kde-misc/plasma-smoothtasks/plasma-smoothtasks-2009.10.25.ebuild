@@ -7,7 +7,7 @@ EAPI="2"
 KDE_LINGUAS="cs de fr hu pl ru"
 inherit kde4-base
 
-MY_P="smooth-tasks-src-wip-2009-10-21"
+MY_P="smooth-tasks-src-wip-2009-10-25"
 
 DESCRIPTION="Smooth Tasks Plasmoid"
 HOMEPAGE="http://www.kde-look.org/content/show.php/Smooth+Tasks?content=101586"
@@ -17,6 +17,8 @@ LICENSE="GPL"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="debug"
+RESTRICT="nomirror"
+
 
 RDEPEND="
 	>=kde-base/plasma-workspace-${KDE_MINIMAL}
