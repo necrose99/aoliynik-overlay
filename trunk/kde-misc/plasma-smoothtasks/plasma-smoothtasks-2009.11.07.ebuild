@@ -7,7 +7,7 @@ EAPI="2"
 KDE_LINGUAS="cs de fr hu pl ru"
 inherit kde4-base
 
-MY_P="smooth-tasks-src-wip-2009-11-03"
+MY_P="smooth-tasks-src-wip-2009-11-07"
 
 DESCRIPTION="Smooth Tasks Plasmoid"
 HOMEPAGE="http://www.kde-look.org/content/show.php/Smooth+Tasks?content=101586"
