@@ -1,5 +1,4 @@
 net-misc/vpnc hybrid-auth
-app-admin/conky audacious hddtemp wifi
 app-admin/sudo -skey
 app-arch/p7zip rar -kde -wxwindows
 app-cdr/k3b ffmpeg lame
@@ -7,7 +6,7 @@ app-crypt/gnupg bzip2 ecc
 app-dicts/goldendict -addons
 app-emulation/virtualbox-ose additions
 app-emulation/wine threads gphoto2 glu openssl fontconfig -openal
-app-misc/mc -X samba nls -dnotify attrs
+app-misc/mc -X nls -dnotify attrs
 app-misc/strigi inotify -fam
 app-mobilephone/kmobiletools obex
 app-office/mozilla-sunbird moznopango
@@ -41,7 +40,6 @@ gnome-base/gvfs -bluetooth -gphoto2
 gnome-extra/evolution-data-server ldap kerberos
 kde-base/dolphin thumbnail
 kde-base/konqueror thumbnail
-kde-base/kdebase-kioslaves samba
 kde-base/kdebase-workspace xcomposite newxkb 
 kde-base/kdebase xcomposite bzip2 -java
 kde-base/kdelibs plasma bzip2
@@ -55,7 +53,7 @@ mail-client/evolution ldap -nntp -hal -crypt
 mail-client/mozilla-thunderbird -ldap moznopango java -crypt
 mail-filter/spamassassin berkdb qmail ssl
 media-gfx/gfxboot themes animate speech beep
-media-gfx/gimp -gtkhtml python
+media-gfx/gimp -gtkhtml python -webkit
 media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf xml2
 media-gfx/splashutils fbcondecor
 media-libs/freetype newspr -bindist filter_light
@@ -76,7 +74,7 @@ media-video/mplayer  compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -o
 media-video/nvclock -qt3 -qt
 media-video/realplayer X nsplugin
 media-video/totem -nsplugin
-media-video/vlc dvd ffmpeg mpeg mad samba -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm httpd cdda vcd cdio live rtsp shout upnp skins dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd -libnotify
+media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm httpd cdda vcd cdio live rtsp shout upnp skins dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd -libnotify
 net-analyzer/nmap -gtk
 net-analyzer/openvas-client gtk
 net-analyzer/zabbix server agent frontend curl snmp mysql jabber -sqlite3
@@ -94,7 +92,6 @@ net-misc/openssh sftplogging -ldap
 net-misc/openvpn iproute2
 net-misc/tsclient vnc
 net-misc/vnc -server
-net-nds/openldap -samba gdbm -berkdb
 net-p2p/deluge gtk
 net-wireless/bluez old-daemons
 net-wireless/bluez-utils -gtk udev old-daemons hal test-programs
