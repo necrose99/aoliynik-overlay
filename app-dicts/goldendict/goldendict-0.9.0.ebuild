@@ -18,7 +18,7 @@ else
 fi
 
 RUPACK="enruen-content"
-RUPACK_V="1.0"
+RUPACK_V="1.1"
 MORPH_V="1.0"
 
 inherit qt4
@@ -33,11 +33,15 @@ for i in ${LANGS}; do
 	IUSE="${IUSE} linguas_${i}"
 done
 
-# let's have some en<->ru dictionaries, english-pronouncing pack and updated morphology
+# let's have some dictionaries, english-pronouncing pack and updated morphology
 SRC_URI="${SRC_URI} addons? (
 	linguas_en? ( mirror://berlios//"${PN}/en_US_${MORPH_V}".zip -> morphology_dict-en_US_"${MORPH_V}".zip
 		      linguas_ru? ( mirror://berlios//"${PN}/${RUPACK}-${RUPACK_V}".tar.bz2 ) )
+	linguas_es? ( mirror://berlios//"${PN}/es_ES_${MORPH_V}".zip -> morphology_dict-es_ES_"${MORPH_V}".zip )
 	linguas_de? ( mirror://berlios//"${PN}/de_DE_${MORPH_V}".zip -> morphology_dict-de_DE_"${MORPH_V}".zip )
+	linguas_fr? ( mirror://berlios//"${PN}/fr_FR_${MORPH_V}".zip -> morphology_dict-fr_FR_"${MORPH_V}".zip )
+	linguas_it? ( mirror://berlios//"${PN}/it_IT_${MORPH_V}".zip -> morphology_dict-it_IT_"${MORPH_V}".zip )
+	linguas_pt? ( mirror://berlios//"${PN}/pt_BR_${MORPH_V}".zip -> morphology_dict-pt_BR_"${MORPH_V}".zip )
 	linguas_ru? ( mirror://berlios//"${PN}/ru_RU_${MORPH_V}".zip -> morphology_dict-ru_RU_"${MORPH_V}".zip )
 	)"
 RDEPEND="sys-libs/zlib
@@ -76,6 +80,11 @@ src_unpack() {
 			use linguas_${i} && unpack morphology_dict-${i}_${I}_"${MORPH_V}".zip
 		done
 	fi
+}
+
+src_prepare() {
+	# fixing gcc >=4.4 issue
+	epatch "${FILESDIR}"/gcc-4.4-fix.patch
 }
 
 src_compile() {
