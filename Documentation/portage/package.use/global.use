@@ -136,5 +136,6 @@ sys-fs/udev extras
 app-crypt/truecrypt -X
 app-arch/p7zip -kde
 dev-libs/soprano java
+net-p2p/ktorrent -mediaplayer
 
 
