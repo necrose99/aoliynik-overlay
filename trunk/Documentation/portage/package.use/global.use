@@ -5,8 +5,10 @@ app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
 app-dicts/goldendict -addons
 app-emulation/virtualbox-ose additions
+
 app-emulation/wine threads gphoto2 glu openssl fontconfig -openal
 app-misc/mc -X nls -dnotify attrs
+
 app-misc/strigi inotify -fam
 app-mobilephone/kmobiletools obex
 app-office/mozilla-sunbird moznopango
@@ -70,11 +72,13 @@ media-video/transcode mmx
 media-tv/miro -libnotify xine -gstreamer
 media-video/ffmpeg amr sdl -mmx -mmxext
 media-video/handbrake sys-libs
-media-video/mplayer  compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk compiz mp2 amrnb amrwb srt enca teletext
+media-video/mplayer ass png compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk compiz mp2 amrnb amrwb srt enca teletext
 media-video/nvclock -qt3 -qt
 media-video/realplayer X nsplugin
 media-video/totem -nsplugin
-media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm httpd cdda vcd cdio live rtsp shout upnp skins dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd -libnotify
+
+media-video/vlc dvd ffmpeg mpeg mad  -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm httpd cdda vcd cdio live rtsp shout upnp skins dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd -libnotify
+
 net-analyzer/nmap -gtk
 net-analyzer/openvas-client gtk
 net-analyzer/zabbix server agent frontend curl snmp mysql jabber -sqlite3
@@ -98,7 +102,7 @@ net-wireless/bluez-utils -gtk udev old-daemons hal test-programs
 net-wireless/btsco ao skype
 net-wireless/irda-utils -gtk
 net-wireless/wpa_supplicant gsm
-sys-apps/dbus gtk python -mono -qt3 qt4
+sys-apps/dbus gtk python -mono -qt3 qt4 X
 sys-apps/file -python
 sys-apps/pciutils -zlib
 sys-auth/pambase consolekit
@@ -138,6 +142,10 @@ app-arch/p7zip -kde
 dev-libs/soprano java
 net-p2p/ktorrent -mediaplayer
 sci-astronomy/celestia -theora
+x11-libs/pango X
+x11-libs/cairo X
+
+
 
 
 
