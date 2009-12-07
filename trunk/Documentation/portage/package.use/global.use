@@ -141,11 +141,8 @@ app-crypt/truecrypt -X
 app-arch/p7zip -kde
 dev-libs/soprano java
 net-p2p/ktorrent -mediaplayer
+sys-fs/hal -crypt
 sci-astronomy/celestia -theora
 x11-libs/pango X
 x11-libs/cairo X
-
-
-
-
 
