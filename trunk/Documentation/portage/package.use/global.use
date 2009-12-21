@@ -16,14 +16,12 @@ app-office/openoffice-bin java -kde
 app-office/openoffice-infra-bin java -kde
 app-office/openoffice-infra java -kde
 app-office/openoffice java -kde
-app-portage/eix
 app-text/cuneiform imagemagick
 app-text/djvu -kde -nsplugin -qt3
 app-text/poppler-bindings gtk
 dev-cpp/gtkmm accessibility
 dev-db/hsqldb java6
 dev-db/mysql -cluster big-tables -berkdb embedded
-dev-java/antlr java
 dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli fpm force-cgi-redirect cgi pear ctype pcre
 dev-lang/python X -tk
 dev-libs/gdl gnome
@@ -89,7 +87,7 @@ net-fs/samba  acl -ldap winbind -xml xml2 winbind async -ads syslog
 net-im/skype -qt-static
 net-libs/libsoup gnome
 net-libs/webkitgtk -svg
-net-libs/xulrunner java -qt -sqlite
+net-libs/xulrunner java -qt sqlite
 net-mail/dovecot mbox pop3d -vpopmail
 net-misc/aria2 metalink bittorrent
 net-misc/openssh sftplogging -ldap
@@ -113,7 +111,7 @@ sys-fs/e2fsprogs -diet -static
 sys-kernel/gentoo-sources -symlink
 sys-libs/glibc -erandom nls nptl nptlonly pic -userlocales
 sys-libs/pam pam_chroot pam_console pam_timestamp
-www-client/mozilla-firefox java moznopango -qt -sqlite
+www-client/mozilla-firefox java moznopango -qt sqlite
 www-client/opera -qt3
 www-servers/pound dynscaler
 x11-base/xorg-server nptl
@@ -127,22 +125,21 @@ x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3 mozilla
 x11-themes/qtcurve gtk -gtk1
 dev-util/git -cgi
-kde-base/kopete oscar -msn
 net-p2p/transmission gtk -qt4 -libnotify
-media-sound/qmmp projectm
-media-video/ushare dlna
 media-sound/pulseaudio -bluetooth -dbus -lirc -glib
 net-wireless/wpa_supplicant wps
-net-misc/wicd -ncurses
 net-misc/networkmanager dhclient
 
 sys-fs/udev extras
 app-crypt/truecrypt -X
 app-arch/p7zip -kde
 dev-libs/soprano java
-net-p2p/ktorrent -mediaplayer
 sys-fs/hal -crypt
 sci-astronomy/celestia -theora
 x11-libs/pango X
 x11-libs/cairo X
+dev-db/sqlite -icu fts3
+
+
+
 
