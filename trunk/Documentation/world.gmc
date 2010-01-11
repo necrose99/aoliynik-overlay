@@ -32,6 +32,7 @@ app-text/foxitreader
 dev-db/mysql
 dev-db/mytop
 dev-lang/php
+dev-libs/adobe-air-sdk-bin
 dev-libs/fcgi
 dev-libs/geoip
 dev-libs/klibc
@@ -99,6 +100,7 @@ kde-base/kwin
 kde-base/plasma-runtime
 kde-base/systemsettings
 kde-misc/customizable-weather
+kde-misc/gx-mail-notify
 kde-misc/knetworkmanager
 kde-misc/kosd
 kde-misc/kstyle-nitrogen
@@ -132,10 +134,10 @@ media-sound/mp3splt
 media-sound/twolame
 media-tv/tvtime
 media-tv/xbmc
-media-video/minitube
 media-video/miro
 media-video/mplayer
 media-video/nvclock
+media-video/openshot
 media-video/smplayer
 net-analyzer/nmap
 net-analyzer/pktstat
@@ -172,7 +174,6 @@ net-print/cups
 net-proxy/toonel
 net-wireless/blueman
 net-wireless/ipw2200-firmware
-net-wireless/kdebluetooth4
 net-wireless/rt73-firmware
 net-wireless/wireless-tools
 perl-core/Math-BigInt-FastCalc
@@ -217,7 +218,6 @@ www-apache/mod_fastcgi
 www-client/chromium
 www-client/httrack
 www-client/mozilla-firefox
-www-client/opera
 www-plugins/adobe-flash
 www-servers/apache
 www-servers/nginx

@@ -38,8 +38,8 @@ dev-util/qt-creator subversion git debugger designer cmake
 dev-util/subversion -apache2 berkdb python -nowebdav -java -dso -kde
 gnome-base/gvfs -bluetooth -gphoto2
 gnome-extra/evolution-data-server ldap kerberos
-kde-base/dolphin thumbnail
-kde-base/konqueror thumbnail
+kde-base/dolphin -thumbnail
+kde-base/konqueror -thumbnail
 kde-base/kdebase-workspace xcomposite newxkb 
 kde-base/kdebase xcomposite bzip2 -java
 kde-base/kdelibs plasma bzip2
@@ -58,7 +58,7 @@ media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf 
 media-gfx/splashutils fbcondecor
 media-libs/freetype newspr -bindist filter_light
 media-libs/libsdl -nojoystick
-media-libs/mlt sdl
+media-libs/mlt sdl frei0r melt
 media-libs/pdflib perl python -tcltk
 media-libs/xine-lib modplug
 media-plugins/audacious-plugins projectm mtp icacast cue icecast lame
@@ -87,7 +87,7 @@ net-fs/samba  acl -ldap winbind -xml xml2 winbind async -ads syslog
 net-im/skype -qt-static
 net-libs/libsoup gnome
 net-libs/webkitgtk -svg
-net-libs/xulrunner java -qt sqlite
+net-libs/xulrunner java -qt -sqlite
 net-mail/dovecot mbox pop3d -vpopmail
 net-misc/aria2 metalink bittorrent
 net-misc/openssh sftplogging -ldap
@@ -111,7 +111,7 @@ sys-fs/e2fsprogs -diet -static
 sys-kernel/gentoo-sources -symlink
 sys-libs/glibc -erandom nls nptl nptlonly pic -userlocales
 sys-libs/pam pam_chroot pam_console pam_timestamp
-www-client/mozilla-firefox java moznopango -qt sqlite
+www-client/mozilla-firefox java moznopango -qt -sqlite
 www-client/opera -qt3
 www-servers/pound dynscaler
 x11-base/xorg-server nptl
