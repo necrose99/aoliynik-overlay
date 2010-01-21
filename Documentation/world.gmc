@@ -31,6 +31,7 @@ app-text/dos2unix
 app-text/foxitreader
 dev-db/mysql
 dev-db/mytop
+dev-java/ant-core
 dev-lang/php
 dev-libs/adobe-air-sdk-bin
 dev-libs/fcgi
@@ -87,6 +88,7 @@ kde-base/kmenuedit
 kde-base/kmines
 kde-base/kmix
 kde-base/knetworkconf
+kde-base/kompare
 kde-base/konsole
 kde-base/kpat
 kde-base/krdc
@@ -122,13 +124,12 @@ media-fonts/ttf-bitstream-vera
 media-fonts/unifont
 media-fonts/vista-fonts
 media-gfx/gfxboot
-media-gfx/gimp
 media-gfx/picasa
 media-gfx/splashutils
 media-libs/win32codecs
 media-sound/alsa-tools
 media-sound/alsa-utils
-media-sound/audacious
+media-sound/amarok
 media-sound/mac
 media-sound/mp3splt
 media-sound/twolame
@@ -212,13 +213,13 @@ sys-kernel/gentoo-sources
 sys-kernel/linux-headers
 sys-power/acpi
 sys-power/cpufrequtils
-sys-process/iotop
 sys-process/lsof
 www-apache/mod_fastcgi
 www-client/chromium
 www-client/httrack
 www-client/mozilla-firefox
 www-plugins/adobe-flash
+www-plugins/gecko-mediaplayer
 www-servers/apache
 www-servers/nginx
 x11-apps/setxkbmap
