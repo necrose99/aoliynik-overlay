@@ -140,6 +140,7 @@ x11-libs/pango X
 x11-libs/cairo X
 dev-db/sqlite -icu fts3
 
+dev-java/antlr java
 
 
 
