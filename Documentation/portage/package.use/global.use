@@ -142,5 +142,6 @@ dev-db/sqlite -icu fts3
 
 dev-java/antlr java
 
+dev-util/cmake -qt4
 
 
