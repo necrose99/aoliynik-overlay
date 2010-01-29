@@ -26,9 +26,9 @@ app-portage/gentoolkit
 app-portage/getdelta
 app-portage/layman
 app-portage/portage-utils
+app-text/acroread
 app-text/djview4
 app-text/dos2unix
-app-text/foxitreader
 dev-db/mysql
 dev-db/mytop
 dev-java/ant-core
@@ -157,6 +157,7 @@ net-firewall/iptables
 net-fs/nfs-utils
 net-ftp/filezilla
 net-ftp/ftp
+net-im/qutim
 net-im/skype
 net-misc/aria2
 net-misc/dhcp
@@ -171,7 +172,6 @@ net-misc/vpnc
 net-misc/whois
 net-misc/youtube-dl
 net-p2p/qbittorrent
-net-print/cups
 net-proxy/toonel
 net-wireless/blueman
 net-wireless/ipw2200-firmware
@@ -184,7 +184,9 @@ perl-gcpan/Data-Serializer
 perl-gcpan/File-Touch
 perl-gcpan/Text-CSV-XS
 perl-gcpan/Time-Format
+perl-gcpan/XML-Structured
 sci-astronomy/celestia
+sci-astronomy/stellarium
 sys-apps/baselayout
 sys-apps/hal
 sys-apps/hdparm
