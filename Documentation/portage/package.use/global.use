@@ -146,3 +146,4 @@ dev-util/cmake -qt4
 
 app-text/ghostscript-gpl cups
 sys-apps/man -nls
+net-libs/libproxy -webkit -python
