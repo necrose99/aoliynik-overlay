@@ -8,3 +8,4 @@ app-cdr/k3b **
 sys-auth/policykit-qt **
 media-tv/xbmc **
 net-misc/networkmanager **
+www-client/chromium **
