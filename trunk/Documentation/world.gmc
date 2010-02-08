@@ -19,7 +19,6 @@ app-portage/deltup
 app-portage/eix
 app-portage/emerge-delta-webrsync
 app-portage/epm
-app-portage/euses
 app-portage/g-cpan
 app-portage/genlop
 app-portage/gentoolkit
@@ -31,9 +30,7 @@ app-text/djview4
 app-text/dos2unix
 dev-db/mysql
 dev-db/mytop
-dev-java/ant-core
 dev-lang/php
-dev-libs/adobe-air-sdk-bin
 dev-libs/fcgi
 dev-libs/geoip
 dev-libs/klibc
@@ -175,6 +172,7 @@ net-p2p/qbittorrent
 net-proxy/toonel
 net-wireless/blueman
 net-wireless/ipw2200-firmware
+net-wireless/kbluetooth
 net-wireless/rt73-firmware
 net-wireless/wireless-tools
 perl-core/Math-BigInt-FastCalc
