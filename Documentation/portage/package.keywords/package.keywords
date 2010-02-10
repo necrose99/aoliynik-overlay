@@ -2,6 +2,8 @@ net-im/skype **
 media-video/smplayer **
 x11-drivers/nvidia-drivers **
 x11-themes/skulpture **
+x11-themes/bespin **
+
 app-portage/portage **
 kde-misc/basket **
 app-cdr/k3b **
