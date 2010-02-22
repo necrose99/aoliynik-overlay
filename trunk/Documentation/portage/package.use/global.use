@@ -62,7 +62,7 @@ media-libs/mlt sdl frei0r melt
 media-libs/pdflib perl python -tcltk
 media-libs/xine-lib modplug
 media-plugins/audacious-plugins projectm mtp icacast cue icecast lame
-media-sound/amarok gstreamer xine opengl visualization -xmms real -noamazon -daap mtp mp4 
+media-sound/amarok -embedded gstreamer xine opengl visualization -xmms real -noamazon -daap mtp mp4 
 media-sound/audacity flac id3tag soundtouch twolame vamp libsamplerate
 media-sound/lossless2lossy ape
 media-sound/transkode amarok wavpack
@@ -147,3 +147,6 @@ dev-util/cmake -qt4
 app-text/ghostscript-gpl cups
 sys-apps/man -nls
 net-libs/libproxy -webkit -python
+
+kde-base/kttsd mbrola festival
+app-accessibility/festival mbrola

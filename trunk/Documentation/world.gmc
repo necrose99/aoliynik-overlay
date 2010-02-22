@@ -108,6 +108,7 @@ kde-misc/knetworkmanager
 kde-misc/kosd
 kde-misc/kstyle-nitrogen
 kde-misc/plasma-daisy
+kde-misc/plasma-indicatordisplay
 kde-misc/plasma-smoothtasks
 kde-misc/plasma-video-wallpaper
 kde-misc/plasma-wifi
@@ -139,7 +140,6 @@ media-tv/xbmc
 media-video/miro
 media-video/mplayer
 media-video/nvclock
-media-video/openshot
 media-video/smplayer
 net-analyzer/nmap
 net-analyzer/pktstat
@@ -164,6 +164,9 @@ net-misc/aria2
 net-misc/dhcp
 net-misc/knemo
 net-misc/netkit-telnetd
+net-misc/networkmanager-openconnect
+net-misc/networkmanager-pptp
+net-misc/networkmanager-vpnc
 net-misc/ntp
 net-misc/openconnect
 net-misc/openssh
