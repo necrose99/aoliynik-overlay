@@ -10,6 +10,7 @@ app-dicts/goldendict
 app-editors/joe
 app-editors/juffed
 app-emulation/virtualbox-ose
+app-emulation/vmware-workstation
 app-emulation/wine
 app-misc/lirc
 app-misc/mc
@@ -100,6 +101,7 @@ kde-base/ksnapshot
 kde-base/ksysguard
 kde-base/kwallet
 kde-base/kwin
+kde-base/okular
 kde-base/plasma-runtime
 kde-base/systemsettings
 kde-misc/customizable-weather
@@ -186,6 +188,7 @@ perl-core/Math-BigInt-FastCalc
 perl-core/Time-Piece
 perl-gcpan/CDB-File
 perl-gcpan/Data-Serializer
+perl-gcpan/File-Touch
 perl-gcpan/Text-CSV-XS
 perl-gcpan/Time-Format
 perl-gcpan/WWW-Mechanize-Cached
