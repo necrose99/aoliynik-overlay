@@ -26,7 +26,6 @@ app-portage/gentoolkit
 app-portage/getdelta
 app-portage/layman
 app-portage/portage-utils
-app-text/acroread
 app-text/djview4
 app-text/dos2unix
 dev-db/mysql
@@ -59,10 +58,10 @@ dev-util/cvs
 dev-util/git
 dev-util/lafilefixer
 dev-util/meld
-dev-util/mercurial
 dev-util/strace
 dev-util/subversion
 dev-util/xdelta
+dev-vcs/mercurial
 games-board/pokerth
 kde-base/ark
 kde-base/dolphin
@@ -71,7 +70,6 @@ kde-base/kcalc
 kde-base/kcontrol
 kde-base/kde-l10n
 kde-base/kdeartwork-iconthemes
-kde-base/kdeartwork-kscreensaver
 kde-base/kdeartwork-styles
 kde-base/kdeartwork-wallpapers
 kde-base/kdebase-data
@@ -90,11 +88,8 @@ kde-base/kmenuedit
 kde-base/kmines
 kde-base/kmix
 kde-base/knetworkconf
-kde-base/kompare
 kde-base/konsole
 kde-base/kpat
-kde-base/krdc
-kde-base/krfb
 kde-base/kscreensaver
 kde-base/ksmserver
 kde-base/ksnapshot
@@ -143,6 +138,7 @@ media-video/miro
 media-video/mplayer
 media-video/nvclock
 media-video/smplayer
+net-analyzer/nettop
 net-analyzer/nmap
 net-analyzer/pktstat
 net-analyzer/rrdtool
@@ -164,7 +160,6 @@ net-im/qutim
 net-im/skype
 net-misc/aria2
 net-misc/dhcp
-net-misc/knemo
 net-misc/netkit-telnetd
 net-misc/networkmanager-openconnect
 net-misc/networkmanager-pptp
@@ -190,6 +185,7 @@ perl-gcpan/CDB-File
 perl-gcpan/Data-Serializer
 perl-gcpan/File-Touch
 perl-gcpan/Text-CSV-XS
+perl-gcpan/Text-xSV
 perl-gcpan/Time-Format
 perl-gcpan/WWW-Mechanize-Cached
 perl-gcpan/XML-Structured
@@ -205,7 +201,6 @@ sys-apps/usermode-utilities
 sys-apps/v86d
 sys-auth/policykit-qt
 sys-boot/grub
-sys-devel/distcc
 sys-devel/gcc
 sys-devel/prelink
 sys-fs/dosfstools
@@ -226,12 +221,12 @@ sys-power/cpufrequtils
 sys-process/lsof
 www-apache/mod_fastcgi
 www-client/chromium
-www-client/httrack
 www-client/mozilla-firefox
 www-plugins/adobe-flash
 www-plugins/gecko-mediaplayer
 www-servers/apache
 www-servers/nginx
+x11-apps/fusion-icon
 x11-apps/setxkbmap
 x11-apps/xdm
 x11-base/xorg-server
@@ -258,3 +253,4 @@ x11-themes/skulpture
 x11-themes/smplayer-themes
 x11-themes/smplayer-themes-nonfree
 x11-themes/xcursor-themes
+x11-wm/compiz-fusion
