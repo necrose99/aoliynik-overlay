@@ -72,8 +72,6 @@ media-video/ffmpeg amr sdl -mmx -mmxext
 media-video/handbrake sys-libs
 media-video/mplayer ass png compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk compiz mp2 amrnb amrwb srt enca teletext
 media-video/nvclock -qt3 -qt
-media-video/realplayer X nsplugin
-media-video/totem -nsplugin
 
 media-video/vlc dvd ffmpeg mpeg mad  -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm httpd cdda vcd cdio live rtsp shout upnp skins dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd -libnotify
 
@@ -125,14 +123,10 @@ x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3 mozilla
 x11-themes/qtcurve gtk -gtk1
 dev-util/git -cgi
-net-p2p/transmission gtk -qt4 -libnotify
-media-sound/pulseaudio -bluetooth -dbus -lirc -glib
-net-wireless/wpa_supplicant wps
-net-misc/networkmanager dhclient
+net-misc/networkmanager dhclient resolvconf
 
 sys-fs/udev extras
 app-crypt/truecrypt -X
-app-arch/p7zip -kde
 dev-libs/soprano java -virtuoso -redland -raptor
 sys-fs/hal -crypt
 sci-astronomy/celestia -theora
@@ -148,5 +142,3 @@ app-text/ghostscript-gpl cups
 sys-apps/man -nls
 net-libs/libproxy -webkit -python
 
-kde-base/kttsd mbrola festival
-app-accessibility/festival mbrola
