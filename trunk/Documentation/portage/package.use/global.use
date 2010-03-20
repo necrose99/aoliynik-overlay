@@ -122,7 +122,7 @@ x11-libs/qt mysql dbus accessibility qt-copy
 x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3 mozilla
 x11-themes/qtcurve gtk -gtk1
-dev-util/git -cgi
+dev-vcs/git -cgi
 net-misc/networkmanager dhclient resolvconf
 
 sys-fs/udev extras
