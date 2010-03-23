@@ -12,7 +12,6 @@ app-editors/joe
 app-editors/juffed
 app-emulation/virtualbox-bin
 app-laptop/fnfx
-app-misc/lirc
 app-misc/mc
 app-misc/screen
 app-office/dia
@@ -60,15 +59,15 @@ dev-python/configobj
 dev-util/ccache
 dev-util/cvs
 dev-util/ftjam
-dev-util/git
 dev-util/lafilefixer
 dev-util/meld
-dev-util/mercurial
 dev-util/perforce-cli
 dev-util/perforce-gui
 dev-util/strace
 dev-util/subversion
 dev-util/xdelta
+dev-vcs/git
+dev-vcs/mercurial
 games-board/pokerth
 kde-base/ark
 kde-base/dolphin
@@ -94,7 +93,6 @@ kde-base/konqueror
 kde-base/konsole
 kde-base/kpat
 kde-base/krdc
-kde-base/krfb
 kde-base/kscreensaver
 kde-base/ksnapshot
 kde-base/ksysguard
@@ -104,6 +102,7 @@ kde-misc/basket
 kde-misc/customizable-weather
 kde-misc/devicemanager
 kde-misc/gx-mail-notify
+kde-misc/knetworkmanager
 kde-misc/konq-plugins
 kde-misc/kosd
 kde-misc/plasma-daisy
@@ -128,11 +127,11 @@ media-libs/freetype
 media-libs/win32codecs
 media-sound/alsa-tools
 media-sound/alsa-utils
+media-sound/amarok
 media-sound/lastfmplayer
 media-sound/mac
 media-sound/mp3splt
 media-sound/qmpdclient
-media-sound/streamripper
 media-sound/twolame
 media-tv/ivtv-firmware
 media-tv/tvtime
@@ -173,7 +172,6 @@ net-misc/ajaxterm
 net-misc/aria2
 net-misc/dhcp
 net-misc/keychain
-net-misc/kvpnc
 net-misc/netkit-telnetd
 net-misc/ntp
 net-misc/openconnect
@@ -186,6 +184,7 @@ net-misc/youtube-dl
 net-p2p/qbittorrent
 net-print/cups
 net-proxy/toonel
+net-voip/ekiga
 net-wireless/ipw2200-firmware
 net-wireless/opd
 net-wireless/rt73-firmware
@@ -195,11 +194,10 @@ perl-core/Time-Piece
 perl-gcpan/CDB-File
 perl-gcpan/Data-Serializer
 perl-gcpan/File-Rotate-Backup
-perl-gcpan/File-Touch
-perl-gcpan/Term-Prompt
 perl-gcpan/Text-CSV-XS
 perl-gcpan/Time-Format
 perl-gcpan/WWW-Mechanize-Cached
+sci-geosciences/googleearth
 sys-apps/baselayout
 sys-apps/ethtool
 sys-apps/hal
@@ -209,6 +207,7 @@ sys-apps/less
 sys-apps/memtest86+
 sys-apps/module-init-tools
 sys-apps/most
+sys-apps/unscd
 sys-apps/usermode-utilities
 sys-apps/v86d
 sys-boot/grub
@@ -236,7 +235,6 @@ www-client/chromium-bin
 www-client/httrack
 www-client/mozilla-firefox
 www-plugins/adobe-flash
-www-plugins/gecko-mediaplayer
 www-servers/apache
 x11-apps/setxkbmap
 x11-apps/xdm
@@ -245,7 +243,6 @@ x11-drivers/nvidia-drivers
 x11-drivers/xf86-input-evdev
 x11-drivers/xf86-input-void
 x11-drivers/xf86-video-v4l
-x11-misc/googleearth
 x11-misc/trayer
 x11-misc/x11vnc
 x11-misc/xbindkeys
@@ -254,7 +251,6 @@ x11-plugins/qutim-icq
 x11-terms/clusterssh
 x11-themes/gtk-engines
 x11-themes/gtk-engines-murrine
-x11-themes/nitrogen
 x11-themes/qtcurve-qt4
 x11-themes/qutim-artwork
 x11-themes/redhat-cursors

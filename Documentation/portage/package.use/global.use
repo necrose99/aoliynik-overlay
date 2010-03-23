@@ -142,3 +142,6 @@ app-text/ghostscript-gpl cups
 sys-apps/man -nls
 net-libs/libproxy -webkit -python
 
+net-libs/opal sip
+net-libs/ptlib wav
+
