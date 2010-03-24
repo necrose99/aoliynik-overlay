@@ -100,6 +100,7 @@ kde-base/kwin
 kde-base/okular
 kde-base/plasma-runtime
 kde-base/systemsettings
+kde-misc/basket
 kde-misc/customizable-weather
 kde-misc/gx-mail-notify
 kde-misc/knetworkmanager
@@ -143,6 +144,7 @@ net-analyzer/nettop
 net-analyzer/nmap
 net-analyzer/pktstat
 net-analyzer/rrdtool
+net-analyzer/tcptraceroute
 net-analyzer/traceroute
 net-analyzer/trafshow
 net-dialup/ppp
