@@ -1,0 +1,39 @@
+# Main program
+net-im/qutim:live **
+
+# Protocol plugins
+x11-plugins/qutim-icq:live **
+x11-plugins/qutim-msn:live **
+
+x11-plugins/qutim-jabber:live **
+x11-plugins/qutim-mrim:live **
+x11-plugins/qutim-irc:live **
+x11-plugins/qutim-vkontakte:live **
+x11-plugins/qutim-twitter:live **
+
+# Nonprotocol plugins
+x11-plugins/qutim-yandexnarod:live **
+x11-plugins/qutim-histman:live **
+x11-plugins/qutim-plugman:live **
+x11-plugins/qutim-webhistory:live **
+x11-plugins/qutim-libnotify:live **
+x11-plugins/qutim-kdeintegration:live **
+x11-plugins/qutim-urlpreview:live **
+x11-plugins/qutim-imagepub **
+x11-plugins/qutim-weather **
+x11-plugins/qutim-nowlistening **
+x11-plugins/qutim-floaties **
+x11-plugins/qutim-protocolicon **
+x11-plugins/qutim-connectioncheck **
+x11-plugins/qutim-accountname **
+x11-plugins/qutim-nowplaying **
+x11-plugins/qutim-coder **
+x11-plugins/qutim-massmessaging **
+x11-plugins/qutim-floaties **
+x11-plugins/qutim-protocolicon **
+x11-plugins/qutim-chess **
+x11-plugins/qutim-youtubedownload **
+x11-plugins/qutim-sqlhistory **
+
+# Artwork
+x11-themes/qutim-artwork
