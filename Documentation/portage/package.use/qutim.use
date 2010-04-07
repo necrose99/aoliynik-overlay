@@ -1,14 +1,32 @@
-net-im/qutim icq jabber -mrim phonon -qt-phonon -protocolicon -plugman -vkontakte kdeintegration -connectioncheck -libnotify
+net-im/qutim icq jabber histman plugman -libnotify -irc -mrim -vkontakte -msn -twitter -yandexnarod -imagepub kdeintegration -youtubedownload -chess -protocolicon -floaties -massmessaging -coder -accountname -connectioncheck -nowlistening -weather
 
-x11-plugins/qutim-kdeintegration -debug phonon
+# Протокольные плагины
+x11-plugins/qutim-irc -debug
+x11-plugins/qutim-jabber -debug gloox-static gnutls -openssl
 x11-plugins/qutim-icq -debug
-#x11-plugins/qutim-jabber -openssl debug gnutls
-x11-plugins/qutim-jabber gloox-static -openssl debug gnutls
+x11-plugins/qutim-vkontakte -debug
+x11-plugins/qutim-msn -debug
 x11-plugins/qutim-mrim -debug
-x11-plugins/qutim-protocolicon -debug
-x11-plugins/qutim-imagepub -debug
+x11-plugins/qutim-twitter -debug
+
+# Не протокольные плагины
+x11-plugins/qutim-histman -debug
+x11-plugins/qutim-plugman -debug -tools
 x11-plugins/qutim-yandexnarod -debug
-x11-plugins/qutim-qimhm -debug
+x11-plugins/qutim-imagepub -debug
+x11-plugins/qutim-kdeintegration -debug emoticons notification spell
+x11-plugins/qutim-youtubedownload -debug
+x11-plugins/qutim-chess -debug
+x11-plugins/qutim-protocolicon -debug
+x11-plugins/qutim-floaties -debug
+x11-plugins/qutim-massmessaging -debug
+x11-plugins/qutim-coder -debug
+x11-plugins/qutim-accountname -debug
+x11-plugins/qutim-connectioncheck -debug
+x11-plugins/qutim-nowlistening -debug
 x11-plugins/qutim-weather -debug
-x11-plugins/qutim-plugins-nonprotocol-meta qimhm -protocolicon -yandexnarod -imagepub -weather
+x11-plugins/qutim-sqlhistory -debug
+x11-plugins/qutim-libnotify -debug
+
+# Артворк
 x11-themes/qutim-artwork sounds

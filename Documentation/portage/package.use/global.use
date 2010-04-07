@@ -22,7 +22,7 @@ app-text/poppler-bindings gtk
 dev-cpp/gtkmm accessibility
 dev-db/hsqldb java6
 dev-db/mysql -cluster big-tables -berkdb embedded
-dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli fpm force-cgi-redirect cgi pear ctype pcre
+dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli fpm force-cgi-redirect cgi pear ctype pcre posix snmp soap
 dev-lang/python X -tk
 dev-libs/gdl gnome
 dev-libs/libxml2 python
@@ -142,7 +142,7 @@ app-text/ghostscript-gpl cups
 sys-apps/man -nls
 net-libs/libproxy -webkit -python
 
-net-libs/opal sip dtmf fax h323 ivr lid sipim srtp vxml wav iax
-net-libs/ptlib wav dtmf vxml
-net-voip/ekiga h323 
+
+net-analyzer/nagios-plugins jabber nagios-dns nagios-ntp nagios-ping nagios-ssh ups
+net-analyzer/net-snmp -X
 
