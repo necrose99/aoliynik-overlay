@@ -1,4 +1,4 @@
-net-im/qutim icq jabber histman plugman -libnotify -irc -mrim -vkontakte -msn -twitter -yandexnarod -imagepub kdeintegration -youtubedownload -chess -protocolicon -floaties -massmessaging -coder -accountname -connectioncheck -nowlistening -weather
+net-im/qutim icq jabber -histman -plugman -libnotify -irc -mrim -vkontakte -msn -twitter -yandexnarod -imagepub -kdeintegration -youtubedownload -chess -protocolicon -floaties -massmessaging -coder -accountname -connectioncheck -nowlistening -weather
 
 # Протокольные плагины
 x11-plugins/qutim-irc -debug

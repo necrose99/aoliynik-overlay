@@ -13,7 +13,7 @@ app-emulation/virtualbox-ose
 app-emulation/wine
 app-misc/mc
 app-misc/screen
-app-office/openoffice-infra-bin
+app-office/openoffice-bin
 app-portage/deltup
 app-portage/eix
 app-portage/emerge-delta-webrsync
@@ -183,7 +183,6 @@ sys-apps/hdparm
 sys-apps/iproute2
 sys-apps/memtest86+
 sys-apps/module-init-tools
-sys-apps/usermode-utilities
 sys-apps/v86d
 sys-auth/policykit-qt
 sys-boot/grub

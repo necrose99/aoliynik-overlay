@@ -12,10 +12,7 @@ app-misc/mc -X nls -dnotify attrs
 app-misc/strigi inotify -fam
 app-mobilephone/kmobiletools obex
 app-office/mozilla-sunbird moznopango
-app-office/openoffice-bin java -kde
-app-office/openoffice-infra-bin java -kde
-app-office/openoffice-infra java -kde
-app-office/openoffice java -kde
+app-office/openoffice-bin java kde
 app-text/cuneiform imagemagick
 app-text/djvu -kde -nsplugin -qt3
 app-text/poppler-bindings gtk
