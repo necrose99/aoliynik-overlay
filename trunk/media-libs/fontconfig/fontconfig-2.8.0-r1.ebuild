@@ -42,7 +42,11 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.7.1-latin-reorder.patch   #130466
+	epatch "${FILESDIR}"/${PN}-2.3.2-docbook.patch			# 310157
+	epatch "${FILESDIR}"/${PN}-2.8.0-urw-aliases.patch		# 303591
+
 	epunt_cxx   
+
 	if use ubuntu; then
 		epatch "${FILESDIR}"/${PN}-ubuntu-00_old_diff_gz.patch
 		epatch "${FILESDIR}"/${PN}-ubuntu-04_monospace_lcd_filter_conf.patch
