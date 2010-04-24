@@ -7,3 +7,10 @@ media-video/xbmc
 >=dev-python/beautifulsoup-3.1.0
 
 ~net-im/qutim-0.2.0
+
+# 17.04.2010 NVidia driver is no supported
+=x11-base/xorg-server-1.8.0
+=x11-base/xorg-drivers-1.8
+=x11-apps/xinit-1.2.1-r1
+
+
