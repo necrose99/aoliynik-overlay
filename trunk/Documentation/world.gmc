@@ -40,10 +40,13 @@ dev-perl/DBD-mysql
 dev-perl/DBI
 dev-perl/Date-Calc
 dev-perl/Digest-SHA1
+dev-perl/Email-Address
 dev-perl/FCGI
 dev-perl/GD
 dev-perl/Geo-IP
+dev-perl/JSON
 dev-perl/MailTools
+dev-perl/Net-Domain-TLD
 dev-perl/Term-ProgressBar
 dev-perl/Text-CSV
 dev-perl/Text-Iconv
@@ -61,6 +64,7 @@ dev-util/xdelta
 dev-vcs/git
 dev-vcs/mercurial
 games-board/pokerth
+games-misc/fortune-mod-all
 kde-base/ark
 kde-base/dolphin
 kde-base/gwenview
