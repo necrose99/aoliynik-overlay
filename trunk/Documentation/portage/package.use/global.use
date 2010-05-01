@@ -67,7 +67,7 @@ media-video/transcode mmx
 media-tv/miro -libnotify xine -gstreamer
 media-video/ffmpeg amr sdl -mmx -mmxext
 media-video/handbrake sys-libs
-media-video/mplayer ass png compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk compiz mp2 amrnb amrwb srt enca teletext
+media-video/mplayer ass png compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk dvdnav compiz xvmc mp2 amrnb amrwb srt enca teletext aac
 media-video/nvclock -qt3 -qt
 
 media-video/vlc dvd ffmpeg mpeg mad  -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm httpd cdda vcd cdio live rtsp shout upnp skins dts -nsplugin qt4 -xulrunner twolame run-as-root remoteosd -xosd -libnotify
