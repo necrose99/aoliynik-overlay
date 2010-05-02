@@ -131,9 +131,9 @@ media-gfx/splashutils
 media-libs/win32codecs
 media-sound/alsa-tools
 media-sound/alsa-utils
-media-sound/amarok
 media-sound/mac
 media-sound/mp3splt
+media-sound/qmmp
 media-sound/twolame
 media-tv/tvtime
 media-tv/xbmc
@@ -212,6 +212,7 @@ www-apache/mod_fastcgi
 www-client/chromium
 www-client/mozilla-firefox
 www-plugins/adobe-flash
+www-plugins/gecko-mediaplayer
 www-servers/apache
 www-servers/nginx
 x11-apps/setxkbmap

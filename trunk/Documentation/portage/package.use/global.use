@@ -143,3 +143,5 @@ net-libs/libproxy -webkit -python
 net-analyzer/nagios-plugins jabber nagios-dns nagios-ntp nagios-ping nagios-ssh ups
 net-analyzer/net-snmp -X
 
+media-sound/qmmp -aac
+
