@@ -141,6 +141,7 @@ media-video/miro
 media-video/mplayer
 media-video/nvclock
 media-video/smplayer
+media-video/vlc
 net-analyzer/nmap
 net-analyzer/pktstat
 net-analyzer/tcptraceroute
@@ -166,6 +167,7 @@ net-misc/rdesktop
 net-misc/tigervnc
 net-misc/tor
 net-misc/vpnc
+net-misc/whois
 net-misc/youtube-dl
 net-p2p/qbittorrent
 net-wireless/ipw2200-firmware
