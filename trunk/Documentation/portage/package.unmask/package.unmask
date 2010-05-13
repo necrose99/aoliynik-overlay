@@ -1,7 +1,5 @@
 >=sys-apps/portage-2.2_pre
 >=app-portage/rep-rebuild-0.1
 ~kde-misc/basket-9999
-
 =net-misc/networkmanager-0.8.0*
-=www-client/chromium-5.0*
 
