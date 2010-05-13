@@ -131,9 +131,9 @@ media-gfx/splashutils
 media-libs/win32codecs
 media-sound/alsa-tools
 media-sound/alsa-utils
+media-sound/clementine
 media-sound/mac
 media-sound/mp3splt
-media-sound/qmmp
 media-sound/twolame
 media-tv/tvtime
 media-tv/xbmc
