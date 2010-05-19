@@ -59,6 +59,7 @@ dev-util/ccache
 dev-util/cvs
 dev-util/lafilefixer
 dev-util/meld
+dev-util/strace
 dev-util/subversion
 dev-util/xdelta
 dev-vcs/git
@@ -157,7 +158,6 @@ net-im/skype
 net-misc/aria2
 net-misc/dhcp
 net-misc/memcached
-net-misc/networkmanager-openconnect
 net-misc/networkmanager-pptp
 net-misc/networkmanager-vpnc
 net-misc/ntp
@@ -213,6 +213,7 @@ sys-process/lsof
 www-apache/mod_fastcgi
 www-client/chromium
 www-client/mozilla-firefox
+www-client/rekonq
 www-plugins/adobe-flash
 www-plugins/gecko-mediaplayer
 www-servers/apache
