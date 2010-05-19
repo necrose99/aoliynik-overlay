@@ -137,11 +137,12 @@ dev-util/cmake -qt4
 
 app-text/ghostscript-gpl cups
 sys-apps/man -nls
-net-libs/libproxy -webkit -python
+net-libs/libproxy -webkit -python -xulrunner -perl
 
 
 net-analyzer/nagios-plugins jabber nagios-dns nagios-ntp nagios-ping nagios-ssh ups
 net-analyzer/net-snmp -X
 
 media-sound/qmmp -aac
+app-arch/unzip -rcc
 
