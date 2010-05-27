@@ -128,6 +128,7 @@ media-fonts/unifont
 media-fonts/vista-fonts
 media-gfx/gfxboot
 media-gfx/picasa
+media-gfx/sK1
 media-gfx/splashutils
 media-libs/win32codecs
 media-sound/alsa-tools
@@ -209,6 +210,7 @@ sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-kernel/linux-headers
 sys-power/cpufrequtils
+sys-process/cronie
 sys-process/lsof
 www-apache/mod_fastcgi
 www-client/chromium

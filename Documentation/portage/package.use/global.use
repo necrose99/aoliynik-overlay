@@ -146,3 +146,10 @@ net-analyzer/net-snmp -X
 media-sound/qmmp -aac
 app-arch/unzip -rcc
 
+dev-python/imaging tk
+dev-lang/python tk
+
+
+media-plugins/gst-plugins-meta taglib lame
+
+
