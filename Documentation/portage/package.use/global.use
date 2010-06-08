@@ -151,5 +151,6 @@ dev-lang/python tk
 
 
 media-plugins/gst-plugins-meta taglib lame
+app-text/scrollkeeper -nls
 
 

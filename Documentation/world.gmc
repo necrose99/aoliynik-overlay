@@ -4,6 +4,7 @@ app-arch/p7zip
 app-arch/rar
 app-arch/rpm
 app-arch/unrar
+app-backup/dropbox-bin
 app-cdr/k3b
 app-crypt/truecrypt
 app-dicts/goldendict
@@ -103,7 +104,7 @@ kde-base/kwin
 kde-base/okular
 kde-base/plasma-runtime
 kde-base/systemsettings
-kde-misc/basket
+kde-misc/dropbox-servicemenu
 kde-misc/gx-mail-notify
 kde-misc/kcm_gtk
 kde-misc/knetworkmanager
@@ -142,6 +143,7 @@ media-tv/xbmc
 media-video/miro
 media-video/mplayer
 media-video/nvclock
+media-video/nvidia-settings
 media-video/smplayer
 media-video/vlc
 net-analyzer/nmap
@@ -166,11 +168,11 @@ net-misc/openconnect
 net-misc/openssh
 net-misc/rdesktop
 net-misc/tigervnc
-net-misc/tor
 net-misc/vpnc
 net-misc/whois
 net-misc/youtube-dl
 net-p2p/qbittorrent
+net-wireless/aircrack-ng
 net-wireless/ipw2200-firmware
 net-wireless/kbluetooth
 net-wireless/rt73-firmware
@@ -217,7 +219,6 @@ www-client/chromium
 www-client/mozilla-firefox
 www-client/rekonq
 www-plugins/adobe-flash
-www-plugins/gecko-mediaplayer
 www-servers/apache
 www-servers/nginx
 x11-apps/setxkbmap

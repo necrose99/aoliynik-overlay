@@ -1,0 +1,22 @@
+#!/sbin/runscript
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+opts="${opts} status"
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting dropbox..."
+	start-stop-daemon -b -o -N $NICENESS -c dropbox -S -e HOME="/opt/dropbox-bin" -x /opt/bin/dropboxd
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping dropbox..."
+	start-stop-daemon -o -c dropbox -K -p /opt/dropbox-bin/.dropbox/dropbox.pid
+	eend $?
+}
