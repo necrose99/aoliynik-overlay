@@ -4,7 +4,6 @@
 
 EAPI="2"
 
-PYTHON_DEPEND="2"
 inherit python
 
 MY_P="DropboxServiceMenu"
@@ -25,24 +24,11 @@ RDEPEND="
 	x11-misc/xdg-utils
 "
 
-S="${WORKDIR}"
 S="${WORKDIR}/${MY_P}-${PV}"
-
-pkg_setup() {
-	python_set_active_version 2
-}
-
-src_prepare() {
-	python_convert_shebangs -r 2 .
-}
 
 src_install() {
 	exeinto /usr/bin
-	doexe dropbox-scripts/pyndexer.py || die
-	doexe dropbox-scripts/dropbox.py || die 
-	doexe dropbox-scripts/dropbox_menu.sh || die
-	doexe dropbox-scripts/dropbox_menu_translations.sh || die
-	doexe dropbox-scripts/dropbox-notify.py
+	doexe dropbox-scripts/* || die
 
 	insinto /usr/share/kde4/services/ServiceMenus
 	doins dropbox_all.desktop
