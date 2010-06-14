@@ -47,7 +47,7 @@ kde-base/krdc vnc rdp qca decibel
 kde-base/okular djvu
 kde-base/solid bluetooth
 mail-client/evolution ldap -nntp -hal -crypt
-mail-client/mozilla-thunderbird -ldap moznopango java -crypt lightning
+mail-client/thunderbird -ldap moznopango java -crypt lightning
 mail-filter/spamassassin berkdb qmail ssl
 media-gfx/gfxboot themes animate speech beep
 media-gfx/gimp -gtkhtml python -webkit
