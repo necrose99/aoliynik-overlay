@@ -19,6 +19,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="media-libs/freetype:2
+	net-print/cups
 	>=x11-libs/gtk+-2.12"
 
 RESTRICT="mirror strip"

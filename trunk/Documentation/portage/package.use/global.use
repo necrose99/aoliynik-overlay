@@ -143,14 +143,11 @@ net-libs/libproxy -webkit -python -xulrunner -perl
 net-analyzer/nagios-plugins jabber nagios-dns nagios-ntp nagios-ping nagios-ssh ups
 net-analyzer/net-snmp -X
 
-media-sound/qmmp -aac
 app-arch/unzip -rcc
-
-dev-python/imaging tk
-dev-lang/python tk
-
 
 media-plugins/gst-plugins-meta taglib lame
 app-text/scrollkeeper -nls
 
+dev-lang/nasm -doc
+x11-libs/libX11 -doc
 
