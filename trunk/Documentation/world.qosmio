@@ -57,8 +57,8 @@ dev-perl/Unicode-Map8
 dev-perl/XML-RegExp
 dev-perl/perl-tk
 dev-python/configobj
+dev-python/pexpect
 dev-util/ccache
-dev-util/cvs
 dev-util/ftjam
 dev-util/lafilefixer
 dev-util/meld
@@ -66,6 +66,8 @@ dev-util/perforce-cli
 dev-util/strace
 dev-util/subversion
 dev-util/xdelta
+dev-vcs/bzr
+dev-vcs/cvs
 dev-vcs/git
 dev-vcs/mercurial
 games-board/pokerth
@@ -106,7 +108,7 @@ kde-misc/konq-plugins
 kde-misc/plasma-daisy
 kde-misc/plasma-smoothtasks
 kde-misc/yakuake
-mail-client/mozilla-thunderbird
+mail-client/thunderbird
 mail-filter/procmail
 mail-mta/sendmail
 media-fonts/corefonts
@@ -199,6 +201,7 @@ sys-apps/module-init-tools
 sys-apps/most
 sys-apps/unscd
 sys-apps/v86d
+sys-boot/burg
 sys-boot/grub
 sys-devel/gcc
 sys-devel/prelink

@@ -99,7 +99,7 @@ sys-apps/dbus gtk python -mono -qt3 qt4 X
 sys-apps/file -python
 sys-apps/pciutils -zlib
 sys-auth/pambase consolekit
-sys-boot/grub multislot 
+sys-boot/grub -multislot
 sys-devel/distcc gtk
 sys-devel/gcc -gtk
 sys-fs/e2fsprogs -diet -static
@@ -123,7 +123,7 @@ dev-vcs/git -cgi
 net-misc/networkmanager dhclient resolvconf
 
 sys-fs/udev extras
-app-crypt/truecrypt -X
+app-crypt/truecrypt X
 dev-libs/soprano java -virtuoso -redland -raptor
 sys-fs/hal -crypt
 sci-astronomy/celestia -theora
@@ -150,4 +150,6 @@ app-text/scrollkeeper -nls
 
 dev-lang/nasm -doc
 x11-libs/libX11 -doc
+dev-vcs/qct subversion mercurial
+
 

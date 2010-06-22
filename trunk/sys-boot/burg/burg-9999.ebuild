@@ -31,8 +31,8 @@ if [[ ${PV} == "9999" ]] ; then
 		unpack ${A}
 	fi
 	cd "${S}"
-#	epatch "${FILESDIR}"/burg-genkernel.patch #256335
-#	epatch_user
+	epatch "${FILESDIR}"/burg-genkernel.patch #256335
+	epatch_user
 
 	# autogen.sh does more than just run autotools
 if [[ ${PV} == "9999" ]] ; then
