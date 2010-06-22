@@ -64,6 +64,7 @@ dev-util/meld
 dev-util/strace
 dev-util/subversion
 dev-util/xdelta
+dev-vcs/bzr
 dev-vcs/cvs
 dev-vcs/git
 dev-vcs/mercurial
@@ -195,7 +196,9 @@ sys-apps/memtest86+
 sys-apps/module-init-tools
 sys-apps/v86d
 sys-auth/policykit-qt
+sys-boot/burg
 sys-boot/grub
+sys-boot/os-prober
 sys-devel/gcc
 sys-devel/prelink
 sys-fs/dosfstools

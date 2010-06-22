@@ -1,5 +1,5 @@
 #Grub with SuSE patches
->sys-boot/grub-0.98-r8
+#>sys-boot/grub-0.98-r8
 
 >=dev-util/xdelta-3.0
 media-video/xbmc
