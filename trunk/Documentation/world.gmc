@@ -129,7 +129,6 @@ media-fonts/libertine-ttf
 media-fonts/ttf-bitstream-vera
 media-fonts/unifont
 media-fonts/vista-fonts
-media-gfx/gfxboot
 media-gfx/picasa
 media-gfx/splashutils
 media-libs/win32codecs
@@ -146,7 +145,6 @@ media-video/mplayer
 media-video/nvclock
 media-video/nvidia-settings
 media-video/smplayer
-media-video/vlc
 net-analyzer/nmap
 net-analyzer/pktstat
 net-analyzer/tcptraceroute
@@ -192,9 +190,9 @@ sys-apps/baselayout
 sys-apps/hal
 sys-apps/hdparm
 sys-apps/iproute2
-sys-apps/memtest86+
 sys-apps/module-init-tools
 sys-apps/v86d
+sys-apps/vbetool
 sys-auth/policykit-qt
 sys-boot/burg
 sys-boot/grub

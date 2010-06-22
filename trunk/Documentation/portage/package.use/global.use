@@ -99,7 +99,7 @@ sys-apps/dbus gtk python -mono -qt3 qt4 X
 sys-apps/file -python
 sys-apps/pciutils -zlib
 sys-auth/pambase consolekit
-sys-boot/grub -multislot
+sys-boot/grub -multislot 
 sys-devel/distcc gtk
 sys-devel/gcc -gtk
 sys-fs/e2fsprogs -diet -static
