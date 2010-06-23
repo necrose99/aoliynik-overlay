@@ -32,7 +32,7 @@ dev-python/gnome-python-extras xulrunner
 dev-python/pyrex python
 dev-util/eclipse-sdk java6
 dev-util/qt-creator subversion git debugger designer cmake
-dev-util/subversion -apache2 berkdb python -nowebdav -java -dso -kde
+dev-vcs/subversion -apache2 berkdb python -nowebdav -java -dso -kde
 gnome-base/gvfs -bluetooth -gphoto2
 gnome-extra/evolution-data-server ldap kerberos
 kde-base/dolphin -thumbnail
