@@ -138,7 +138,7 @@ media-sound/clementine
 media-sound/mac
 media-sound/mp3splt
 media-sound/mpd
-media-sound/quimup
+media-sound/qmpdclient
 media-sound/twolame
 media-tv/tvtime
 media-tv/xbmc
@@ -146,6 +146,7 @@ media-video/miro
 media-video/mplayer
 media-video/nvclock
 media-video/smplayer
+media-video/vlc
 net-analyzer/nmap
 net-analyzer/pktstat
 net-analyzer/tcptraceroute
