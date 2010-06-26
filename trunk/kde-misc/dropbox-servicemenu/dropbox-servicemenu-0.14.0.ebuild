@@ -27,7 +27,13 @@ RDEPEND="
 S="${WORKDIR}/${MY_P}-${PV}"
 
 src_install() {
-	exeinto /usr/bin
+	sed 's/#SCRIPTS_PATH/SCRIPTS_PATH/g' -i dropbox-scripts/dropbox_menu.sh
+	sed 's|=dropbox_menu.sh|=/usr/share/kde4/services/ServiceMenus/dropbox-scripts/dropbox_menu.sh|g' -i dropbox_all.desktop
+	sed 's|=dropbox_menu.sh|=/usr/share/kde4/services/ServiceMenus/dropbox-scripts/dropbox_menu.sh|g' -i dropbox_files.desktop
+	sed 's|=dropbox_menu.sh|=/usr/share/kde4/services/ServiceMenus/dropbox-scripts/dropbox_menu.sh|g' -i dropbox_directories.desktop
+
+	mkdir -p ${D}/usr/share/kde4/services/ServiceMenus/dropbox-scripts
+	exeinto  /usr/share/kde4/services/ServiceMenus/dropbox-scripts
 	doexe dropbox-scripts/* || die
 
 	insinto /usr/share/kde4/services/ServiceMenus

@@ -1,8 +1,6 @@
 >=dev-util/xdelta-3.0
-media-video/xbmc
 >=dev-lang/python-3.0
 
-~net-im/qutim-0.2
 =media-tv/xbmc-9.11-r4
 
 
