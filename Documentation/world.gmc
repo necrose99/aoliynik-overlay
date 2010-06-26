@@ -137,6 +137,8 @@ media-sound/alsa-utils
 media-sound/clementine
 media-sound/mac
 media-sound/mp3splt
+media-sound/mpd
+media-sound/quimup
 media-sound/twolame
 media-tv/tvtime
 media-tv/xbmc

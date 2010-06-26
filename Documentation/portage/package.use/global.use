@@ -6,7 +6,7 @@ app-crypt/gnupg bzip2 ecc
 app-dicts/goldendict -addons
 app-emulation/virtualbox-ose additions
 
-app-emulation/wine threads gphoto2 glu openssl fontconfig -openal
+app-emulation/wine cups threads gphoto2 glu openssl fontconfig -openal
 app-misc/mc -X nls -dnotify attrs
 
 app-misc/strigi inotify -fam
@@ -150,6 +150,5 @@ app-text/scrollkeeper -nls
 
 dev-lang/nasm -doc
 x11-libs/libX11 -doc
-dev-vcs/qct subversion mercurial
-
+media-sound/mpd ao cue lame libmms 
 
