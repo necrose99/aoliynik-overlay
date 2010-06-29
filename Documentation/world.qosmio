@@ -1,3 +1,5 @@
+app-admin/389-admin-console
+app-admin/389-ds-console
 app-admin/logrotate
 app-admin/makepasswd
 app-admin/rsyslog
@@ -58,18 +60,20 @@ dev-perl/XML-RegExp
 dev-perl/perl-tk
 dev-python/configobj
 dev-python/pexpect
+dev-tcltk/expect
 dev-util/ccache
+dev-util/debootstrap
 dev-util/ftjam
 dev-util/lafilefixer
 dev-util/meld
 dev-util/perforce-cli
 dev-util/strace
-dev-util/subversion
 dev-util/xdelta
 dev-vcs/bzr
 dev-vcs/cvs
 dev-vcs/git
 dev-vcs/mercurial
+dev-vcs/subversion
 games-board/pokerth
 kde-base/ark
 kde-base/dolphin
@@ -128,6 +132,7 @@ media-libs/freetype
 media-libs/win32codecs
 media-sound/alsa-tools
 media-sound/alsa-utils
+media-sound/clementine
 media-sound/mac
 media-sound/mp3splt
 media-sound/qmpdclient
@@ -157,6 +162,7 @@ net-fs/nfs-utils
 net-fs/samba
 net-ftp/filezilla
 net-ftp/lftp
+net-im/qutim
 net-im/skype
 net-misc/ajaxterm
 net-misc/aria2
@@ -202,7 +208,6 @@ sys-apps/most
 sys-apps/unscd
 sys-apps/v86d
 sys-boot/burg
-sys-boot/grub
 sys-devel/gcc
 sys-devel/prelink
 sys-fs/dosfstools
@@ -239,6 +244,7 @@ x11-terms/clusterssh
 x11-themes/gtk-engines
 x11-themes/oxygen-molecule
 x11-themes/qtcurve-qt4
+x11-themes/qutim-artwork
 x11-themes/redhat-cursors
 x11-themes/skulpture
 x11-themes/smplayer-themes
