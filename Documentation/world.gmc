@@ -199,6 +199,7 @@ sys-apps/vbetool
 sys-auth/policykit-qt
 sys-boot/burg
 sys-boot/os-prober
+sys-boot/plymouth
 sys-devel/gcc
 sys-devel/prelink
 sys-fs/dosfstools
