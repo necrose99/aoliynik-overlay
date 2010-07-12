@@ -18,7 +18,6 @@ IUSE="pango gdm"
 DEPEND=">=media-libs/libpng-1.2.16
 	pango? ( >=x11-libs/pango-1.21 )
 	>=x11-libs/gtk+-2.12.0
-	sys-fs/multipath-tools
 	x11-libs/libdrm"
 RDEPEND="${DEPEND}
 sys-kernel/dracut"
