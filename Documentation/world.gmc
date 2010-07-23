@@ -174,7 +174,6 @@ net-misc/vpnc
 net-misc/whois
 net-misc/youtube-dl
 net-p2p/qbittorrent
-net-wireless/aircrack-ng
 net-wireless/ipw2200-firmware
 net-wireless/kbluetooth
 net-wireless/rt73-firmware
@@ -183,9 +182,7 @@ perl-core/Math-BigInt-FastCalc
 perl-core/Time-Piece
 perl-gcpan/CDB-File
 perl-gcpan/Data-Serializer
-perl-gcpan/File-Touch
 perl-gcpan/Text-CSV-XS
-perl-gcpan/Text-xSV
 perl-gcpan/Time-Format
 perl-gcpan/WWW-Mechanize-Cached
 sci-geosciences/googleearth
@@ -198,6 +195,7 @@ sys-apps/v86d
 sys-apps/vbetool
 sys-auth/policykit-qt
 sys-boot/burg
+sys-boot/burg-theme
 sys-boot/os-prober
 sys-boot/plymouth
 sys-devel/gcc
@@ -211,6 +209,7 @@ sys-fs/ntfsprogs
 sys-fs/reiserfsprogs
 sys-fs/udev
 sys-fs/udftools
+sys-kernel/dracut
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-kernel/linux-headers
