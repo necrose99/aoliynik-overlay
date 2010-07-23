@@ -1,3 +1,4 @@
 >=sys-apps/portage-2.2_pre
 ~kde-misc/basket-9999
 =www-client/chromium-6.0.437.3
+=kde-misc/knetworkmanager-4.4.0_p20100331
