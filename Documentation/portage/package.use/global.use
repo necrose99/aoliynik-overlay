@@ -106,7 +106,7 @@ sys-fs/e2fsprogs -diet -static
 sys-kernel/gentoo-sources -symlink
 sys-libs/glibc -erandom nls nptl nptlonly pic -userlocales
 sys-libs/pam pam_chroot pam_console pam_timestamp
-www-client/mozilla-firefox java moznopango
+www-client/firefox java moznopango
 www-client/opera -qt3
 www-servers/pound dynscaler
 x11-base/xorg-server nptl

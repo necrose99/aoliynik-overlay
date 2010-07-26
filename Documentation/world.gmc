@@ -191,6 +191,7 @@ sys-apps/hal
 sys-apps/hdparm
 sys-apps/iproute2
 sys-apps/module-init-tools
+sys-apps/smartmontools
 sys-apps/v86d
 sys-apps/vbetool
 sys-auth/policykit-qt
@@ -217,7 +218,7 @@ sys-power/cpufrequtils
 sys-process/cronie
 sys-process/lsof
 www-apache/mod_fastcgi
-www-client/mozilla-firefox
+www-client/firefox
 www-plugins/adobe-flash
 www-plugins/gecko-mediaplayer
 www-servers/apache
@@ -236,6 +237,7 @@ x11-themes/gtk-engines-murrine
 x11-themes/gtk-engines-qtcurve
 x11-themes/gtk-theme-switch
 x11-themes/oxygen-molecule
+x11-themes/oxygen-transparent
 x11-themes/qtcurve-qt4
 x11-themes/qutim-artwork
 x11-themes/redhat-cursors
