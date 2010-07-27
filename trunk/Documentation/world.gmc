@@ -144,7 +144,7 @@ media-tv/tvtime
 media-tv/xbmc
 media-video/miro
 media-video/mplayer
-media-video/nvclock
+media-video/nvidia-settings
 media-video/smplayer
 media-video/vlc
 net-analyzer/nmap
@@ -219,6 +219,7 @@ sys-process/cronie
 sys-process/lsof
 www-apache/mod_fastcgi
 www-client/firefox
+www-client/opera
 www-plugins/adobe-flash
 www-plugins/gecko-mediaplayer
 www-servers/apache
