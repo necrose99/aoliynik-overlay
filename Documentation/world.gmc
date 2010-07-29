@@ -161,6 +161,7 @@ net-ftp/ftp
 net-im/qutim
 net-im/skype
 net-misc/aria2
+net-misc/cnetworkmanager
 net-misc/dhcp
 net-misc/memcached
 net-misc/networkmanager-pptp
@@ -174,8 +175,9 @@ net-misc/vpnc
 net-misc/whois
 net-misc/youtube-dl
 net-p2p/qbittorrent
+net-wireless/aircrack-ng
+net-wireless/bluedevil
 net-wireless/ipw2200-firmware
-net-wireless/kbluetooth
 net-wireless/rt73-firmware
 net-wireless/wireless-tools
 perl-core/Math-BigInt-FastCalc
@@ -190,6 +192,7 @@ sys-apps/baselayout
 sys-apps/hal
 sys-apps/hdparm
 sys-apps/iproute2
+sys-apps/lshw
 sys-apps/module-init-tools
 sys-apps/smartmontools
 sys-apps/v86d
@@ -218,6 +221,7 @@ sys-power/cpufrequtils
 sys-process/cronie
 sys-process/lsof
 www-apache/mod_fastcgi
+www-client/chromium-bin
 www-client/firefox
 www-client/opera
 www-plugins/adobe-flash
