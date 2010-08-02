@@ -1,9 +1,11 @@
+app-admin/hddtemp
 app-admin/logrotate
 app-admin/rsyslog
 app-arch/p7zip
 app-arch/rar
 app-arch/rpm
 app-arch/unrar
+app-backup/dropbox
 app-backup/dropbox-bin
 app-cdr/k3b
 app-crypt/truecrypt
@@ -106,6 +108,7 @@ kde-base/kwallet
 kde-base/kwin
 kde-base/plasma-runtime
 kde-base/systemsettings
+kde-misc/colibri
 kde-misc/dropbox-servicemenu
 kde-misc/gx-mail-notify
 kde-misc/kcm_gtk
@@ -144,6 +147,7 @@ media-tv/tvtime
 media-tv/xbmc
 media-video/miro
 media-video/mplayer
+media-video/nvclock
 media-video/nvidia-settings
 media-video/smplayer
 media-video/vlc
@@ -192,6 +196,7 @@ sys-apps/baselayout
 sys-apps/hal
 sys-apps/hdparm
 sys-apps/iproute2
+sys-apps/lm_sensors
 sys-apps/lshw
 sys-apps/module-init-tools
 sys-apps/smartmontools
