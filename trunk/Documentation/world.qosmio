@@ -1,5 +1,4 @@
 app-admin/389-admin-console
-app-admin/389-ds-console
 app-admin/logrotate
 app-admin/makepasswd
 app-admin/rsyslog
@@ -13,6 +12,7 @@ app-crypt/truecrypt
 app-dicts/goldendict
 app-editors/joe
 app-editors/juffed
+app-emulation/euca2ools
 app-emulation/virtualbox-bin
 app-laptop/fnfx
 app-misc/mc
@@ -47,10 +47,13 @@ dev-perl/DBD-mysql
 dev-perl/DBI
 dev-perl/Date-Calc
 dev-perl/Digest-SHA1
+dev-perl/Email-Address
 dev-perl/FCGI
 dev-perl/GD
 dev-perl/Geo-IP
 dev-perl/HTML-Template
+dev-perl/IO-String
+dev-perl/Net-Domain-TLD
 dev-perl/Net-IP
 dev-perl/Term-ProgressBar
 dev-perl/Text-Iconv
@@ -60,6 +63,7 @@ dev-perl/XML-RegExp
 dev-perl/perl-tk
 dev-python/configobj
 dev-python/pexpect
+dev-ruby/rubygems
 dev-tcltk/expect
 dev-util/ccache
 dev-util/debootstrap
@@ -105,6 +109,7 @@ kde-base/ksysguard
 kde-base/nsplugins
 kde-base/plasma-runtime
 kde-misc/basket
+kde-misc/colibri
 kde-misc/dropbox-servicemenu
 kde-misc/kcm_gtk
 kde-misc/knetworkmanager
@@ -139,10 +144,10 @@ media-sound/qmpdclient
 media-sound/twolame
 media-tv/ivtv-firmware
 media-tv/tvtime
-media-tv/xbmc
 media-video/miro
 media-video/mplayer
 media-video/smplayer
+media-video/vlc
 net-analyzer/nmap
 net-analyzer/pktstat
 net-analyzer/tcpdump
@@ -182,6 +187,7 @@ net-nds/jxplorer
 net-p2p/qbittorrent
 net-print/cups
 net-wireless/aircrack-ng
+net-wireless/bluedevil
 net-wireless/ipw2200-firmware
 net-wireless/kismet
 net-wireless/rt73-firmware
@@ -190,7 +196,6 @@ perl-core/Math-BigInt-FastCalc
 perl-core/Time-Piece
 perl-gcpan/CDB-File
 perl-gcpan/Data-Serializer
-perl-gcpan/File-Rotate-Backup
 perl-gcpan/Text-CSV-XS
 perl-gcpan/Time-Format
 perl-gcpan/WWW-Mechanize-Cached
@@ -202,12 +207,12 @@ sys-apps/hdparm
 sys-apps/iproute2
 sys-apps/less
 sys-apps/lsb-release
-sys-apps/memtest86+
 sys-apps/module-init-tools
 sys-apps/most
 sys-apps/unscd
 sys-apps/v86d
 sys-boot/burg
+sys-boot/plymouth
 sys-devel/gcc
 sys-devel/prelink
 sys-fs/dosfstools
@@ -217,6 +222,7 @@ sys-fs/mhddfs
 sys-fs/ntfs3g
 sys-fs/ntfsprogs
 sys-fs/reiserfsprogs
+sys-kernel/dracut
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-power/acpi
@@ -228,8 +234,9 @@ virtual/pcmcia
 virtual/tftp
 www-apache/mod_fastcgi
 www-client/chromium-bin
-www-client/mozilla-firefox
+www-client/firefox
 www-plugins/adobe-flash
+www-plugins/gecko-mediaplayer
 www-servers/apache
 x11-apps/setxkbmap
 x11-apps/xdm
@@ -243,6 +250,7 @@ x11-misc/xbindkeys
 x11-terms/clusterssh
 x11-themes/gtk-engines
 x11-themes/oxygen-molecule
+x11-themes/oxygen-transparent
 x11-themes/qtcurve-qt4
 x11-themes/qutim-artwork
 x11-themes/redhat-cursors

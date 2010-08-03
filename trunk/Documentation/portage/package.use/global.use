@@ -89,7 +89,6 @@ net-misc/openssh sftplogging -ldap
 net-misc/openvpn iproute2
 net-misc/tsclient vnc
 net-misc/vnc -server
-net-p2p/deluge gtk
 net-wireless/bluez old-daemons
 net-wireless/bluez-utils -gtk udev old-daemons hal test-programs
 net-wireless/btsco ao skype
@@ -151,7 +150,6 @@ app-text/scrollkeeper -nls
 dev-lang/nasm -doc
 x11-libs/libX11 -doc
 media-sound/mpd ao cue lame libmms 
-dev-tcltk/expect -X
 sys-kernel/dracut plymouth dmraid mdraid lvm
 
 
