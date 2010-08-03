@@ -13,10 +13,15 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="btrfs crypt dmraid iscsi lvm multipath nbd nfs mdraid plymouth selinux uswsusp xen"
+
+COMMON_IUSE="btrfs debug lvm mdraid multipath selinux syslog uswsusp xen"
+NETWORK_IUSE="iscsi nbd nfs"
+DM_IUSE="crypt dmraid dmsquash-live"
+IUSE="${COMMON_IUSE} ${DM_IUSE} ${NETWORK_IUSE}"
 
 # common networking deps
-NETWORK_DEPS="sys-apps/iproute2 net-misc/dhcp net-misc/bridge-utils"
+NETWORK_DEPS="net-misc/bridge-utils >=net-misc/dhcp-4.0 sys-apps/iproute2"
+DM_DEPS="|| ( sys-fs/device-mapper >=sys-fs/lvm2-2.02.33 )"
 
 RDEPEND="
 	>=app-shells/bash-4.0
@@ -26,24 +31,69 @@ RDEPEND="
 	>=sys-apps/util-linux-2.16
 	>=sys-fs/udev-149
 	btrfs? ( sys-fs/btrfs-progs )
-	crypt? ( sys-fs/cryptsetup )
-	dmraid? ( sys-fs/dmraid sys-fs/multipath-tools )
+	crypt? ( sys-fs/cryptsetup ${DM_DEPS} )
+	debug? ( dev-util/strace )
+	dmraid? ( sys-fs/dmraid sys-fs/multipath-tools ${DM_DEPS} )
+	dmsquash-live? ( sys-apps/eject ${DM_DEPS} )
+	iscsi? ( sys-block/open-iscsi[utils] ${NETWORK_DEPS} )
 	lvm? ( >=sys-fs/lvm2-2.02.33 )
 	mdraid? ( sys-fs/mdadm )
-	nfs? ( net-fs/nfs-utils net-nds/rpcbind ${NETWORK_DEPS} )
-	iscsi? ( sys-block/open-iscsi[utils] ${NETWORK_DEPS} )
 	multipath? ( sys-fs/multipath-tools )
 	nbd? ( sys-block/nbd ${NETWORK_DEPS} )
-	plymouth? ( >=sys-boot/plymouth-0.8.3 )
+	nfs? ( net-fs/nfs-utils net-nds/rpcbind ${NETWORK_DEPS} )
 	selinux? ( sys-libs/libselinux sys-libs/libsepol )
+	syslog? ( || ( app-admin/syslog-ng app-admin/rsyslog ) )
 	uswsusp? ( sys-power/suspend )
 	xen? ( app-emulation/xen )
 	"
 DEPEND="${RDEPEND}"
 
+
+#
+# Helper functions
+#
+
+# Returns true if any of specified modules is enabled by USE flag and false
+# otherwise.
+# $1 = list of modules (which have corresponding USE flags of the same name)
+any_module() {
+	local m modules=" $@ "
+
+	for m in ${modules}; do
+		! use $m && modules=${modules/ $m / }
+	done
+
+	shopt -s extglob
+	modules=${modules%%+( )}
+	shopt -u extglob
+
+	[[ ${modules} ]]
+}
+
+# Removes module from modules.d.
+# $1 = module name
+# Module name can be specified without number prefix.
+rm_module() {
+	local m
+
+	for m in $@; do
+		if [[ $m =~ ^[0-9][0-9][^\ ]*$ ]]; then
+			rm -rf "${modules_dir}"/$m
+		else
+			rm -rf "${modules_dir}"/[0-9][0-9]$m
+		fi
+	done
+}
+
+
+#
+# ebuild functions
+#
+
 src_prepare() {
 	epatch "${FILESDIR}/${P}-dhcp6.patch"
 	epatch "${FILESDIR}/${P}-lc-all-c.patch"
+	epatch "${FILESDIR}/${P}-dm-udev-rules.patch"
 	epatch "${FILESDIR}/${P}-console_init-not-necessary.patch"
 }
 
@@ -52,30 +102,34 @@ src_compile() {
 }
 
 src_install() {
-	local modules_dir="${D}/usr/share/dracut/modules.d"
-
 	emake WITH_SWITCH_ROOT=0 \
 		prefix=/usr sysconfdir=/etc \
 		DESTDIR="${D}" install || die "emake install failed"
-	echo "${PF}" > "${modules_dir}"/10rpmversion/dracut-version
+
 	dodir /boot/dracut /var/lib/dracut/overlay
 	dodoc HACKING TODO AUTHORS NEWS README*
-	# disable modules not enabled by use flags
-	for module in btrfs crypt dmraid lvm mdraid multipath uswsusp xen ; do
-		! use ${module} && rm -rf ${modules_dir}/90${module}
+
+	#
+	# Modules
+	#
+	local module
+	modules_dir="${D}/usr/share/dracut/modules.d" 
+
+	echo "${PF}" > "${modules_dir}"/10rpmversion/dracut-version
+
+	# Disable modules not enabled by USE flags
+	for module in ${IUSE} ; do
+		! use ${module} && rm_module ${module}
 	done
-	# disable all network modules
-	for module in iscsi nbd nfs ; do
-		! use ${module} && rm -rf ${modules_dir}/95${module}
-	done
-	# if no networking at all, disable the rest
-	if ! use iscsi && ! use nbd && ! use nfs ; then
-		rm -rf ${modules_dir}/40network
-	fi
-	# disable modules which won't work for sure
-	rm -rf ${modules_dir}/01fips
-	rm -rf ${modules_dir}/10redhat-i18n
-	rm -rf ${modules_dir}/95fcoe
+
+	! any_module ${DM_IUSE} && rm_module 90dm
+	! any_module ${NETWORK_IUSE} && rm_module 45ifcfg 40network
+
+	# Disable S/390 modules which are not tested at all
+	rm_module 95dasd 95dasd_mod 95zfcp 95znet
+
+	# Disable modules which won't work for sure
+	rm_module 01fips 10redhat-i18n 95fcoe
 }
 
 pkg_postinst() {
