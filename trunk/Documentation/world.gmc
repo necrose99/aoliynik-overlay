@@ -230,7 +230,6 @@ www-client/chromium-bin
 www-client/firefox
 www-client/opera
 www-plugins/adobe-flash
-www-plugins/gecko-mediaplayer
 www-servers/apache
 www-servers/nginx
 x11-apps/setxkbmap
