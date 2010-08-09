@@ -7,6 +7,7 @@ app-arch/p7zip
 app-arch/rar
 app-arch/rpm
 app-arch/unrar
+app-backup/dropbox-bin
 app-cdr/k3b
 app-crypt/truecrypt
 app-dicts/goldendict
@@ -146,6 +147,7 @@ media-tv/ivtv-firmware
 media-tv/tvtime
 media-video/miro
 media-video/mplayer
+media-video/nvidia-settings
 media-video/smplayer
 media-video/vlc
 net-analyzer/nmap
@@ -236,7 +238,6 @@ www-apache/mod_fastcgi
 www-client/chromium-bin
 www-client/firefox
 www-plugins/adobe-flash
-www-plugins/gecko-mediaplayer
 www-servers/apache
 x11-apps/setxkbmap
 x11-apps/xdm
