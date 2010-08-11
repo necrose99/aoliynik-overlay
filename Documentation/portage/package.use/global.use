@@ -47,7 +47,7 @@ kde-base/krdc vnc rdp qca decibel
 kde-base/okular djvu
 kde-base/solid bluetooth
 mail-client/evolution ldap -nntp -hal -crypt
-mail-client/thunderbird -ldap moznopango java -crypt lightning
+mail-client/thunderbird ldap moznopango java -crypt lightning
 mail-filter/spamassassin berkdb qmail ssl
 media-gfx/gfxboot themes animate speech beep
 media-gfx/gimp -gtkhtml python -webkit
@@ -123,7 +123,7 @@ net-misc/networkmanager dhclient resolvconf
 
 sys-fs/udev extras
 app-crypt/truecrypt X
-dev-libs/soprano java -virtuoso -redland -raptor
+dev-libs/soprano java virtuoso redland raptor
 sys-fs/hal -crypt
 sci-astronomy/celestia -theora
 x11-libs/pango X
