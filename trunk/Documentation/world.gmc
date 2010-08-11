@@ -18,7 +18,6 @@ app-misc/screen
 app-office/openoffice-bin
 app-portage/deltup
 app-portage/eix
-app-portage/emerge-delta-webrsync
 app-portage/epm
 app-portage/g-cpan
 app-portage/genlop
@@ -103,6 +102,7 @@ kde-base/krdc
 kde-base/kscreensaver
 kde-base/ksmserver
 kde-base/ksnapshot
+kde-base/kstyles
 kde-base/ksysguard
 kde-base/kwallet
 kde-base/kwin
@@ -111,7 +111,6 @@ kde-base/plasma-runtime
 kde-base/systemsettings
 kde-misc/colibri
 kde-misc/dropbox-servicemenu
-kde-misc/gx-mail-notify
 kde-misc/kcm_gtk
 kde-misc/knetworkmanager
 kde-misc/kosd
@@ -152,8 +151,10 @@ media-video/nvclock
 media-video/nvidia-settings
 media-video/smplayer
 media-video/vlc
+net-analyzer/dsniff
 net-analyzer/nmap
 net-analyzer/pktstat
+net-analyzer/tcpdump
 net-analyzer/tcptraceroute
 net-analyzer/traceroute
 net-dns/bind
