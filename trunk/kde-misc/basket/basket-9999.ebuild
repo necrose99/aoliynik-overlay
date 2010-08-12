@@ -1,24 +1,29 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="2"
 
-inherit kde4-base git
+inherit git kde4-base
 
 DESCRIPTION="A DropDrawers clone. Multiple information organizer"
 HOMEPAGE="http://basket.kde.org/"
-EGIT_REPO_URI="git://github.com/kelvie/basket.git"
+EGIT_REPO_URI="git://gitorious.org/basket/basket.git"
 
 LICENSE="GPL-2"
 KEYWORDS=""
 SLOT="4"
-IUSE="debug"
+
+IUSE="debug crypt"
+
 
 src_unpack() {
 	git_src_unpack
 }
 
-RDEPEND="
-	!x11-misc/basket:0
-"
+src_configure() {
+	mycmakeargs=(
+		$(cmake-utils_use_enable crypt)
+	)
+	kde4-base_src_configure
+}

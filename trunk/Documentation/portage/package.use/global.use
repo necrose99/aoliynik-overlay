@@ -153,6 +153,8 @@ media-sound/mpd ao cue lame libmms
 sys-kernel/dracut plymouth dmraid mdraid lvm
 
 #sci-geosciences/googleearth -qt-bundled
+kde-misc/basket -crypt
+
 
 
 

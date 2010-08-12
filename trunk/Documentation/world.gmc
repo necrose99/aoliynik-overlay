@@ -109,6 +109,7 @@ kde-base/kwin
 kde-base/palapeli
 kde-base/plasma-runtime
 kde-base/systemsettings
+kde-misc/basket
 kde-misc/colibri
 kde-misc/dropbox-servicemenu
 kde-misc/kcm_gtk
