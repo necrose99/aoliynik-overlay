@@ -12,6 +12,8 @@ app-crypt/truecrypt
 app-dicts/goldendict
 app-editors/joe
 app-editors/juffed
+app-emulation/playonlinux
+app-emulation/q4wine
 app-emulation/virtualbox-ose
 app-misc/mc
 app-misc/screen
@@ -231,12 +233,12 @@ sys-process/lsof
 www-apache/mod_fastcgi
 www-client/chromium-bin
 www-client/firefox
-www-client/opera
 www-plugins/adobe-flash
 www-servers/apache
 www-servers/nginx
 x11-apps/setxkbmap
 x11-apps/xdm
+x11-apps/xhost
 x11-base/xorg-server
 x11-drivers/nvidia-drivers
 x11-drivers/xf86-input-evdev
