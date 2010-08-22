@@ -150,7 +150,7 @@ app-text/scrollkeeper -nls
 dev-lang/nasm -doc
 x11-libs/libX11 -doc
 media-sound/mpd ao cue lame libmms 
-sys-kernel/dracut plymouth dmraid mdraid lvm
+sys-kernel/dracut plymouth dmraid mdraid lvm gensplash
 
 #sci-geosciences/googleearth -qt-bundled
 kde-misc/basket -crypt

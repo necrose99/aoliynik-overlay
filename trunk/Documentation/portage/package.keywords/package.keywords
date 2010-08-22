@@ -4,7 +4,9 @@ x11-themes/skulpture **
 
 app-portage/portage **
 kde-misc/basket **
+kde-misc/knetworkmanager **
 app-cdr/k3b **
+
 sys-auth/policykit-qt **
 www-client/chromium **
 

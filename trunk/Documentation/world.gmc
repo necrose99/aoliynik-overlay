@@ -13,7 +13,6 @@ app-dicts/goldendict
 app-editors/joe
 app-editors/juffed
 app-emulation/playonlinux
-app-emulation/q4wine
 app-emulation/virtualbox-ose
 app-misc/mc
 app-misc/screen
