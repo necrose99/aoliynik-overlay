@@ -170,7 +170,6 @@ net-im/qutim
 net-im/skype
 net-misc/aria2
 net-misc/cnetworkmanager
-net-misc/dhcp
 net-misc/memcached
 net-misc/networkmanager-pptp
 net-misc/networkmanager-vpnc
