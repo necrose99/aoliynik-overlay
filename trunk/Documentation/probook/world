@@ -7,15 +7,12 @@ app-arch/p7zip
 app-arch/rar
 app-arch/rpm
 app-arch/unrar
-app-backup/dropbox-bin
 app-cdr/k3b
 app-crypt/truecrypt
 app-dicts/goldendict
 app-editors/joe
 app-editors/juffed
-app-emulation/euca2ools
 app-emulation/virtualbox-bin
-app-laptop/fnfx
 app-misc/mc
 app-misc/screen
 app-office/dia
@@ -71,7 +68,6 @@ dev-util/debootstrap
 dev-util/ftjam
 dev-util/lafilefixer
 dev-util/meld
-dev-util/perforce-cli
 dev-util/strace
 dev-util/xdelta
 dev-vcs/bzr
@@ -106,6 +102,7 @@ kde-base/kpat
 kde-base/krdc
 kde-base/kscreensaver
 kde-base/ksnapshot
+kde-base/kstyles
 kde-base/ksysguard
 kde-base/nsplugins
 kde-base/plasma-runtime
@@ -147,7 +144,6 @@ media-tv/ivtv-firmware
 media-tv/tvtime
 media-video/miro
 media-video/mplayer
-media-video/nvidia-settings
 media-video/smplayer
 media-video/vlc
 net-analyzer/nmap
@@ -173,7 +169,6 @@ net-im/qutim
 net-im/skype
 net-misc/ajaxterm
 net-misc/aria2
-net-misc/dhcp
 net-misc/memcached
 net-misc/netkit-telnetd
 net-misc/ntp
@@ -189,7 +184,10 @@ net-nds/jxplorer
 net-p2p/qbittorrent
 net-print/cups
 net-wireless/aircrack-ng
+net-wireless/b43-firmware
+net-wireless/bcm43xx-fwcutter
 net-wireless/bluedevil
+net-wireless/broadcom-sta
 net-wireless/ipw2200-firmware
 net-wireless/kismet
 net-wireless/rt73-firmware
@@ -214,6 +212,7 @@ sys-apps/most
 sys-apps/unscd
 sys-apps/v86d
 sys-boot/burg
+sys-boot/os-prober
 sys-boot/plymouth
 sys-devel/gcc
 sys-devel/prelink
@@ -242,16 +241,16 @@ www-servers/apache
 x11-apps/setxkbmap
 x11-apps/xdm
 x11-apps/xhost
-x11-drivers/nvidia-drivers
+x11-drivers/ati-drivers
 x11-drivers/xf86-input-evdev
 x11-drivers/xf86-input-void
+x11-drivers/xf86-video-radeonhd
 x11-drivers/xf86-video-v4l
 x11-misc/x11vnc
 x11-misc/xbindkeys
 x11-terms/clusterssh
 x11-themes/gtk-engines
 x11-themes/oxygen-molecule
-x11-themes/oxygen-transparent
 x11-themes/qtcurve-qt4
 x11-themes/qutim-artwork
 x11-themes/redhat-cursors
