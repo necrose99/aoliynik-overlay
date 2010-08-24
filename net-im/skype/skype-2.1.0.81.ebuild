@@ -7,15 +7,12 @@ inherit eutils qt4 pax-utils
 DESCRIPTION="A P2P-VoiceIP client."
 HOMEPAGE="http://www.skype.com/"
 
-SFILENAME=${PN}_static-${PV}.tar.bz2
-DFILENAME=${P}.tar.bz2
-SRC_URI="!qt-static? ( http://download.skype.com/linux/${DFILENAME} )
-	qt-static? ( http://download.skype.com/linux/${SFILENAME} )"
+SRC_URI="http://download.skype.com/linux/${P}.tar.bz2"
 
 LICENSE="skype-eula"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="qt-static"
+IUSE=""
 RESTRICT="mirror strip"
 
 DEPEND="amd64? ( >=app-emulation/emul-linux-x86-xlibs-1.2
@@ -26,33 +23,16 @@ DEPEND="amd64? ( >=app-emulation/emul-linux-x86-xlibs-1.2
 		>=media-libs/alsa-lib-1.0.11
 		x11-libs/libXScrnSaver
 		x11-libs/libXv
-		qt-static? ( media-libs/fontconfig
-				media-libs/freetype
-				x11-libs/libICE
-				x11-libs/libSM
-				x11-libs/libXcursor
-				x11-libs/libXext
-				x11-libs/libXfixes
-				x11-libs/libXi
-				x11-libs/libXinerama
-				x11-libs/libXrandr
-				x11-libs/libXrender
-				x11-libs/libX11 )
-		!qt-static? (  
-				|| ( ( x11-libs/qt-dbus:4
-					x11-libs/qt-webkit:4 )
-				    =x11-libs/qt-4.3*:4 )
-				|| ( x11-libs/qt-gui:4
-				=x11-libs/qt-4.3*:4 )
-				x11-libs/libX11
-				x11-libs/libXau
-				x11-libs/libXdmcp ) )"
+		x11-libs/qt-dbus
+		x11-libs/qt-webkit
+		x11-libs/qt-gui
+		x11-libs/libX11
+		x11-libs/libXau
+		x11-libs/libXdmcp )"
 
 RDEPEND="${DEPEND}"
 
 QA_EXECSTACK="opt/skype/skype"
-
-use qt-static && S="${WORKDIR}/${PN}_static-${PV}"
 
 src_unpack() {
 	unpack ${A}
@@ -70,19 +50,15 @@ src_install() {
 	insinto /opt/${PN}/sounds
 	doins sounds/*.wav
 
-	if ! use qt-static ; then
-		insinto /etc/dbus-1/system.d
-		newins skype.conf skype.conf
-	fi
+	insinto /etc/dbus-1/system.d
+	newins skype.conf skype.conf
 
 	insinto /opt/${PN}/lang
 	#
 	#There have been some issues were lang is not updated from the .ts files
 	#but if we have qt we can rebuild it
 	#
-	if ! use qt-static ; then
-		lrelease lang/*.ts
-	fi
+	lrelease lang/*.ts
 
 	doins lang/*.qm
 
