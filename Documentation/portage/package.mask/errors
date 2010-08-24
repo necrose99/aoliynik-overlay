@@ -2,6 +2,5 @@
 =net-libs/rb_libtorrent-0.15.1
 
 =sys-apps/util-linux-2.18
-
-<=sys-kernel/gentoo-sources-2.6.35-r1
+#<=sys-kernel/gentoo-sources-2.6.35-r1
 =sci-geosciences/googleearth-5.2.1.1329_beta
