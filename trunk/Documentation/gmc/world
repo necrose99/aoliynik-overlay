@@ -13,6 +13,7 @@ app-dicts/goldendict
 app-editors/joe
 app-editors/juffed
 app-emulation/playonlinux
+app-emulation/virtualbox-modules
 app-emulation/virtualbox-ose
 app-misc/mc
 app-misc/screen
@@ -89,7 +90,6 @@ kde-base/kdeplasma-addons
 kde-base/kdialog
 kde-base/kdm
 kde-base/kgamma
-kde-base/khelpcenter
 kde-base/khotkeys
 kde-base/klines
 kde-base/kmahjongg
@@ -107,7 +107,6 @@ kde-base/kstyles
 kde-base/ksysguard
 kde-base/kwallet
 kde-base/kwin
-kde-base/palapeli
 kde-base/plasma-runtime
 kde-base/systemsettings
 kde-misc/basket
@@ -115,11 +114,9 @@ kde-misc/colibri
 kde-misc/dropbox-servicemenu
 kde-misc/kcm_gtk
 kde-misc/knetworkmanager
-kde-misc/kosd
 kde-misc/kstyle-nitrogen
 kde-misc/plasma-daisy
 kde-misc/plasma-smoothtasks
-kde-misc/plasma-widget-message-indicator
 kde-misc/plasma-wifi
 kde-misc/yakuake
 mail-client/thunderbird
@@ -149,7 +146,6 @@ media-tv/tvtime
 media-tv/xbmc
 media-video/miro
 media-video/mplayer
-media-video/nvclock
 media-video/nvidia-settings
 media-video/smplayer
 media-video/vlc
@@ -169,8 +165,8 @@ net-ftp/ftp
 net-im/qutim
 net-im/skype
 net-misc/aria2
-net-misc/cnetworkmanager
 net-misc/memcached
+net-misc/netkit-telnetd
 net-misc/networkmanager-pptp
 net-misc/networkmanager-vpnc
 net-misc/ntp
@@ -220,17 +216,18 @@ sys-fs/ntfs3g
 sys-fs/ntfsprogs
 sys-fs/reiserfsprogs
 sys-fs/udev
-sys-fs/udftools
 sys-kernel/dracut
 sys-kernel/genkernel
 sys-kernel/gentoo-sources
 sys-kernel/linux-headers
 sys-power/cpufrequtils
+sys-power/nvclock
 sys-process/cronie
 sys-process/lsof
 www-apache/mod_fastcgi
 www-client/chromium-bin
 www-client/firefox
+www-client/opera
 www-plugins/adobe-flash
 www-servers/apache
 www-servers/nginx
@@ -247,6 +244,7 @@ x11-misc/xbindkeys
 x11-themes/gtk-engines
 x11-themes/gtk-engines-murrine
 x11-themes/gtk-engines-qtcurve
+x11-themes/gtk-oxygen-engine
 x11-themes/gtk-theme-switch
 x11-themes/oxygen-molecule
 x11-themes/oxygen-transparent
