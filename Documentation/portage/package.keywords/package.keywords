@@ -9,6 +9,8 @@ app-cdr/k3b **
 
 sys-auth/policykit-qt **
 www-client/chromium **
+www-client/google-chrome **
 
+x11-drivers/nvidia-drivers **
 net-wireless/bluedevil **
 net-libs/libbluedevil **

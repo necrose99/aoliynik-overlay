@@ -20,6 +20,7 @@ app-misc/screen
 app-office/openoffice-bin
 app-portage/deltup
 app-portage/eix
+app-portage/emerge-delta-webrsync
 app-portage/epm
 app-portage/g-cpan
 app-portage/genlop
@@ -143,7 +144,6 @@ media-sound/mac
 media-sound/mp3splt
 media-sound/twolame
 media-tv/tvtime
-media-tv/xbmc
 media-video/miro
 media-video/mplayer
 media-video/nvidia-settings
@@ -201,11 +201,9 @@ sys-apps/module-init-tools
 sys-apps/smartmontools
 sys-apps/v86d
 sys-apps/vbetool
-sys-auth/policykit-qt
 sys-boot/burg
 sys-boot/burg-theme
 sys-boot/os-prober
-sys-boot/plymouth
 sys-devel/gcc
 sys-devel/prelink
 sys-fs/dosfstools
@@ -225,8 +223,8 @@ sys-power/nvclock
 sys-process/cronie
 sys-process/lsof
 www-apache/mod_fastcgi
-www-client/chromium-bin
 www-client/firefox
+www-client/google-chrome
 www-client/opera
 www-plugins/adobe-flash
 www-servers/apache
@@ -239,6 +237,7 @@ x11-drivers/nvidia-drivers
 x11-drivers/xf86-input-evdev
 x11-drivers/xf86-input-void
 x11-drivers/xf86-video-v4l
+x11-misc/basqet
 x11-misc/x11vnc
 x11-misc/xbindkeys
 x11-themes/gtk-engines
