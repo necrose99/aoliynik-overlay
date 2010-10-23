@@ -156,6 +156,7 @@ sys-kernel/dracut plymouth dmraid mdraid lvm gensplash
 kde-misc/basket -crypt
 
 media-libs/jpeg static-libs
+media-libs/lcms static-libs
 
 
 

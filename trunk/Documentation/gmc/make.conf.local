@@ -1,5 +1,5 @@
 FEATURES="sandbox -buildpkg ccache -distcc distlocks -strict -digest parallel-fetch -splitdebug"
 
-USE="$USE sse sse2 sse3 ssse3 -lirc -cpudetection mmx mmxext cups -dri vdpau -pvr samba semantic-desktop"
+USE="$USE sse sse2 sse3 ssse3 -lirc -cpudetection mmx mmxext cups -dri vdpau -pvr samba -semantic-desktop"
 MAKEOPTS="-j2"
 INPUT_DEVICES="void evdev"
