@@ -114,7 +114,7 @@ kde-misc/dropbox-servicemenu
 kde-misc/kcm_gtk
 kde-misc/knetworkmanager
 kde-misc/kstyle-nitrogen
-kde-misc/plasma-daisy
+kde-misc/plasma-applet-daisy
 kde-misc/plasma-smoothtasks
 kde-misc/plasma-wifi
 kde-misc/yakuake
@@ -147,7 +147,6 @@ media-video/mplayer
 media-video/nvidia-settings
 media-video/smplayer
 media-video/vlc
-net-analyzer/dsniff
 net-analyzer/nmap
 net-analyzer/pktstat
 net-analyzer/tcpdump
@@ -235,7 +234,6 @@ x11-base/xorg-server
 x11-drivers/nvidia-drivers
 x11-drivers/xf86-input-evdev
 x11-drivers/xf86-input-void
-x11-drivers/xf86-video-v4l
 x11-misc/basqet
 x11-misc/x11vnc
 x11-misc/xbindkeys

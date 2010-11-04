@@ -4,25 +4,7 @@
 =net-libs/rb_libtorrent-0.15.4
 
 
-=sys-apps/util-linux-2.18
-
 =sci-geosciences/googleearth-5.2.1.1329_beta
 =sci-geosciences/googleearth-5.2.1.1547_beta
 =sci-geosciences/googleearth-5.2.1.1588
-
-=x11-libs/cairo-1.10.0-r1
-=x11-libs/cairo-1.10.0-r2
-=x11-libs/cairo-1.10.0-r3
-=x11-libs/cairo-1.10.0
-
-=x11-base/xorg-server-1.9.0
-=x11-base/xorg-drivers-1.9
-=x11-base/xorg-server-1.9.0-r2
-=x11-base/xorg-server-1.9.0.901
-=x11-base/xorg-server-1.9.0.902
-
-
-=net-analyzer/dsniff-2.4_beta1-r5
-=media-tv/xbmc-10.0_beta2
-=media-tv/xbmc-9.11-r5
 
