@@ -1,3 +1,4 @@
+>=x11-libs/cairo-1.10
 =net-libs/rb_libtorrent-0.15.0
 =net-libs/rb_libtorrent-0.15.1
 =net-libs/rb_libtorrent-0.15.3

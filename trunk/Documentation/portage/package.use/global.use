@@ -67,7 +67,7 @@ media-video/transcode mmx
 media-tv/miro -libnotify xine -gstreamer
 media-video/ffmpeg amr sdl -mmx -mmxext vpx rtmp
 media-video/handbrake gtk css
-media-video/mplayer ass png compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk dvdnav compiz xvmc mp2 amrnb amrwb srt enca teletext aac
+media-video/mplayer ass png compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk dvdnav compiz xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123
 sys-power/nvclock -qt3 -qt
 
 media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm cdda vcd cdio live rtsp shout upnp skins dts nsplugin qt4 xulrunner twolame run-as-root remoteosd -xosd -libnotify wma-fixed -ncurses -svg
@@ -110,7 +110,7 @@ www-client/opera -qt3
 www-servers/pound dynscaler
 x11-base/xorg-server nptl -hal
 x11-base/xorg-x11 3dnow bitmap-fonts cjk -dlloader mmx opengl pam truetype-fonts xv -font-server		
-x11-libs/cairo cleartype
+x11-libs/cairo cleartype -glitz
 x11-libs/libX11 xcb
 x11-libs/libXft cleartype
 x11-libs/pixman -sse2
@@ -158,7 +158,9 @@ kde-misc/basket -crypt
 media-libs/jpeg static-libs
 media-libs/lcms static-libs
 net-misc/remmina-plugins vnc rdesktop ssh 
-
+sys-apps/portage python3
+media-libs/libpng apng
+media-libs/libass enca
 
 
 
