@@ -122,7 +122,7 @@ dev-vcs/git -cgi
 net-misc/networkmanager dhcpcd resolvconf -dhclient
 
 sys-fs/udev extras
-app-crypt/truecrypt X
+app-crypt/truecrypt -X
 dev-libs/soprano java virtuoso redland raptor
 sys-fs/hal -crypt
 sci-astronomy/celestia -theora
@@ -152,7 +152,7 @@ x11-libs/libX11 -doc
 media-sound/mpd ao cue lame libmms 
 sys-kernel/dracut plymouth dmraid mdraid lvm gensplash
 
-#sci-geosciences/googleearth -qt-bundled
+sci-geosciences/googleearth qt-bundled
 kde-misc/basket -crypt
 
 media-libs/jpeg static-libs
@@ -161,6 +161,8 @@ net-misc/remmina-plugins vnc rdesktop ssh
 sys-apps/portage python3
 media-libs/libpng apng
 media-libs/libass enca
+net-print/cups -php
+media-libs/gd fontconfig
 
 
 
