@@ -3,9 +3,9 @@
 # $Header: $
 
 EAPI="2"
-PYTHON_DEPEND="2:2.6"
+PYTHON_DEPEND="2:2.5"
 
-inherit fdo-mime gnome2-utils python distutils
+inherit eutils fdo-mime gnome2-utils python distutils
 
 DESCRIPTION="Open source video player and podcast client"
 HOMEPAGE="http://www.getmiro.com/"
@@ -14,49 +14,42 @@ SRC_URI="http://ftp.osuosl.org/pub/pculture.org/${PN}/src/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="libnotify faac faad +ffmpeg mp3 musepack theora vorbis x264 xvid"
+IUSE="libnotify aac musepack xvid"
 
 CDEPEND="
 	dev-libs/glib:2
 	dev-libs/boost[python]
 	>=dev-python/pyrex-0.9.6.4
 	dev-python/pygtk:2
-	dev-python/pygobject:2
-	>=net-libs/webkit-gtk-1.1.15"
+	dev-python/pygobject:2"
 
 RDEPEND="${CDEPEND}
 	libnotify? ( dev-python/notify-python )
 	|| ( dev-lang/python[sqlite] dev-python/pysqlite:2 )
 	dev-python/dbus-python
 	dev-python/pycairo
-	>=dev-python/pywebkitgtk-1.1.5
-	dev-python/pycurl 
 	dev-python/gconf-python
 	dev-python/gst-python:0.10
+	>=dev-python/pywebkitgtk-1.1.5
+	dev-python/pycurl
+	>=net-libs/rb_libtorrent-0.14.1[python]
 
-	=net-libs/rb_libtorrent-0.14*[python]
-
-	media-plugins/gst-plugins-meta:0.10[theora?,vorbis?]
-	=media-plugins/gst-plugins-pango-0.10*
-	faad? ( =media-plugins/gst-plugins-faad-0.10* )
-	mp3? ( =media-plugins/gst-plugins-mad-0.10* )
-	musepack? ( =media-plugins/gst-plugins-musepack-0.10* )
-	x264? ( =media-plugins/gst-plugins-x264-0.10* )
-	xvid? ( =media-plugins/gst-plugins-xvid-0.10* )
-	
-	ffmpeg? ( media-video/ffmpeg[faac?,faad?,mp3?,theora?,vorbis?,x264?,xvid?] )
-	theora? ( media-video/ffmpeg2theora )"
+	media-plugins/gst-plugins-meta:0.10
+	media-plugins/gst-plugins-pango:0.10
+	aac? ( media-plugins/gst-plugins-faad:0.10 )
+	musepack? ( media-plugins/gst-plugins-musepack:0.10 )
+	xvid? ( media-plugins/gst-plugins-xvid:0.10 )"
 
 DEPEND="${CDEPEND}"
 
 S="${WORKDIR}/${P}/linux"
 
-src_prepare() {
-	# Fix the codec used to convert to ogg audio
-	sed -i -e s/vorbis/libvorbis/ ../resources/conversions/others.conv
+src_compile() {
+	${S}/run.sh
 }
-
 src_install() {
+	cd ${S}	
+	
 	# doing the mv now otherwise, distutils_src_install will install it
 	mv README README.gtk || die "mv failed"
 
