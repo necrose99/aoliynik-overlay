@@ -9,7 +9,7 @@ app-emulation/virtualbox-ose additions
 app-emulation/wine cups threads gphoto2 glu openssl fontconfig -openal
 app-misc/mc -X nls -dnotify attrs
 
-app-misc/strigi inotify -fam
+app-misc/strigi inotify -fam -exif
 app-mobilephone/kmobiletools obex
 app-office/mozilla-sunbird moznopango
 app-office/openoffice-bin java kde
@@ -54,7 +54,7 @@ media-gfx/gimp -gtkhtml python -webkit
 media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf xml2
 media-gfx/splashutils fbcondecor
 media-libs/freetype newspr -bindist filter_light
-media-libs/libsdl -nojoystick
+media-libs/libsdl joystick
 media-libs/mlt sdl frei0r melt
 media-libs/pdflib perl python -tcltk
 media-libs/xine-lib modplug
@@ -164,5 +164,6 @@ media-libs/libass enca
 net-print/cups -php
 media-libs/gd fontconfig
 
+kde-base/kdeplasma-addons -exif
 
 
