@@ -3,7 +3,8 @@ app-admin/sudo -skey
 app-arch/p7zip rar -kde -wxwindows
 app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
-app-dicts/goldendict -addons
+# move app-dicts/goldendict app-text/goldendict
+app-text/goldendict -addons
 app-emulation/virtualbox-ose additions
 
 app-emulation/wine cups threads gphoto2 glu openssl fontconfig -openal
@@ -166,4 +167,5 @@ media-libs/gd fontconfig
 
 kde-base/kdeplasma-addons -exif
 
+net-p2p/ktorrent -kross -search -mediaplayer -downloadorder -magnetgenerator
 
