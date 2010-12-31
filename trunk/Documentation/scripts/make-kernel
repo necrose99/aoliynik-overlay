@@ -1,0 +1,20 @@
+#!/bin/sh
+
+. /etc/conf.d/splash
+
+OPTIONS="--initramfs-overlay=/usr/share/v86d --splash=${SPLASH_THEME} --splash-res=${SPLASH_RES} --menuconfig"
+
+kernel=`eselect kernel show|grep gentoo|awk -F/ '{print $4}'`
+kernel=${kernel#linux-}
+echo "Kernel version: $kernel"
+
+genkernel $OPTIONS all
+#emerge @module-rebuild
+module-rebuild -X rebuild
+
+echo "Generating initramfs with dracut"
+dracut --force "/boot/initramfs-genkernel-x86-$kernel" $kernel
+
+update-burg
+
+#Add to kernel options: video=uvesafb:1600x1200-32@60,mtrr:3,ywrap

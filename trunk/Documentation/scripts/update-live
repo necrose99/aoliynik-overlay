@@ -1,0 +1,3 @@
+#!/bin/sh
+
+epm -Gqa|grep 9^C9|awk '{print "="$1}'|xargs emerge -1
