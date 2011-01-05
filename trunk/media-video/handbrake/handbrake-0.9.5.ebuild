@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,27 +22,31 @@ IUSE="css doc gtk"
 RDEPEND="sys-libs/zlib
 	css? ( media-libs/libdvdcss )
 	gtk? (	>=x11-libs/gtk+-2.8
+			dev-libs/glib
 			dev-libs/dbus-glib
-			sys-apps/hal
-			net-libs/webkit-gtk
 			x11-libs/libnotify
 			media-libs/gstreamer
 			media-libs/gst-plugins-base
+			>=sys-fs/udev-147[extras]
 	)"
-DEPEND="dev-lang/yasm
-	dev-lang/python
-	|| ( net-misc/wget net-misc/curl ) 
-	${RDEPEND}"
+DEPEND="=sys-devel/automake-1.10*
+	=sys-devel/automake-1.4*
+	=sys-devel/automake-1.9*
+	dev-lang/yasm
+	>=dev-lang/python-2.4.6
+	|| ( >=net-misc/wget-1.11.4 >=net-misc/curl-7.19.4 )
+	$RDEPEND"
 
 src_configure() {
-	# Python configure script doesn't accept all econf flags
-	./configure --force --prefix=/usr \
-		$(use_enable gtk) \
-		|| die "configure failed"
+	local myconf=""
+
+	! use gtk && myconf="${myconf} --disable-gtk"
+
+	./configure --force --prefix=/usr --disable-gtk-update-checks ${myconf} || die "configure failed"
 }
 
 src_compile() {
-	emake -C build || die "failed compiling ${PN}"
+	WANT_AUTOMAKE=1.9 emake -C build || die "failed compiling ${PN}"
 }
 
 src_install() {
@@ -50,8 +54,8 @@ src_install() {
 
 	if use doc; then
 		emake -C build doc
-		dodoc AUTHORS CREDITS NEWS THANKS \
-			build/doc/articles/txt/* || die "docs failed"
+			dodoc AUTHORS CREDITS NEWS THANKS \
+				build/doc/articles/txt/* || die "docs failed"
 	fi
 }
 
@@ -66,3 +70,4 @@ pkg_postinst() {
 pkg_postrm() {
 	gnome2_icon_cache_update
 }
+
