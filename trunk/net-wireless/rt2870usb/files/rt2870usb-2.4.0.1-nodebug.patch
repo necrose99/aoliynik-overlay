@@ -1,0 +1,12 @@
+diff -Naur 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/os/linux/config.mk 2010_0709_RT2870_Linux_STA_v2.4.0.1/os/linux/config.mk
+--- 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/os/linux/config.mk	2010-10-31 01:15:56.818555719 +0700
++++ 2010_0709_RT2870_Linux_STA_v2.4.0.1/os/linux/config.mk	2010-10-31 01:16:52.659305583 +0700
+@@ -86,7 +86,7 @@
+ # config for STA mode
+ 
+ ifeq ($(RT28xx_MODE),STA)
+-WFLAGS += -DCONFIG_STA_SUPPORT -DDBG
++WFLAGS += -DCONFIG_STA_SUPPORT
+ 
+ ifeq ($(HAS_XLINK),y)
+ WFLAGS += -DXLINK_SUPPORT
