@@ -17,3 +17,6 @@
 
 ~www-client/chromium-9999
 ~sys-auth/policykit-qt-9999
+~media-video/handbrake-9999
+~net-libs/webkit-gtk-9999
+

@@ -168,4 +168,7 @@ media-libs/gd fontconfig
 kde-base/kdeplasma-addons -exif
 
 net-p2p/ktorrent -kross -search -mediaplayer -downloadorder -magnetgenerator
+dev-libs/boost program_options thread
+app-office/libreoffice -python wiki -mysql java -nsplugin
+dev-java/lucene analyzers
 
