@@ -1,0 +1,58 @@
+diff -Naur 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/common/rtusb_dev_id.c 2010_0709_RT2870_Linux_STA_v2.4.0.1/common/rtusb_dev_id.c
+--- 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/common/rtusb_dev_id.c	2010-10-31 01:15:56.815555689 +0700
++++ 2010_0709_RT2870_Linux_STA_v2.4.0.1/common/rtusb_dev_id.c	2010-10-31 01:31:32.812555505 +0700
+@@ -59,6 +59,7 @@
+ 	{USB_DEVICE(0x0DF6,0x002D)}, /* Sitecom */
+ 	{USB_DEVICE(0x14B2,0x3C06)}, /* Conceptronic */
+ 	{USB_DEVICE(0x14B2,0x3C28)}, /* Conceptronic */
++	{USB_DEVICE(0x2019,0xAB25)}, /* PLANEX 150N Wireless LAN USB Adapter */
+ 	{USB_DEVICE(0x2019,0xED06)}, /* Planex Communications, Inc. */
+ 	{USB_DEVICE(0x07D1,0x3C09)}, /* D-Link */
+ 	{USB_DEVICE(0x07D1,0x3C11)}, /* D-Link */
+@@ -101,12 +102,13 @@
+ 	{USB_DEVICE(0x7392,0x7717)},
+ 	{USB_DEVICE(0x1737,0x0070)}, /* Linksys WUSB100 */
+ 	{USB_DEVICE(0x1737,0x0071)}, /* Linksys WUSB600N */
++	{USB_DEVICE(0x1737,0x0077)}, /* Linksys WUSB54GC */
+ 	{USB_DEVICE(0x0411,0x00e8)}, /* Buffalo WLI-UC-G300N*/
+ 	{USB_DEVICE(0x050d,0x815c)}, /* Belkin F5D8053 */
+ 	{USB_DEVICE(0x100D,0x9031)}, /* Motorola 2770 */
+ 	{USB_DEVICE(0x0DB0,0x6899)},
+ #endif // RT2870 //
+-	{ }/* Terminating entry */
++	{NULL}/* Terminating entry */
+ };
+ 
+ INT const rtusb_usb_id_len = sizeof(rtusb_dev_id) / sizeof(USB_DEVICE_ID);
+diff -Naur 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/Makefile 2010_0709_RT2870_Linux_STA_v2.4.0.1/Makefile
+--- 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/Makefile	2010-10-31 01:15:56.810555798 +0700
++++ 2010_0709_RT2870_Linux_STA_v2.4.0.1/Makefile	2010-10-31 01:18:59.071316171 +0700
+@@ -117,7 +117,7 @@
+ 
+ ifeq ($(PLATFORM),PC)
+ # Linux 2.6
+-LINUX_SRC = /lib/modules/$(shell uname -r)/build
++LINUX_SRC = /usr/src/linux
+ # Linux 2.4 Change to your local setting
+ #LINUX_SRC = /usr/src/linux-2.4
+ LINUX_SRC_MODULE = /lib/modules/$(shell uname -r)/kernel/drivers/net/wireless/
+diff -Naur 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/os/linux/config.mk 2010_0709_RT2870_Linux_STA_v2.4.0.1/os/linux/config.mk
+--- 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/os/linux/config.mk	2010-10-31 01:15:56.818555719 +0700
++++ 2010_0709_RT2870_Linux_STA_v2.4.0.1/os/linux/config.mk	2010-10-31 01:28:45.135323927 +0700
+@@ -5,13 +5,13 @@
+ HAS_QA_SUPPORT=n
+ 
+ # Support XLINK mode
+-HAS_XLINK=n
++HAS_XLINK=y
+ 
+ # Support Wpa_Supplicant
+-HAS_WPA_SUPPLICANT=n
++HAS_WPA_SUPPLICANT=y
+ 
+ # Support Native WpaSupplicant for Network Maganger
+-HAS_NATIVE_WPA_SUPPLICANT_SUPPORT=n
++HAS_NATIVE_WPA_SUPPLICANT_SUPPORT=y
+ 
+ #Support Net interface block while Tx-Sw queue full
+ HAS_BLOCK_NET_IF=n

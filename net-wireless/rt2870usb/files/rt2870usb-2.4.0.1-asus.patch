@@ -1,0 +1,12 @@
+diff -Naur 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/common/rtusb_dev_id.c 2010_0709_RT2870_Linux_STA_v2.4.0.1/common/rtusb_dev_id.c
+--- 2010_0709_RT2870_Linux_STA_v2.4.0.1.orig/common/rtusb_dev_id.c	2011-01-04 20:27:31.265000026 +0200
++++ 2010_0709_RT2870_Linux_STA_v2.4.0.1/common/rtusb_dev_id.c	2011-01-04 20:28:21.916000014 +0200
+@@ -53,6 +53,8 @@
+ 	{USB_DEVICE(0x0B05,0x1731)}, /* Asus */
+ 	{USB_DEVICE(0x0B05,0x1732)}, /* Asus */
+ 	{USB_DEVICE(0x0B05,0x1742)}, /* Asus */
++	{USB_DEVICE(0x0B05,0x1761)}, /* Asus */
++	{USB_DEVICE(0x1761,0x0B05)}, /* Asus */
+ 	{USB_DEVICE(0x0DF6,0x0017)}, /* Sitecom */
+ 	{USB_DEVICE(0x0DF6,0x002B)}, /* Sitecom */
+ 	{USB_DEVICE(0x0DF6,0x002C)}, /* Sitecom */
