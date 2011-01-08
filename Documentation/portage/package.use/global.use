@@ -5,7 +5,8 @@ app-cdr/k3b ffmpeg lame
 app-crypt/gnupg bzip2 ecc
 # move app-dicts/goldendict app-text/goldendict
 app-text/goldendict -addons
-app-emulation/virtualbox-ose additions
+# move app-emulation/virtualbox-ose app-emulation/virtualbox
+app-emulation/virtualbox additions
 
 app-emulation/wine cups threads gphoto2 glu openssl fontconfig -openal
 app-misc/mc -X nls -dnotify attrs
@@ -19,7 +20,9 @@ app-text/djvu -kde -nsplugin -qt3
 app-text/poppler-bindings gtk
 dev-cpp/gtkmm accessibility
 dev-db/hsqldb java6
-dev-db/mysql -cluster big-tables -berkdb embedded
+dev-db/mysql -cluster big-tables -berkdb -embedded
+virtual/mysql -embedded
+
 dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli fpm force-cgi-redirect cgi pear ctype pcre posix snmp soap
 dev-lang/python X -tk
 dev-libs/gdl gnome
@@ -160,7 +163,7 @@ media-libs/jpeg static-libs
 media-libs/lcms static-libs
 net-misc/remmina-plugins vnc rdesktop ssh 
 sys-apps/portage python3
-media-libs/libpng apng
+media-libs/libpng apng static-libs
 media-libs/libass enca
 net-print/cups -php
 media-libs/gd fontconfig
@@ -168,7 +171,8 @@ media-libs/gd fontconfig
 kde-base/kdeplasma-addons -exif
 
 net-p2p/ktorrent -kross -search -mediaplayer -downloadorder -magnetgenerator
-dev-libs/boost program_options thread
+dev-libs/boost program_options thread system filesystem regex signals wave serialization mpi graph
 app-office/libreoffice -python wiki -mysql java -nsplugin
 dev-java/lucene analyzers
+dev-python/PyQt4 declarative
 
