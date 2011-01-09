@@ -1,0 +1,3 @@
+#!/bin/sh
+
+qlist -I -C x11-drivers|xargs emerge -1
