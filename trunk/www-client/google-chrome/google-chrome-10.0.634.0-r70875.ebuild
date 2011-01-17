@@ -17,9 +17,7 @@ DESCRIPTION="A browser that combines a minimal design with sophisticated technol
 HOMEPAGE="http://www.google.com/chrome"
 
 SRC_BASE="http://dl.google.com/linux/chrome/deb/pool/main/${PN:0:1}/${PN}-${CHAN}/"
-SRC_URI="
-	x86? ( ${SRC_BASE}${MY_P}_i386.deb )
-	amd64? ( ${SRC_BASE}${MY_P}_amd64.deb )"
+SRC_URI="x86? ( ${SRC_BASE}${MY_P}_i386.deb )"
 
 LICENSE="BSD"
 SLOT="0"
