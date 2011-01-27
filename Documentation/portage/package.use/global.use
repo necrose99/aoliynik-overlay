@@ -68,7 +68,7 @@ media-sound/audacity flac id3tag soundtouch twolame vamp libsamplerate
 media-sound/lossless2lossy ape
 media-sound/transkode amarok wavpack
 media-video/transcode mmx
-media-tv/miro -libnotify xine -gstreamer
+media-video/miro -libnotify xine -gstreamer
 media-video/ffmpeg amr sdl -mmx -mmxext vpx rtmp
 media-video/handbrake gtk css
 media-video/mplayer ass png compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk dvdnav compiz xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123
