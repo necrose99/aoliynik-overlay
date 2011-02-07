@@ -9,7 +9,7 @@ app-text/goldendict -addons
 app-emulation/virtualbox additions
 
 app-emulation/wine cups threads gphoto2 glu openssl fontconfig -openal
-app-misc/mc -X nls -dnotify attrs
+app-misc/mc -X nls -dnotify attrs -ncurses
 
 app-misc/strigi inotify -fam -exif
 app-mobilephone/kmobiletools obex
@@ -74,7 +74,7 @@ media-video/handbrake gtk css
 media-video/mplayer ass png compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk dvdnav compiz xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123
 sys-power/nvclock -qt3 -qt
 
-media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm cdda vcd cdio live rtsp shout upnp skins dts nsplugin qt4 xulrunner twolame run-as-root remoteosd -xosd -libnotify wma-fixed -ncurses -svg
+media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm cdda vcd cdio live rtsp shout upnp -skins dts nsplugin qt4 twolame run-as-root -remoteosd -xosd -libnotify wma-fixed -ncurses -svg
 
 net-analyzer/nmap -gtk
 net-analyzer/openvas-client gtk
@@ -114,9 +114,7 @@ www-client/opera -qt3
 www-servers/pound dynscaler
 x11-base/xorg-server nptl -hal
 x11-base/xorg-x11 3dnow bitmap-fonts cjk -dlloader mmx opengl pam truetype-fonts xv -font-server		
-x11-libs/cairo cleartype -glitz
 x11-libs/libX11 xcb
-x11-libs/libXft cleartype
 x11-libs/pixman -sse2
 x11-libs/qt mysql dbus accessibility qt-copy
 x11-themes/gtk-engines-kde4 themes

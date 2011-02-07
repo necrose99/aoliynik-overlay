@@ -1,0 +1,4 @@
+x11-libs/cairo cleartype -glitz -lcdfilter
+x11-libs/libXft cleartype -lcdfilter
+media-libs/fontconfig -lcdfilter cleartype
+media-libs/freetype -lcdfilter cleartype
