@@ -19,4 +19,6 @@
 ~sys-auth/policykit-qt-9999
 ~media-video/handbrake-9999
 ~net-libs/webkit-gtk-9999
+~net-p2p/ktorrent-9999
+~sys-boot/plymouth-9999
 

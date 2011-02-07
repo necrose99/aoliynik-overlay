@@ -1,0 +1,3 @@
+sys-boot/plymouth **
+sys-kernel/dracut **
+sys-kernel/genkernel **

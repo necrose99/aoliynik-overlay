@@ -1,2 +1,1 @@
->=x11-libs/cairo-1.10
-=sys-fs/udisks-1.0.2
+=sys-kernel/genkernel-3.4.12.6
