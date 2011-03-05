@@ -8,7 +8,6 @@ app-text/goldendict -addons
 # move app-emulation/virtualbox-ose app-emulation/virtualbox
 app-emulation/virtualbox additions
 
-app-emulation/wine cups threads gphoto2 glu openssl fontconfig -openal
 app-misc/mc -X nls -dnotify attrs -ncurses
 
 app-misc/strigi inotify -fam -exif
@@ -67,11 +66,11 @@ media-sound/amarok -embedded gstreamer xine opengl visualization -xmms real -noa
 media-sound/audacity flac id3tag soundtouch twolame vamp libsamplerate
 media-sound/lossless2lossy ape
 media-sound/transkode amarok wavpack
-media-video/transcode mmx
+media-video/transcode mmxb
 media-video/miro -libnotify xine -gstreamer
 media-video/ffmpeg amr sdl -mmx -mmxext vpx rtmp
 media-video/handbrake gtk css
-media-video/mplayer ass png compiz 3dnow -3dnowex divx4linux -esd mmx -openal nvidia -oss rtc  -xmms xv xvid -xvmc -gtk dvdnav compiz xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123
+media-video/mplayer ass png -3dnowex divx4linux -esd mmx -openal -oss rtc -xmms xv xvid -xvmc -gtk dvdnav xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123 -cdparanoia -cddb
 sys-power/nvclock -qt3 -qt
 
 media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm cdda vcd cdio live rtsp shout upnp -skins dts nsplugin qt4 twolame run-as-root -remoteosd -xosd -libnotify wma-fixed -ncurses -svg
@@ -125,7 +124,7 @@ net-misc/networkmanager dhcpcd resolvconf -dhclient
 
 sys-fs/udev extras
 app-crypt/truecrypt -X
-dev-libs/soprano java virtuoso redland raptor
+dev-libs/soprano -java virtuoso redland raptor
 sys-fs/hal -crypt
 sci-astronomy/celestia -theora
 x11-libs/pango X
@@ -135,8 +134,6 @@ dev-db/sqlite -icu fts3 secure-delete
 dev-java/antlr java
 
 dev-util/cmake -qt4
-
-app-text/ghostscript-gpl cups
 sys-apps/man -nls
 net-libs/libproxy -webkit -python -xulrunner -perl
 
@@ -144,9 +141,10 @@ net-libs/libproxy -webkit -python -xulrunner -perl
 net-analyzer/nagios-plugins jabber nagios-dns nagios-ntp nagios-ping nagios-ssh ups
 net-analyzer/net-snmp -X
 
-app-arch/unzip -rcc
+app-arch/unzip rcc
+media-libs/libid3tag rcc
 
-media-plugins/gst-plugins-meta taglib lame
+media-plugins/gst-plugins-meta taglib lame aac alsa -esd ffmpeg
 app-text/scrollkeeper -nls
 
 dev-lang/nasm -doc
@@ -181,3 +179,4 @@ dev-libs/libksba static-libs
 dev-libs/libgpg-error static-libs
 dev-libs/libassuan static-libs
 media-libs/libcanberra gtk
+media-libs/libmng static-libs
