@@ -173,10 +173,11 @@ dev-java/lucene analyzers
 dev-python/PyQt4 declarative
 x11-libs/qt-svg accessibility
 media-sound/deadbeef gtk cover
-media-sound/phonon xine
+media-sound/phonon xine -vlc
 app-crypt/gnupg static
 dev-libs/libksba static-libs
 dev-libs/libgpg-error static-libs
 dev-libs/libassuan static-libs
 media-libs/libcanberra gtk
 media-libs/libmng static-libs
+app-text/ghostscript-gpl cups

@@ -8,7 +8,7 @@ kernel=`eselect kernel show|grep gentoo|awk -F/ '{print $4}'`
 kernel=${kernel#linux-}
 echo "Kernel version: $kernel"
 
-genkernel $OPTIONS all
+genkernel $OPTIONS all || die "Failed to build kernel"
 #emerge @module-rebuild
 module-rebuild -X rebuild
 
