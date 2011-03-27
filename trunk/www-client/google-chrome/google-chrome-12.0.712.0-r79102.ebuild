@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,14 +17,16 @@ DESCRIPTION="A browser that combines a minimal design with sophisticated technol
 HOMEPAGE="http://www.google.com/chrome"
 
 SRC_BASE="http://dl.google.com/linux/chrome/deb/pool/main/${PN:0:1}/${PN}-${CHAN}/"
-SRC_URI="x86? ( ${SRC_BASE}${MY_P}_i386.deb )"
+SRC_URI="
+	x86? ( ${SRC_BASE}${MY_P}_i386.deb )
+	amd64? ( ${SRC_BASE}${MY_P}_amd64.deb )"
 
 LICENSE="BSD"
 SLOT="0"
 IUSE="+suid +plugins-symlink"
 
-LANGS="am ar bg bn ca cs da de el en_GB en_US es_419 es et fil fi fr gu he hi hr
-	hu id it ja kn ko lt lv ml mr nb nl pl pt_BR pt_PT ro ru sk sl sr sv sw ta te th
+LANGS="am ar bg bn ca cs da de el en_GB en_US es_419 es et fil fr gu he hi hr
+	hu id it ja kn ko lt lv ml mr nb nl pl pt_BR pt_PT ro ru sk sl sr sw ta te th
 	tr uk vi zh_CN zh_TW"
 
 for l in ${LANGS} ; do
@@ -39,7 +41,6 @@ DEPEND="|| (
 	!www-client/google-chrome-bin"
 RDEPEND="app-misc/ca-certificates
 	dev-libs/atk
-	net-print/cups
 	dev-libs/dbus-glib
 	dev-libs/expat
 	dev-libs/glib:2
@@ -66,6 +67,7 @@ RDEPEND="app-misc/ca-certificates
 	x11-libs/libXScrnSaver
 	x11-libs/pango
 	x11-misc/xdg-utils
+	net-print/cups
 "
 
 # Incompatible system plugins:
@@ -82,7 +84,8 @@ QA_PRESTRIPPED="opt/google/chrome/chrome
 	opt/google/chrome/libffmpegsumo.so
 	opt/google/chrome/libgcflashplayer.so"
 
-QA_TEXTRELS="opt/google/chrome/libffmpegsumo.so"
+QA_TEXTRELS="opt/google/chrome/libffmpegsumo.so
+	opt/google/chrome/libpdf.so"
 
 src_unpack() {
 	unpack ${A}

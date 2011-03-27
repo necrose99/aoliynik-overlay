@@ -39,7 +39,7 @@ RDEPEND="sys-libs/zlib
 	>=app-text/hunspell-1.2
 	media-libs/libogg
 	media-libs/libvorbis
-	media-sound/phonon
+	media-libs/phonon
 	>=x11-libs/qt-core-4.5
 	>=x11-libs/qt-webkit-4.5
 	x11-libs/libXtst"
