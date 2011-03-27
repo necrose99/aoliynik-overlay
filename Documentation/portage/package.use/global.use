@@ -56,7 +56,7 @@ media-gfx/gfxboot themes animate speech beep
 media-gfx/gimp -gtkhtml python -webkit
 media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf xml2
 media-gfx/splashutils fbcondecor
-media-libs/freetype newspr -bindist filter_light
+media-libs/freetype -bindist
 media-libs/libsdl joystick
 media-libs/mlt sdl frei0r melt
 media-libs/pdflib perl python -tcltk
@@ -155,9 +155,12 @@ sys-kernel/dracut plymouth dmraid mdraid lvm gensplash
 sci-geosciences/googleearth qt-bundled
 kde-misc/basket -crypt
 
+virtual/jpeg static-libs
 media-libs/jpeg static-libs
 media-libs/lcms static-libs
+
 net-misc/remmina-plugins vnc rdesktop ssh 
+
 sys-apps/portage python3
 media-libs/libpng apng static-libs
 media-libs/libass enca
@@ -173,7 +176,8 @@ dev-java/lucene analyzers
 dev-python/PyQt4 declarative
 x11-libs/qt-svg accessibility
 media-sound/deadbeef gtk cover
-media-sound/phonon xine -vlc
+# move media-sound/phonon media-libs/phonon
+media-libs/phonon xine -vlc
 app-crypt/gnupg static
 dev-libs/libksba static-libs
 dev-libs/libgpg-error static-libs
