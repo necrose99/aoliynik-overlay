@@ -23,7 +23,7 @@ IUSE="+gtk gtk3 +alsa ffmpeg pulseaudio mp3 +vorbis +flac wavpack sndfile cdda +
 RDEPEND="media-libs/libsamplerate
 	gtk? ( x11-libs/gtk+:2 )
 	alsa? ( media-libs/alsa-lib )
-	ffmpeg? (virtual/ffmpeg )
+	ffmpeg? ( virtual/ffmpeg )
 	pulseaudio? ( media-sound/pulseaudio )
 	mp3? ( media-libs/libmad )
 	vorbis? ( media-libs/libvorbis )

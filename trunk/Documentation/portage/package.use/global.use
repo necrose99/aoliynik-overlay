@@ -1,7 +1,7 @@
 net-misc/vpnc hybrid-auth
 app-admin/sudo -skey
 app-arch/p7zip rar -kde -wxwindows
-app-cdr/k3b ffmpeg lame
+app-cdr/k3b ffmpeg lame -encode
 app-crypt/gnupg bzip2 ecc
 # move app-dicts/goldendict app-text/goldendict
 app-text/goldendict -addons
