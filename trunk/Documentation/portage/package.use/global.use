@@ -68,7 +68,7 @@ media-sound/lossless2lossy ape
 media-sound/transkode amarok wavpack
 media-video/transcode mmxb
 media-video/miro -libnotify xine -gstreamer
-media-video/ffmpeg amr sdl -mmx -mmxext vpx rtmp
+virtual/ffmpeg -amr -sdl -mmx -mmxext vpx rtmp
 media-video/handbrake gtk css
 media-video/mplayer ass png -3dnowex divx4linux -esd mmx -openal -oss rtc -xmms xv xvid -xvmc -gtk dvdnav xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123 -cdparanoia -cddb
 sys-power/nvclock -qt3 -qt
@@ -185,3 +185,4 @@ dev-libs/libassuan static-libs
 media-libs/libcanberra gtk
 media-libs/libmng static-libs
 app-text/ghostscript-gpl cups
+media-sound/clementine -lastfm
