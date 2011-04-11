@@ -5,7 +5,7 @@ app-cdr/k3b ffmpeg lame -encode
 app-crypt/gnupg bzip2 ecc
 # move app-dicts/goldendict app-text/goldendict
 app-text/goldendict -addons
-app-emulation/virtualbox additions headless
+app-emulation/virtualbox additions -headless
 
 app-misc/mc -X nls -dnotify attrs -ncurses
 
