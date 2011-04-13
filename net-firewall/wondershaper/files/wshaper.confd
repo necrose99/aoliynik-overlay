@@ -1,0 +1,37 @@
+# /etc/conf.d/wshaper
+#
+# Wonder Shaper
+
+# Please read the README before filling out these values.
+
+# Set the following values to somewhat less than your actual download
+# and uplink speed. In kilobits.
+WSHAPER_DOWNLINK=
+WSHAPER_UPLINK=
+
+# Set the device that is to be shaped.
+WSHAPER_DEV=
+
+
+#
+# Low priority OUTGOING traffic. You can leave this blank if you want.
+#
+
+# Low priority source netmasks
+WSHAPER_NOPRIOHOSTSRC=
+
+# Low priority destination netmasks
+WSHAPER_NOPRIOHOSTDST=
+
+# Low priority source ports
+WSHAPER_NOPRIOPORTSRC=
+
+# Low priority destination ports
+WSHAPER_NOPRIOPORTDST=
+
+
+#
+# Initscript specific. Required.
+#
+
+# Set one of possible algorithms:
