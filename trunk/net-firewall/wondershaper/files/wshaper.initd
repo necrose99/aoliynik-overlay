@@ -1,0 +1,92 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+opts="${opts} showstatus"
+
+_check_vars() {
+	local ret=0 var
+
+	# Required variables
+	for var in WSHAPER_DOWNLINK WSHAPER_UPLINK WSHAPER_DEV; do
+		if [[ ! ${!var} ]]; then
+			eerror "${!var} is not set!"
+			ret=1
+		fi
+	done
+
+	return ${ret}
+}
+
+# $1 = algorithm (cbq or htb)
+_get_script_path() {
+	local algo="${ALGORITHM,,}"; : ${algo:=cbq}
+	local script="/usr/libexec/wshaper/wshaper.${algo}"
+
+	if ! [[ ${algo} == [a-z]* && -x ${script} ]]; then
+		eerror "ALGORITHM variable has incorrect value!"
+		return 1
+	fi
+
+	echo "${script}"
+}
+
+depend() {
+	need net
+}
+
+start() {
+	local script
+
+	ebegin "Starting wondershaper"
+
+	if ! script="$(_get_script_path)" || ! _check_vars; then
+		eend 1
+		return 1
+	fi
+
+	DOWNLINK="$WSHAPER_DOWNLINK" \
+	UPLINK="$WSHAPER_UPLINK" \
+	DEV="$WSHAPER_DEV" \
+	NOPRIOHOSTSRC="$WSHAPER_NOPRIOHOSTSRC" \
+	NOPRIOHOSTDST="$WSHAPER_NOPRIOHOSTDST" \
+	NOPRIOPORTSRC="$WSHAPER_NOPRIOPORTSRC" \
+	NOPRIOPORTDST="$WSHAPER_NOPRIOPORTDST" \
+	"${script}" start || \
+	DEV="$WSHAPER_DEV" "${script}" stop
+
+	eend $?
+}
+
+stop() {
+	local script
+
+	ebegin "Stopping wondershaper"
+
+	if ! script="$(_get_script_path)" || ! _check_vars; then
+		eend 1
+		return 1
+	fi
+
+	DEV="$WSHAPER_DEV" "${script}" stop
+
+	eend $?
+}
+
+showstatus() {
+	local script
+
+	ebegin "Status"
+	echo
+
+	if ! script="$(_get_script_path)" || ! _check_vars; then
+		eend 1
+		return 1
+	fi
+
+	DEV="$WSHAPER_DEV" "${script}" status
+
+	echo
+	eend $?
+}

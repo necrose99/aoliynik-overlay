@@ -1,0 +1,23 @@
+diff -ur wondershaper-1.1a/wshaper wondershaper-1.1a.new/wshaper
+--- wondershaper-1.1a/wshaper	2002-04-16 16:26:35.000000000 +0200
++++ wondershaper-1.1a.new/wshaper	2011-01-27 13:07:24.887683156 +0100
+@@ -46,6 +46,8 @@
+ 	exit
+ fi
+ 
++set -e
++
+ ###### uplink
+ 
+ # install root CBQ
+diff -ur wondershaper-1.1a/wshaper.htb wondershaper-1.1a.new/wshaper.htb
+--- wondershaper-1.1a/wshaper.htb	2002-04-16 16:26:51.000000000 +0200
++++ wondershaper-1.1a.new/wshaper.htb	2011-01-27 13:07:37.311547479 +0100
+@@ -45,6 +45,7 @@
+ 	exit
+ fi
+ 
++set -e
+ 
+ ###### uplink
+ 
