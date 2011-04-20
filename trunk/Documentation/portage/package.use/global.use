@@ -2,7 +2,7 @@ net-misc/vpnc hybrid-auth
 app-admin/sudo -skey
 app-arch/p7zip rar -kde -wxwindows
 app-cdr/k3b ffmpeg lame -encode
-app-crypt/gnupg bzip2 ecc
+app-crypt/gnupg bzip2 ecc -static
 # move app-dicts/goldendict app-text/goldendict
 app-text/goldendict -addons
 app-emulation/virtualbox additions -headless
@@ -72,7 +72,7 @@ media-video/handbrake gtk css
 media-video/mplayer ass png -3dnowex divx4linux -esd mmx -openal -oss rtc -xmms xv xvid -xvmc -gtk dvdnav xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123 -cdparanoia -cddb
 sys-power/nvclock -qt3 -qt
 
-media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm cdda vcd cdio live rtsp shout upnp -skins dts nsplugin qt4 twolame run-as-root -remoteosd -xosd -libnotify wma-fixed -ncurses -svg
+media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm cdda vcd cdio live rtsp shout upnp -skins dts -nsplugin qt4 twolame run-as-root -remoteosd -xosd -libnotify wma-fixed -ncurses -svg
 
 net-analyzer/nmap -gtk
 net-analyzer/openvas-client gtk
@@ -177,7 +177,6 @@ x11-libs/qt-svg accessibility
 media-sound/deadbeef gtk cover
 # move media-sound/phonon media-libs/phonon
 media-libs/phonon xine -vlc
-app-crypt/gnupg static
 dev-libs/libksba static-libs
 dev-libs/libgpg-error static-libs
 dev-libs/libassuan static-libs
