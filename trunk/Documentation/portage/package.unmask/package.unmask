@@ -2,3 +2,4 @@
 >=net-misc/dhcp-4.0.0
 =x11-drivers/nvidia-drivers-270.41.03
 =media-video/libav-0.7_pre20110327
+=sys-kernel/genkernel-9999

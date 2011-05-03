@@ -1,7 +1,6 @@
 ~app-text/scrollkeeper-9999
 ~app-emulation/wine-9999
 ~media-video/avidemux-9999
-~media-video/mplayer-9999
 ~app-misc/screen-9999
 ~media-video/smplayer-9999
 ~media-libs/x264-9999
@@ -10,12 +9,10 @@
 ~app-misc/mc-9999
 ~app-cdr/k3b-9999
 ~app-crypt/qca-9999
-~net-p2p/eiskaltdc-9999
 ~www-client/firefox-9999
 ~net-misc/networkmanager-9999
 ~gnome-extra/nm-applet-9999
 
-~www-client/chromium-9999
 ~sys-auth/policykit-qt-9999
 ~media-video/handbrake-9999
 ~net-libs/webkit-gtk-9999
@@ -23,4 +20,5 @@
 ~sys-boot/plymouth-9999
 ~kde-base/kdeartwork-styles-9999
 ~media-video/libav-9999
+~sys-kernel/dracut-9999
 
