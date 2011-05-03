@@ -1,4 +1,0 @@
-# Polkit and other deps
->=kde-misc/polkit-kde-kcmodules-0.98_pre
->=sys-auth/polkit-kde-agent-0.98_pre
->=sys-auth/polkit-qt-0.98_pre
