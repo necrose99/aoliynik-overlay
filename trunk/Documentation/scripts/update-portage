@@ -1,0 +1,8 @@
+systemctl restart usr-portage.automount
+sleep 2
+emerge --sync
+layman -S
+emerge -uDNtva --keep-going world
+emerge -a --depclean
+revdep-rebuild
+
