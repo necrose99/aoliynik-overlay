@@ -14,32 +14,37 @@ LICENSE="GPL-2 ZLIB"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="aac adplug alsa cdda cover curl dts encode ffmpeg flac gme +gtk
-	hotkeys lastfm libnotify libsamplerate m3u mac midi mms mp3 musepack
-	nls null oss pulseaudio shellexec sid sndfile supereq threads tta
-	vorbis vtx wavpack zip"
+	hotkeys imlib lastfm libnotify libsamplerate m3u mac midi mms mp3
+	musepack nls null oss pulseaudio shellexec sid sndfile supereq threads
+	tta vorbis vtx wavpack zip"
 
 REQUIRED_USE="encode? ( gtk )
 	cover? ( curl )
 	lastfm? ( curl )"
 
 DEPEND="
-	gtk? ( x11-libs/gtk+:2 )
+	aac? ( media-libs/faad2 )
 	alsa? ( media-libs/alsa-lib )
-	vorbis? ( media-libs/libvorbis )
-	curl? ( net-misc/curl )
-	mp3? ( media-libs/libmad )
-	flac? ( media-libs/flac )
-	wavpack? ( media-sound/wavpack )
-	sndfile? ( media-libs/libsndfile )
 	cdda? ( dev-libs/libcdio media-libs/libcddb )
-	ffmpeg? ( virtual/ffmpeg )
+	cover? (
+		imlib? ( media-libs/imlib2 )
+		!imlib? ( virtual/jpeg media-libs/libpng )
+	)
+	curl? ( net-misc/curl )
+	ffmpeg? ( media-video/ffmpeg )
+	flac? ( media-libs/flac )
+	gtk? ( x11-libs/gtk+:2 )
 	hotkeys? ( x11-libs/libX11 )
 	libnotify? ( sys-apps/dbus )
-	pulseaudio? ( media-sound/pulseaudio )
-	aac? ( media-libs/faad2 )
-	midi? ( media-sound/timidity-freepats )
-	zip? ( sys-libs/zlib )
 	libsamplerate? ( media-libs/libsamplerate )
+	midi? ( media-sound/timidity-freepats )
+	mp3? ( media-libs/libmad )
+	nls? ( virtual/libintl )
+	pulseaudio? ( media-sound/pulseaudio )
+	sndfile? ( media-libs/libsndfile )
+	vorbis? ( media-libs/libvorbis )
+	wavpack? ( media-sound/wavpack )
+	zip? ( sys-libs/zlib )
 	"
 RDEPEND="${DEPEND}"
 
@@ -69,6 +74,7 @@ src_configure() {
 		$(use_enable flac)
 		$(use_enable gme)
 		$(use_enable hotkeys)
+		$(use_enable imlib artwork-imlib2)
 		$(use_enable lastfm lfm)
 		$(use_enable libnotify notify)
 		$(use_enable libsamplerate src)
