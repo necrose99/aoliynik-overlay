@@ -1,3 +1,0 @@
-#!/bin/sh
-
-epm -Gqa|grep 999|awk '{print "="$1}'|grep qutim|xargs emerge -1

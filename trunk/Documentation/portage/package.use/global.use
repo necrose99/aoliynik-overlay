@@ -72,7 +72,7 @@ media-video/handbrake gtk css
 media-video/mplayer ass png -3dnowex divx4linux -esd mmx -openal -oss rtc -xmms xv xvid -xvmc -gtk dvdnav xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123 -cdparanoia -cddb
 sys-power/nvclock -qt3 -qt
 
-media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm cdda vcd cdio live rtsp shout upnp -skins dts -nsplugin qt4 twolame run-as-root -remoteosd -xosd -libnotify wma-fixed -ncurses -svg
+media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm cdda vcd cdio live rtsp shout upnp -skins dts nsplugin qt4 twolame run-as-root -remoteosd -xosd -libnotify wma-fixed -ncurses -svg
 
 net-analyzer/nmap -gtk
 net-analyzer/openvas-client gtk
@@ -149,7 +149,7 @@ app-text/scrollkeeper -nls
 dev-lang/nasm -doc
 x11-libs/libX11 -doc
 media-sound/mpd ao cue lame libmms 
-sys-kernel/dracut plymouth dmraid mdraid lvm gensplash
+sys-kernel/dracut plymouth dmraid mdraid -lvm -gensplash
 
 sci-geosciences/googleearth qt-bundled
 kde-misc/basket -crypt

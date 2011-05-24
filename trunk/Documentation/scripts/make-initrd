@@ -1,6 +1,5 @@
 #!/bin/sh
 
-. /etc/conf.d/splash
 
 OPTIONS="--initramfs-overlay=/usr/share/v86d --menuconfig --plymouth --no-fbsplash"
 
