@@ -1,4 +1,4 @@
 sys-fs/udev systemd
 sys-apps/dbus systemd
-sys-apps/systemd sysv -gtk
+sys-apps/systemd sysv -gtk plymouth
 sys-apps/systemd-units sysv

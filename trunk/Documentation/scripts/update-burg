@@ -1,0 +1,3 @@
+#!/bin/sh
+
+burg-mkconfig -o /boot/burg/burg.cfg
