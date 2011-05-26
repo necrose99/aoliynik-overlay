@@ -10,4 +10,5 @@ net-wireless/wpa_supplicant
 net-wireless/bluez
 net-misc/networkmanager
 net-dns/avahi
+sys-boot/plymouth **
 
