@@ -6,4 +6,5 @@ emerge -uDNtva --keep-going world
 emerge -a --depclean
 revdep-rebuild
 emerge -uDNtva --keep-going world
-lafilefixer --justfixit
+lafilefixer --justfixit >/dev/null
+eix-update
