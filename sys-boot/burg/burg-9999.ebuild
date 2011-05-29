@@ -3,7 +3,7 @@
 
 inherit mount-boot eutils flag-o-matic toolchain-funcs
 
-EBZR_REPO_URI="lp:burg"
+EBZR_REPO_URI="http://bazaar.launchpad.net/~bean123ch/burg/trunk/"
 inherit autotools bzr
 SRC_URI=""
 
@@ -18,33 +18,40 @@ IUSE="custom-cflags debug truetype multislot static"
 RDEPEND=">=sys-libs/ncurses-5.2-r5
 	dev-libs/lzo"
 DEPEND="${RDEPEND}
-	dev-lang/ruby"
+	dev-lang/ruby
+	sys-boot/os-prober"
 PROVIDE="virtual/bootloader"
 
 export STRIP_MASK="*/burg/*/*.mod"
 QA_EXECSTACK="sbin/burg-probe sbin/burg-setup sbin/burg-mkdevicemap"
 
 src_unpack() {
-if [[ ${PV} == "9999" ]] ; then
-		bzr_src_unpack
-	else
-		unpack ${A}
-	fi
+	bzr_src_unpack
 	cd "${S}"
 	epatch "${FILESDIR}"/burg-genkernel.patch #256335
 	epatch_user
 
-	# autogen.sh does more than just run autotools
-if [[ ${PV} == "9999" ]] ; then
-sed -i \
-			-e '/^\(auto\|ac\)/s:^:e:' \
-			-e "s:^eautomake:`which automake`:" \
-			autogen.sh
-		(. ./autogen.sh) || die
-fi
+	eaclocal
+	eautoconf
+	eautoheader
+
+	automake -a -c -f >/dev/null 2>/dev/null || true
 }
 
 src_compile() {
+	echo timestamp > stamp-h.in
+
+	if python -c "import re,sys,os,datetime" 2>/dev/null >/dev/null ; then
+	    python util/import_gcry.py lib/libgcrypt/ .
+	fi
+
+	for rmk in conf/*.rmk ${GRUB_CONTRIB}/*/conf/*.rmk; do
+	    if test -e $rmk ; then
+		ruby genmk.rb < $rmk > `echo $rmk | sed 's/\.rmk$/.mk/'`
+	    fi
+	done
+	sh gendistlist.sh > DISTLIST
+
 	use custom-cflags || unset CFLAGS CPPFLAGS LDFLAGS
 	use static && append-ldflags -static
 
