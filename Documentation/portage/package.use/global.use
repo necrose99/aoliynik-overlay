@@ -102,7 +102,7 @@ sys-apps/pciutils -zlib
 sys-auth/pambase consolekit
 sys-boot/grub -multislot 
 sys-devel/distcc gtk
-sys-devel/gcc -gtk
+sys-devel/gcc -gtk fortran
 sys-fs/e2fsprogs -diet -static
 sys-kernel/gentoo-sources -symlink
 sys-libs/glibc -erandom nls nptl nptlonly pic -userlocales
@@ -169,7 +169,7 @@ media-libs/gd fontconfig
 kde-base/kdeplasma-addons -exif
 
 net-p2p/ktorrent -kross -search -mediaplayer -downloadorder -magnetgenerator
-dev-libs/boost program_options thread system filesystem regex signals wave serialization mpi graph
+dev-libs/boost program_options thread system filesystem regex signals wave serialization -mpi graph
 app-office/libreoffice -python wiki -mysql java -nsplugin
 app-office/libreoffice-bin java
 
