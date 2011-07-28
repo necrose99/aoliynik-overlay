@@ -1,5 +1,3 @@
-net-misc/vpnc hybrid-auth
-app-admin/sudo -skey
 app-arch/p7zip rar -kde -wxwindows
 app-cdr/k3b ffmpeg lame -encode
 app-crypt/gnupg bzip2 ecc -static
@@ -50,8 +48,6 @@ kde-base/okular djvu
 kde-base/solid bluetooth
 mail-client/evolution ldap -nntp -hal -crypt
 mail-client/thunderbird ldap moznopango java -crypt lightning
-mail-filter/spamassassin berkdb qmail ssl
-media-gfx/gfxboot themes animate speech beep
 media-gfx/gimp -gtkhtml python -webkit
 media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf xml2
 media-gfx/splashutils fbcondecor
@@ -61,7 +57,6 @@ media-libs/mlt sdl frei0r melt
 media-libs/pdflib perl python -tcltk
 media-libs/xine-lib modplug
 media-plugins/audacious-plugins projectm -mtp icacast cue icecast lame
-media-sound/amarok -embedded gstreamer xine opengl visualization -xmms real -noamazon -daap -mtp mp4 
 media-sound/audacity flac id3tag soundtouch twolame vamp libsamplerate
 media-sound/lossless2lossy ape
 media-sound/transkode amarok wavpack
@@ -99,14 +94,12 @@ net-wireless/wpa_supplicant gsm
 sys-apps/dbus gtk python -mono -qt3 qt4 X
 sys-apps/file -python
 sys-apps/pciutils -zlib
-sys-auth/pambase consolekit
 sys-boot/grub -multislot 
 sys-devel/distcc gtk
 sys-devel/gcc -gtk fortran
 sys-fs/e2fsprogs -diet -static
 sys-kernel/gentoo-sources -symlink
 sys-libs/glibc -erandom nls nptl nptlonly pic -userlocales
-sys-libs/pam pam_chroot pam_console pam_timestamp
 www-client/firefox java moznopango
 www-client/opera -qt3
 www-servers/pound dynscaler
@@ -119,7 +112,7 @@ x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3 mozilla
 x11-themes/qtcurve gtk -gtk1
 dev-vcs/git -cgi
-net-misc/networkmanager dhcpcd resolvconf -dhclient -bluetooth
+net-misc/networkmanager dhcpcd resolvconf -dhclient -bluetooth -ppp
 
 sys-fs/udev extras
 app-crypt/truecrypt -X
@@ -143,7 +136,7 @@ net-analyzer/net-snmp -X
 app-arch/unzip rcc
 media-libs/libid3tag rcc
 
-media-plugins/gst-plugins-meta taglib lame aac alsa -esd ffmpeg
+media-plugins/gst-plugins-meta taglib lame aac alsa -esd ffmpeg -vcd
 app-text/scrollkeeper -nls
 
 dev-lang/nasm -doc
