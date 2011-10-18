@@ -1,5 +1,6 @@
 app-admin/logrotate
 app-admin/makepasswd
+app-admin/mcelog
 app-admin/rsyslog
 app-admin/sysstat
 app-arch/p7zip
@@ -10,9 +11,11 @@ app-cdr/k3b
 app-crypt/truecrypt
 app-editors/joe
 app-editors/juffed
-app-emulation/virtualbox
+app-emulation/virtualbox-bin
+app-emulation/vmware-workstation
 app-misc/mc
 app-misc/screen
+app-office/dia
 app-office/libreoffice-bin
 app-portage/eix
 app-portage/epm
@@ -26,7 +29,6 @@ app-text/djview4
 app-text/dos2unix
 app-text/foxitreader
 app-text/goldendict
-app-text/kchmviewer
 dev-db/mysql
 dev-lang/php
 dev-libs/fcgi
@@ -76,12 +78,10 @@ kde-base/kdeartwork-wallpapers
 kde-base/kdebase-data
 kde-base/kdebase-kioslaves
 kde-base/kdebase-startkde
-kde-base/kdebase-wallpapers
 kde-base/kdenetwork-filesharing
 kde-base/kdeplasma-addons
 kde-base/kgamma
 kde-base/klipper
-kde-base/kmahjongg
 kde-base/kmenuedit
 kde-base/kmix
 kde-base/konqueror
@@ -94,6 +94,7 @@ kde-base/ksysguard
 kde-base/kwallet
 kde-base/kwin
 kde-base/nsplugins
+kde-base/okular
 kde-base/plasma-runtime
 kde-base/systemsettings
 kde-misc/chromi
@@ -120,16 +121,17 @@ media-fonts/unifont
 media-fonts/vista-fonts
 media-gfx/imagemagick
 media-gfx/picasa
-media-gfx/splashutils
 media-libs/freetype
 media-libs/win32codecs
 media-plugins/gst-plugins-gio
 media-plugins/gst-plugins-soup
+media-sound/alsa-firmware
 media-sound/alsa-tools
 media-sound/alsa-utils
 media-sound/mac
-media-sound/mp3splt
+media-sound/rawrec
 media-sound/twolame
+media-tv/sopcast-player
 media-video/mplayer
 media-video/smplayer
 media-video/vlc
@@ -151,7 +153,6 @@ net-ftp/filezilla
 net-ftp/lftp
 net-im/qutim
 net-im/skype
-net-misc/aria2
 net-misc/clusterssh
 net-misc/freerdp
 net-misc/memcached
@@ -160,8 +161,6 @@ net-misc/networkmanager-vpnc
 net-misc/ntp
 net-misc/openconnect
 net-misc/openssh
-net-misc/remmina
-net-misc/remmina-plugins
 net-misc/stunnel
 net-misc/tigervnc
 net-misc/vpnc
@@ -185,6 +184,7 @@ perl-gcpan/Time-Format
 perl-gcpan/WWW-Mechanize-Cached
 sci-geosciences/googleearth
 sys-apps/baselayout
+sys-apps/dmidecode
 sys-apps/hdparm
 sys-apps/iproute2
 sys-apps/module-init-tools
@@ -213,6 +213,7 @@ www-apache/mod_fastcgi
 www-client/firefox
 www-client/google-chrome
 www-plugins/adobe-flash
+www-plugins/google-talkplugin
 www-servers/apache
 x11-apps/xdm
 x11-apps/xhost

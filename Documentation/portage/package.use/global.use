@@ -74,7 +74,7 @@ net-analyzer/openvas-client gtk
 net-analyzer/zabbix server agent frontend curl snmp mysql jabber -sqlite3
 net-dialup/ppp dhcp
 net-dialup/rp-pppoe -X
-net-dns/bind -threads -ldap -mysql -odbc -postgres ssl
+net-dns/bind -threads -ldap -mysql -odbc -postgres ssl dlz
 net-fs/samba  acl -ldap winbind -xml xml2 winbind async -ads syslog
 net-im/skype -qt-static
 net-libs/libsoup gnome
@@ -181,5 +181,7 @@ app-text/ghostscript-gpl cups
 media-sound/clementine -lastfm
 
 net-firewall/wondershaper htb
-dev-java/swt -xulrunner
+net-misc/wget -ntlm
+
 >=sys-libs/zlib-1.2.5.1-r2 minizip
+
