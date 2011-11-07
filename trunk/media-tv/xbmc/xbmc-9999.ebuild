@@ -1,22 +1,20 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-10.1.ebuild,v 1.2 2011/03/12 09:22:01 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.93 2011/10/12 22:53:27 vapier Exp $
 
 EAPI="2"
 
 inherit eutils python
 
-# Use XBMC_ESVN_REPO_URI to track a different branch
-ESVN_REPO_URI=${XBMC_ESVN_REPO_URI:-http://xbmc.svn.sourceforge.net/svnroot/xbmc/trunk}
-ESVN_PROJECT=${ESVN_REPO_URI##*/svnroot/}
-ESVN_PROJECT=${ESVN_PROJECT%/*}
+EGIT_REPO_URI="git://github.com/xbmc/xbmc.git"
 if [[ ${PV} == "9999" ]] ; then
-	inherit subversion autotools
-	KEYWORDS=""
+	inherit git-2 autotools
 else
 	inherit autotools
-	SRC_URI="http://mirrors.xbmc.org/releases/source/${P}.tar.gz"
+	MY_P=${P/_/-}
+	SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
+	S=${WORKDIR}/${MY_P}
 fi
 
 DESCRIPTION="XBMC is a free and open source media-player and entertainment hub"
@@ -24,52 +22,56 @@ HOMEPAGE="http://xbmc.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="alsa altivec avahi css debug joystick midi profile pulseaudio rtmp sse sse2 udev vaapi vdpau webserver +xrandr"
+IUSE="airplay alsa altivec avahi bluray css debug goom joystick midi profile +projectm pulseaudio +rsxs rtmp +samba sse sse2 udev vaapi vdpau webserver +xrandr"
 
 COMMON_DEPEND="virtual/opengl
 	app-arch/bzip2
 	app-arch/unzip
 	app-arch/zip
 	app-i18n/enca
+	airplay? ( app-pda/libplist )
+	>=dev-lang/python-2.4
 	dev-libs/boost
 	dev-libs/fribidi
 	dev-libs/libcdio[-minimal]
 	dev-libs/libpcre[cxx]
-	dev-libs/lzo
+	>=dev-libs/lzo-2.04
+	dev-libs/yajl
 	>=dev-python/pysqlite-2
 	media-libs/alsa-lib
-	media-libs/faad2
 	media-libs/flac
 	media-libs/fontconfig
 	media-libs/freetype
-	media-libs/glew
+	>=media-libs/glew-1.5.6
 	media-libs/jasper
 	media-libs/jbigkit
 	virtual/jpeg
 	>=media-libs/libass-0.9.7
+	bluray? ( media-libs/libbluray )
 	css? ( media-libs/libdvdcss )
 	media-libs/libmad
-	media-libs/libmms
 	media-libs/libmodplug
 	media-libs/libmpeg2
 	media-libs/libogg
+	media-libs/libpng
+	projectm? ( media-libs/libprojectm )
 	media-libs/libsamplerate
 	media-libs/libsdl[audio,opengl,video,X]
 	alsa? ( media-libs/libsdl[alsa] )
 	media-libs/libvorbis
 	media-libs/sdl-gfx
-	media-libs/sdl-image[gif,jpeg,png]
+	>=media-libs/sdl-image-1.2.10[gif,jpeg,png]
 	media-libs/sdl-mixer
 	media-libs/sdl-sound
 	media-libs/tiff
 	pulseaudio? ( media-sound/pulseaudio )
 	media-sound/wavpack
-	virtual/ffmpeg
+	>=virtual/ffmpeg-0.6
 	rtmp? ( media-video/rtmpdump )
 	avahi? ( net-dns/avahi )
 	webserver? ( net-libs/libmicrohttpd )
 	net-misc/curl
-	|| ( >=net-fs/samba-3.4.6[smbclient] <net-fs/samba-3.3 )
+	samba? ( >=net-fs/samba-3.4.6[smbclient] )
 	sys-apps/dbus
 	sys-libs/zlib
 	virtual/mysql
@@ -83,19 +85,17 @@ COMMON_DEPEND="virtual/opengl
 	x11-libs/libXinerama
 	xrandr? ( x11-libs/libXrandr )
 	x11-libs/libXrender"
-# The cpluff bundled addon uses gettext which needs CVS ...
 RDEPEND="${COMMON_DEPEND}
 	udev? (	sys-fs/udisks sys-power/upower )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/gperf
-	dev-vcs/cvs
 	x11-proto/xineramaproto
 	dev-util/cmake
 	x86? ( dev-lang/nasm )"
 
 src_unpack() {
 	if [[ ${PV} == "9999" ]] ; then
-		subversion_src_unpack
+		git-2_src_unpack
 		cd "${S}"
 		rm -f configure
 	else
@@ -109,11 +109,19 @@ src_unpack() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-10.0-python-2.7.patch #350098
+	epatch "${FILESDIR}"/${P}-libpng-1.5.patch #380127
+	epatch "${FILESDIR}"/${P}-libpng-1.5-fix-plt-trn-get.patch
+	epatch "${FILESDIR}"/${P}-headers.patch #380127
+
 
 	# some dirs ship generated autotools, some dont
 	local d
-	for d in . xbmc/cores/dvdplayer/Codecs/{libdts,libdvd/lib*/} lib/cpluff ; do
+	for d in \
+		. \
+		lib/{libdvd/lib*/,cpluff,libapetag,libid3tag/libid3tag} \
+		xbmc/screensavers/rsxs-* \
+		xbmc/visualizations/Goom/goom2k4-0
+	do
 		[[ -e ${d}/configure ]] && continue
 		pushd ${d} >/dev/null
 		einfo "Generating autotools in ${d}"
@@ -128,19 +136,16 @@ src_prepare() {
 	sed -i \
 		-e '/^CXXFLAGS/{s:-D[^=]*=.::;s:-m[[:alnum:]]*::}' \
 		-e "1iCXXFLAGS += ${squish}" \
-		xbmc/lib/libsquish/Makefile.in || die
+		lib/libsquish/Makefile.in || die
 
 	# Fix XBMC's final version string showing as "exported"
 	# instead of the SVN revision number.
-	export SVN_REV=${ESVN_WC_REVISION:-exported}
+	export HAVE_GIT=no GIT_REV=${EGIT_VERSION:-exported}
 
 	# Avoid lsb-release dependency
 	sed -i \
 		-e 's:lsb_release -d:cat /etc/gentoo-release:' \
-		xbmc/utils/SystemInfo.cpp
-
-	# Do not use termcap #262822
-	sed -i 's:-ltermcap::' xbmc/lib/libPython/Python/configure
+		xbmc/utils/SystemInfo.cpp || die
 
 	# avoid long delays when powerkit isn't running #348580
 	sed -i \
@@ -164,20 +169,22 @@ src_configure() {
 		--disable-ccache \
 		--disable-optimizations \
 		--enable-external-libraries \
-		--disable-external-python \
-		--enable-goom \
 		--enable-gl \
-		--disable-liba52 \
-		--disable-libdts \
+		$(use_enable airplay) \
 		$(use_enable avahi) \
+		$(use_enable bluray libbluray) \
 		$(use_enable css dvdcss) \
 		$(use_enable debug) \
+		$(use_enable goom) \
 		--disable-hal \
 		$(use_enable joystick) \
 		$(use_enable midi mid) \
 		$(use_enable profile profiling) \
+		$(use_enable projectm) \
 		$(use_enable pulseaudio pulse) \
+		$(use_enable rsxs) \
 		$(use_enable rtmp) \
+		$(use_enable samba) \
 		$(use_enable vaapi) \
 		$(use_enable vdpau) \
 		$(use_enable webserver) \
@@ -186,12 +193,11 @@ src_configure() {
 
 src_install() {
 	emake install DESTDIR="${D}" || die
-	dodoc keymapping.txt README.linux
-	rm "${D}"/usr/share/doc/${PF}/{copying.txt,LICENSE.GPL} || die
+	prepalldocs
 
-#	insinto /usr/share/applications
-#	doins tools/Linux/xbmc.desktop
-#	doicon tools/Linux/xbmc.png
+	insinto /usr/share/applications
+	doins tools/Linux/xbmc.desktop
+	doicon tools/Linux/xbmc.png
 
 	insinto "$(python_get_sitedir)" #309885
 	doins tools/EventClients/lib/python/xbmcclient.py || die
