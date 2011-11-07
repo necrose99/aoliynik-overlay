@@ -10,7 +10,7 @@ app-misc/mc -X nls -dnotify attrs -ncurses
 app-misc/strigi inotify -fam -exif
 app-mobilephone/kmobiletools obex
 app-office/mozilla-sunbird moznopango
-app-office/openoffice-bin java kde
+app-office/openoffice-bin -java kde
 app-text/cuneiform imagemagick
 app-text/djvu -kde -nsplugin -qt3
 app-text/poppler-bindings gtk
@@ -47,7 +47,7 @@ kde-base/krdc vnc rdp qca decibel
 kde-base/okular djvu
 kde-base/solid -bluetooth
 mail-client/evolution ldap -nntp -hal -crypt
-mail-client/thunderbird ldap moznopango java -crypt lightning
+mail-client/thunderbird ldap moznopango -java -crypt lightning
 media-gfx/gimp -gtkhtml python -webkit
 media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf xml2
 media-gfx/splashutils fbcondecor
@@ -163,8 +163,7 @@ kde-base/kdeplasma-addons -exif
 
 net-p2p/ktorrent -kross -search -mediaplayer -downloadorder -magnetgenerator
 dev-libs/boost program_options thread system filesystem regex signals wave serialization -mpi graph
-app-office/libreoffice -python wiki -mysql java -nsplugin
-app-office/libreoffice-bin java
+app-office/libreoffice -python wiki -mysql -java -nsplugin
 
 dev-java/lucene analyzers
 dev-python/PyQt4 declarative
@@ -184,4 +183,6 @@ net-firewall/wondershaper htb
 net-misc/wget -ntlm
 
 >=sys-libs/zlib-1.2.5.1-r2 minizip
+net-fs/cifs-utils caps
+>=x11-libs/libdrm-2.4.27 libkms
 

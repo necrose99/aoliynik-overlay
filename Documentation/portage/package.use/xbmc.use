@@ -1,1 +1,1 @@
-media-tv/xbmc -debug -pvr rtmp
+media-tv/xbmc -debug -pvr rtmp webserver airplay vaapi projectm
