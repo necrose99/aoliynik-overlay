@@ -12,7 +12,6 @@ app-crypt/truecrypt
 app-editors/joe
 app-editors/juffed
 app-emulation/virtualbox-bin
-app-emulation/vmware-workstation
 app-misc/mc
 app-misc/screen
 app-office/dia
@@ -30,6 +29,7 @@ app-text/dos2unix
 app-text/foxitreader
 app-text/goldendict
 dev-db/mysql
+dev-java/sun-jdk
 dev-lang/php
 dev-libs/fcgi
 dev-libs/geoip
@@ -66,6 +66,7 @@ dev-vcs/git
 dev-vcs/mercurial
 dev-vcs/rsvndump
 dev-vcs/subversion
+games-action/btanks
 kde-base/ark
 kde-base/dolphin
 kde-base/gwenview
@@ -101,9 +102,9 @@ kde-misc/chromi
 kde-misc/colibri
 kde-misc/kcm_gtk
 kde-misc/kfilebox
-kde-misc/knetworkmanager
 kde-misc/konq-plugins
 kde-misc/kstyle-nitrogen
+kde-misc/networkmanagement
 kde-misc/plasma-applet-daisy
 kde-misc/smooth-tasks
 kde-misc/yakuake
@@ -135,6 +136,7 @@ media-tv/sopcast-player
 media-video/mplayer
 media-video/smplayer
 media-video/vlc
+net-analyzer/nikto
 net-analyzer/nmap
 net-analyzer/pktstat
 net-analyzer/tcpdump
@@ -187,6 +189,7 @@ sys-apps/baselayout
 sys-apps/dmidecode
 sys-apps/hdparm
 sys-apps/iproute2
+sys-apps/less
 sys-apps/module-init-tools
 sys-apps/portage
 sys-apps/v86d
