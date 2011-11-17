@@ -184,5 +184,4 @@ net-misc/wget -ntlm
 
 >=sys-libs/zlib-1.2.5.1-r2 minizip
 net-fs/cifs-utils caps
->=x11-libs/libdrm-2.4.27 libkms
 
