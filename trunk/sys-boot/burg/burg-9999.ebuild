@@ -16,7 +16,8 @@ KEYWORDS="~x86 ~amd64"
 IUSE="custom-cflags debug truetype multislot static"
 
 RDEPEND=">=sys-libs/ncurses-5.2-r5
-	dev-libs/lzo"
+	dev-libs/lzo
+	sys-devel/flex"
 DEPEND="${RDEPEND}
 	dev-lang/ruby
 	sys-boot/os-prober"

@@ -19,7 +19,7 @@ dev-db/hsqldb java6
 dev-db/mysql -cluster big-tables -berkdb -embedded
 virtual/mysql -embedded
 
-dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli fpm force-cgi-redirect cgi pear ctype pcre posix snmp soap
+dev-lang/php mysql xsl dba berkdb mhash bcmath threads session -recode cli fpm force-cgi-redirect cgi pear ctype pcre posix -snmp soap
 dev-lang/python X -tk
 dev-libs/gdl gnome
 dev-libs/libxml2 python
@@ -82,7 +82,7 @@ net-libs/webkitgtk -svg
 net-libs/xulrunner java
 net-mail/dovecot mbox pop3d -vpopmail
 net-misc/aria2 metalink bittorrent
-net-misc/openssh sftplogging -ldap
+net-misc/openssh sftplogging -ldap -X
 net-misc/openvpn iproute2
 net-misc/tsclient vnc
 net-misc/vnc -server
@@ -112,7 +112,7 @@ x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3 mozilla
 x11-themes/qtcurve gtk -gtk1
 dev-vcs/git -cgi
-net-misc/networkmanager dhcpcd resolvconf -dhclient -bluetooth -ppp
+net-misc/networkmanager dhcpcd resolvconf -dhclient -bluetooth -ppp gnutls -nss -dhclient
 
 sys-fs/udev extras
 app-crypt/truecrypt -X
@@ -153,7 +153,7 @@ media-libs/lcms static-libs
 
 net-misc/remmina-plugins vnc rdesktop ssh 
 
-sys-apps/portage python3
+sys-apps/portage -python3 python2
 media-libs/libpng apng static-libs
 media-libs/libass enca
 net-print/cups -php -usb
@@ -184,4 +184,8 @@ net-misc/wget -ntlm
 
 >=sys-libs/zlib-1.2.5.1-r2 minizip
 net-fs/cifs-utils caps
+>=x11-libs/libdrm-2.4.27 libkms
 
+media-video/ffmpeg dirac schroedinger
+app-portage/layman git subversion mercurial 
+sys-boot/plymouth -pango

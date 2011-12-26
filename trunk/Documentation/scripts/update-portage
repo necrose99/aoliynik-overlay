@@ -5,4 +5,5 @@ emerge -a --depclean
 revdep-rebuild
 emerge -uDNtva --keep-going world
 lafilefixer --justfixit >/dev/null
+etc-update
 eix-update

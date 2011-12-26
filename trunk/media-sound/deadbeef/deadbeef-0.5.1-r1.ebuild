@@ -30,8 +30,9 @@ RDEPEND="
 		imlib? ( media-libs/imlib2 )
 		!imlib? ( virtual/jpeg media-libs/libpng )
 	)
+	dev-perl/XML-Parser
 	curl? ( net-misc/curl )
-	ffmpeg? ( media-video/ffmpeg )
+	ffmpeg? ( virtual/ffmpeg )
 	flac? ( media-libs/flac )
 	gtk? ( x11-libs/gtk+:2 )
 	hotkeys? ( x11-libs/libX11 )

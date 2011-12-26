@@ -4,11 +4,12 @@
 
 EAPI="4"
 
-inherit fdo-mime
+inherit fdo-mime gnome2 eutils
 
 DESCRIPTION="foobar2000-like music player."
 HOMEPAGE="http://deadbeef.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+RESTRICT="strip mirror"
 LICENSE="GPL-2 ZLIB"
 
 SLOT="0"
@@ -16,13 +17,13 @@ KEYWORDS="~x86 ~amd64"
 IUSE="aac adplug alsa cdda cover curl dts encode ffmpeg flac gme +gtk
 	hotkeys imlib lastfm libnotify libsamplerate m3u mac midi mms mp3
 	musepack nls null oss pulseaudio shellexec sid sndfile supereq threads
-	tta vorbis vtx wavpack zip"
+	tta vorbis vtx wavpack zip linguas_zh_CN"
 
 REQUIRED_USE="encode? ( gtk )
 	cover? ( curl )
 	lastfm? ( curl )"
 
-DEPEND="
+RDEPEND="
 	aac? ( media-libs/faad2 )
 	alsa? ( media-libs/alsa-lib )
 	cdda? ( dev-libs/libcdio media-libs/libcddb )
@@ -31,7 +32,7 @@ DEPEND="
 		!imlib? ( virtual/jpeg media-libs/libpng )
 	)
 	curl? ( net-misc/curl )
-	ffmpeg? ( media-video/ffmpeg )
+	ffmpeg? ( virtual/ffmpeg )
 	flac? ( media-libs/flac )
 	gtk? ( x11-libs/gtk+:2 )
 	hotkeys? ( x11-libs/libX11 )
@@ -39,14 +40,16 @@ DEPEND="
 	libsamplerate? ( media-libs/libsamplerate )
 	midi? ( media-sound/timidity-freepats )
 	mp3? ( media-libs/libmad )
-	nls? ( virtual/libintl )
 	pulseaudio? ( media-sound/pulseaudio )
 	sndfile? ( media-libs/libsndfile )
 	vorbis? ( media-libs/libvorbis )
 	wavpack? ( media-sound/wavpack )
 	zip? ( sys-libs/zlib )
 	"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig
+	nls? ( virtual/libintl dev-util/intltool )
+	"
 
 src_prepare() {
 	if use midi; then
@@ -54,6 +57,15 @@ src_prepare() {
 		sed -e 's;/etc/timidity++/timidity-freepats.cfg;/usr/share/timidity/freepats/timidity.cfg;g' \
 			-i "${S}/plugins/wildmidi/wildmidiplug.c"
 	fi
+
+	if use ffmpeg; then
+		epatch "${FILESDIR}/${P}-alt-libav-using.patch"
+	fi
+
+	if use linguas_zh_CN; then
+		epatch "${FILESDIR}/gbk.patch"
+	fi
+
 }
 
 src_configure() {
@@ -93,11 +105,15 @@ src_configure() {
 		$(use_enable vorbis)
 		$(use_enable vtx)
 		$(use_enable wavpack)
-		$(use_enable zip vfs-zip)"
+		$(use_enable zip vfs-zip)
+		--docdir=/usr/share/doc/${PF}"
 
 	econf ${my_config}
 }
 
 src_install() {
-	einstall
+	# Do not compress docs as we need it for deadbeef's help function.
+	PORTAGE_DOCOMPRESS_SKIP+=( "/usr/share/doc/${PF}" )
+
+	emake DESTDIR="${D}" install
 }

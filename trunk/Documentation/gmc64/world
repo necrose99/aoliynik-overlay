@@ -1,4 +1,3 @@
-app-admin/hddtemp
 app-admin/logrotate
 app-admin/rsyslog
 app-arch/dpkg
@@ -103,11 +102,9 @@ kde-base/kwin
 kde-base/plasma-runtime
 kde-base/systemsettings
 kde-misc/colibri
-kde-misc/kcm_gtk
 kde-misc/kfilebox
 kde-misc/networkmanagement
 kde-misc/plasma-applet-daisy
-kde-misc/plasma-wifi
 kde-misc/smooth-tasks
 kde-misc/yakuake
 mail-client/thunderbird
