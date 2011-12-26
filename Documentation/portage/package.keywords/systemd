@@ -12,3 +12,5 @@ net-misc/networkmanager
 net-dns/avahi
 sys-boot/plymouth **
 
+#required by foxitreader (argument)
+=app-text/foxitreader-1.1.0 **
