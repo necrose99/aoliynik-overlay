@@ -9,8 +9,7 @@ inherit eutils mozextension
 MY_PN="${PN/-bin}"
 MY_PV="${PV/_alpha/a}"
 MY_P="${MY_PN}-${MY_PV}"
-M_DATE="2011-12-19-04-20-33"
-REL_URI="http://ftp.mozilla.org/pub/mozilla.org/${MY_PN}/nightly/${M_DATE}-mozilla-aurora"
+REL_URI="http://ftp.mozilla.org/pub/mozilla.org/${MY_PN}/nightly/latest-mozilla-aurora"
 
 DESCRIPTION="Firefox Web Browser"
 SRC_URI="x86? ( ${REL_URI}/${MY_PN}-${MY_PV}.en-US.linux-i686.tar.bz2 -> ${MY_P}.tar.bz2 )

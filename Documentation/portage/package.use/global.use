@@ -189,3 +189,5 @@ net-fs/cifs-utils caps
 media-video/ffmpeg dirac schroedinger
 app-portage/layman git subversion mercurial 
 sys-boot/plymouth -pango
+dev-lang/fpc source
+net-p2p/transmission -kde -qt4 gtk
