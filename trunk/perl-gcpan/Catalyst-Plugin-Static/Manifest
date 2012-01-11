@@ -1,8 +1,0 @@
-DIST Catalyst-Plugin-Static-0.10.tar.gz 3225 RMD160 bf9aad2ea4622d0640c5cc393fe81f38e52cd864 SHA1 41e5face47788258ce1b892e747bc4c6e6ff289f SHA256 9c8d88cebe2ce3251a0c5bd51c595ed6dfb55c6d25cb88d18b8da8db0baa39e3
-EBUILD Catalyst-Plugin-Static-0.10.ebuild 655 RMD160 e580ee28c2031e0a6b25a1b23b10ca823eb590cc SHA1 1baf90718a97839e0b01f914bd18b486ec0132a8 SHA256 b2f1f5cf969026b4a695c46bee16c3fc7123be6e28519be65fc24c7fcd02b807
-MD5 d0c7ce2cb28f6e5e257ec601c03042b6 Catalyst-Plugin-Static-0.10.ebuild 655
-RMD160 e580ee28c2031e0a6b25a1b23b10ca823eb590cc Catalyst-Plugin-Static-0.10.ebuild 655
-SHA256 b2f1f5cf969026b4a695c46bee16c3fc7123be6e28519be65fc24c7fcd02b807 Catalyst-Plugin-Static-0.10.ebuild 655
-MD5 0e0ae0b638ee2f03ebbcaf17f179f8cc files/digest-Catalyst-Plugin-Static-0.10 277
-RMD160 3d012d3b3f6d055d628d1211d855f5a5e84639fe files/digest-Catalyst-Plugin-Static-0.10 277
-SHA256 9ca3f651fc73cd76e498847e9ce0f98d71d6b7836f2d75c345468d6b5d03fd49 files/digest-Catalyst-Plugin-Static-0.10 277
