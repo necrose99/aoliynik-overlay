@@ -1,0 +1,3 @@
+perl-core/*
+dev-perl/*
+virtual/perl-*
