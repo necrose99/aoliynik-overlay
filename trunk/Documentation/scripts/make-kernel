@@ -2,7 +2,8 @@
 
 OPTIONS="--initramfs-overlay=/usr/share/v86d --menuconfig"
 
-kernel=`eselect kernel show|grep gentoo|awk -F/ '{print $4}'`
+kernel=`eselect kernel show|grep gentoo|awk -F/ '{print $NF}'`
+
 kernel=${kernel#linux-}
 arch=`arch`
 
