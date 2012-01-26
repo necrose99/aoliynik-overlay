@@ -151,7 +151,7 @@ virtual/jpeg static-libs
 media-libs/jpeg static-libs
 media-libs/lcms static-libs
 
-net-misc/remmina-plugins vnc rdesktop ssh 
+net-misc/remmina-plugins -vnc rdesktop ssh 
 
 sys-apps/portage -python3 python2
 media-libs/libpng apng static-libs
