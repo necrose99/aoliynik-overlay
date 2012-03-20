@@ -191,3 +191,4 @@ app-portage/layman git subversion mercurial
 sys-boot/plymouth -pango
 dev-lang/fpc source
 net-p2p/transmission -kde -qt4 gtk
+media-libs/mesa g3dvl gles2
