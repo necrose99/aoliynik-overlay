@@ -1,0 +1,12 @@
+#!/bin/sh
+
+tunerip=192.168.2.120
+data=`date +"%Y-%m-%d_%H:%M"`
+dest="/media/nfs/data/tuner_settings/$data"
+mkdir -p $dest
+ssh-copy-id root@$tunerip
+scp -r root@$tunerip:/etc/tuxbox "$dest/"
+scp -r root@$tunerip:/etc/enigma2 "$dest/"
+scp -r root@$tunerip:/usr/keys "$dest/"
+
+
