@@ -1,21 +1,12 @@
 net-im/skype **
-media-video/smplayer **
-
 app-portage/portage **
-# move kde-misc/knetworkmanager kde-misc/networkmanagement
 kde-misc/networkmanagement **
 app-cdr/k3b **
 
-www-client/google-chrome **
-
 x11-drivers/nvidia-drivers **
-
-net-wireless/bluedevil **
-net-libs/libbluedevil **
 
 net-misc/freerdp **
 kde-misc/colibri **
-media-video/libav **
 sys-kernel/genkernel **
 media-tv/xbmc **
 =kde-misc/libnm-qt-9999 **

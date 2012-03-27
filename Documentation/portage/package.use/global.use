@@ -46,7 +46,6 @@ kde-base/knotes -kontact
 kde-base/krdc vnc rdp qca decibel
 kde-base/okular djvu
 kde-base/solid -bluetooth
-mail-client/evolution ldap -nntp -hal -crypt
 mail-client/thunderbird ldap moznopango -java -crypt lightning
 media-gfx/gimp -gtkhtml python -webkit
 media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf xml2
@@ -145,7 +144,6 @@ media-sound/mpd ao cue lame libmms
 sys-kernel/dracut plymouth dmraid mdraid -lvm -gensplash
 
 sci-geosciences/googleearth qt-bundled
-kde-misc/basket -crypt
 
 virtual/jpeg static-libs
 media-libs/jpeg static-libs
