@@ -4,11 +4,8 @@ kde-misc/networkmanagement **
 app-cdr/k3b **
 
 x11-drivers/nvidia-drivers **
-
-net-misc/freerdp **
 kde-misc/colibri **
 sys-kernel/genkernel **
-media-tv/xbmc **
 =kde-misc/libnm-qt-9999 **
 =kde-misc/libmm-qt-9999 **
 
