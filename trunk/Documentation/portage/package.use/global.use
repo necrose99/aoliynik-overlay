@@ -146,6 +146,7 @@ sys-kernel/dracut plymouth dmraid mdraid -lvm -gensplash
 sci-geosciences/googleearth qt-bundled
 
 virtual/jpeg static-libs
+media-libs/libjpeg-turbo static-libs
 media-libs/jpeg static-libs
 media-libs/lcms static-libs
 
@@ -191,3 +192,4 @@ sys-boot/plymouth -pango
 dev-lang/fpc source
 net-p2p/transmission -kde -qt4 gtk
 media-libs/mesa g3dvl gles2
+app-office/calligra -okular
