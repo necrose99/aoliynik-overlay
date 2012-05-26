@@ -1,5 +1,5 @@
 app-arch/p7zip rar -kde -wxwindows
-app-cdr/k3b ffmpeg lame -encode
+app-cdr/k3b ffmpeg -lame -encode
 app-crypt/gnupg bzip2 ecc -static
 # move app-dicts/goldendict app-text/goldendict
 app-text/goldendict -addons

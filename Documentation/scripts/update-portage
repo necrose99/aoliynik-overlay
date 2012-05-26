@@ -2,7 +2,7 @@ emerge --sync
 layman -S
 emerge -uDNtva --keep-going world
 emerge -a --depclean
-revdep-rebuild
+revdep-rebuild -i
 emerge -uDNtva --keep-going world
 lafilefixer --justfixit >/dev/null
 etc-update
