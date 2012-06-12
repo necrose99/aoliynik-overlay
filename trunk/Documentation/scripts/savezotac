@@ -1,0 +1,3 @@
+apt-get clean
+fsarchiver savefs -o /mnt/gentoo/backup/zotac-rootfs.fsa /dev/sda1 -A -j2 --exclude=/root/Dropbox --exclude=/root/.googleearth/Cache --exclude=/root/.local/share/Trash --exclude=/root/.cpan
+fsarchiver savefs -o /mnt/gentoo/backup/zotac-homefs.fsa /dev/sda6 -A -j2
