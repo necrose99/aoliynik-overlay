@@ -45,6 +45,13 @@ pwd
 	insinto /usr/bin
 	dobin teamviewer
 
+	for X in 16 32 48
+	do
+		insinto /usr/share/icons/hicolor/${X}x${X}/apps
+		newins "${S}"/.tvscript/${PN}.png ${PN}.png
+	done
+
+
 	dodoc linux_FAQ_{EN,DE}.txt
 	dodoc CopyRights_{EN,DE}.txt
 
