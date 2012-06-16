@@ -1,10 +1,7 @@
 #!/bin/sh
 
-OPTIONS="--initramfs-overlay=/usr/share/v86d --menuconfig"
+OPTIONS="--menuconfig"
 
-latest=`eselect kernel list|tail -n 1|awk '{print $2}'`
-lastnum=`eselect kernel list|tail -n 1|awk '{print $1}'|cut -d'[' -s -f2|cut -d']' -s -f1`
-eselect kernel set $lastnum
 kernel=`eselect kernel show|grep gentoo|awk -F/ '{print $NF}'`
 
 kernel=${kernel#linux-}
@@ -12,15 +9,6 @@ arch=`arch`
 
 echo "Kernel: $kernel"
 echo "Arch:   $arch"
-config="/etc/kernels/kernel-config-$arch-$kernel"
-if [ ! -f $config ];
-then
- echo -n "No config file, copying from... "
- lastconfig=`ls -1 /etc/kernels|tail -n1|grep $arch`
- echo $lastconfig
- cp "/etc/kernels/$lastconfig" $config
-fi
-
 
 genkernel $OPTIONS all
 #emerge @module-rebuild
@@ -31,4 +19,3 @@ dracut --force "/boot/initramfs-genkernel-$arch-$kernel" $kernel
 
 update-burg
 
-#Add to kernel options: video=uvesafb:1600x1200-32@60,mtrr:3,ywrap

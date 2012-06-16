@@ -1,4 +1,4 @@
-app-arch/p7zip rar -kde -wxwindows
+app-arch/p7zip rar -kde -wxwidgets
 app-cdr/k3b ffmpeg -lame -encode
 app-crypt/gnupg bzip2 ecc -static
 # move app-dicts/goldendict app-text/goldendict
@@ -12,7 +12,7 @@ app-mobilephone/kmobiletools obex
 app-office/mozilla-sunbird moznopango
 app-office/openoffice-bin -java kde
 app-text/cuneiform imagemagick
-app-text/djvu -kde -nsplugin -qt3
+app-text/djvu -kde -nsplugin
 app-text/poppler-bindings gtk
 dev-cpp/gtkmm accessibility
 dev-db/hsqldb java6
@@ -163,7 +163,8 @@ kde-base/kdeplasma-addons -exif
 
 net-p2p/ktorrent -kross -search -mediaplayer -downloadorder -magnetgenerator
 dev-libs/boost program_options thread system filesystem regex signals wave serialization -mpi graph
-app-office/libreoffice -python wiki -mysql -java -nsplugin
+app-office/libreoffice-bin -python -wiki -mysql -java -nsplugin kde
+www-plugins/adobe-flash kde
 
 dev-java/lucene analyzers
 dev-python/PyQt4 declarative
@@ -193,3 +194,5 @@ dev-lang/fpc source
 net-p2p/transmission -kde -qt4 gtk
 media-libs/mesa g3dvl gles2
 app-office/calligra -okular
+
+x11-apps/xinit minimal
