@@ -1,8 +1,5 @@
 #!/bin/sh
 
-
-OPTIONS="--initramfs-overlay=/usr/share/v86d --menuconfig --plymouth --no-fbsplash"
-
 kernel=`eselect kernel show|grep gentoo|awk -F/ '{print $NF}'`
 kernel=${kernel#linux-}
 arch=`arch`
@@ -12,6 +9,6 @@ echo "Kernel version: $kernel"
 echo "Generating initramfs with dracut"
 dracut --force "/boot/initramfs-genkernel-$arch-$kernel" $kernel
 
-update-burg
+update-grub
 
 #Add to kernel options: video=uvesafb:1600x1200-32@60,mtrr:3,ywrap

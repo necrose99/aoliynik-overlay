@@ -9,3 +9,7 @@ sys-kernel/genkernel **
 =kde-misc/libnm-qt-9999 **
 =kde-misc/libmm-qt-9999 **
 
+#required by foxitreader (argument)
+=app-text/foxitreader-1.1.0 **
+
+sys-boot/grub **
