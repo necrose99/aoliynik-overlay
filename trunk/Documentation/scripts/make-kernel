@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OPTIONS="--menuconfig"
+OPTIONS="--initramfs-overlay=/usr/share/v86d --menuconfig"
 
 kernel=`eselect kernel show|grep gentoo|awk -F/ '{print $NF}'`
 
@@ -17,5 +17,5 @@ module-rebuild -X rebuild
 echo "Generating initramfs with dracut"
 dracut --force "/boot/initramfs-genkernel-$arch-$kernel" $kernel
 
-update-burg
+update-grub
 

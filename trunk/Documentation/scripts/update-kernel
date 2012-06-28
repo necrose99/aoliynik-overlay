@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OPTIONS="--menuconfig"
+OPTIONS="--initramfs-overlay=/usr/share/v86d --menuconfig"
 
 latest=`eselect kernel list|tail -n 1|awk '{print $2}'`
 lastnum=`eselect kernel list|tail -n 1|awk '{print $1}'|cut -d'[' -s -f2|cut -d']' -s -f1`
@@ -29,5 +29,5 @@ module-rebuild -X rebuild
 echo "Generating initramfs with dracut"
 dracut --force "/boot/initramfs-genkernel-$arch-$kernel" $kernel
 
-update-burg
+update-grub
 
