@@ -10,6 +10,8 @@ app-cdr/k3b
 app-crypt/truecrypt
 app-editors/joe
 app-editors/juffed
+app-emulation/playonlinux
+app-emulation/virt-manager
 app-emulation/virtualbox-bin
 app-misc/mc
 app-misc/screen
@@ -28,6 +30,7 @@ app-text/foxitreader
 app-text/goldendict
 dev-db/mysql
 dev-java/sun-jdk
+dev-lang/lua
 dev-lang/php
 dev-libs/fcgi
 dev-libs/geoip
@@ -92,6 +95,7 @@ kde-base/ksysguard
 kde-base/kwallet
 kde-base/kwin
 kde-base/nsplugins
+kde-base/okular
 kde-base/plasma-runtime
 kde-base/systemsettings
 kde-misc/colibri
@@ -112,6 +116,7 @@ media-fonts/unifont
 media-fonts/vista-fonts
 media-gfx/imagemagick
 media-gfx/picasa
+media-libs/alsa-oss
 media-libs/freetype
 media-libs/win32codecs
 media-plugins/gst-plugins-gio
@@ -124,9 +129,9 @@ media-sound/mac
 media-sound/rawrec
 media-sound/twolame
 media-tv/sopcast-player
-media-video/smplayer2
+media-video/mplayer
+media-video/smplayer
 media-video/vlc
-net-analyzer/netcat
 net-analyzer/nikto
 net-analyzer/nmap
 net-analyzer/pktstat
@@ -137,7 +142,6 @@ net-dialup/ppp
 net-dialup/pptpclient
 net-dialup/pptpd
 net-dialup/rp-pppoe
-net-dns/bind
 net-dns/bind-tools
 net-firewall/iptables
 net-fs/davfs2
@@ -158,6 +162,7 @@ net-misc/openconnect
 net-misc/openssh
 net-misc/remmina
 net-misc/stunnel
+net-misc/teamviewer
 net-misc/tigervnc
 net-misc/vpnc
 net-misc/whois
@@ -174,14 +179,13 @@ perl-core/Math-BigInt-FastCalc
 perl-core/Time-Piece
 perl-gcpan/CDB-File
 perl-gcpan/Time-Format
-sci-geosciences/googleearth
 sys-apps/baselayout
 sys-apps/dmidecode
 sys-apps/hdparm
 sys-apps/iproute2
 sys-apps/less
-sys-apps/module-init-tools
 sys-apps/portage
+sys-apps/systemd-units
 sys-apps/v86d
 sys-boot/burg
 sys-boot/burg-theme
@@ -214,8 +218,6 @@ x11-apps/xhost
 x11-drivers/ati-drivers
 x11-drivers/xf86-input-evdev
 x11-drivers/xf86-input-void
-x11-drivers/xf86-video-v4l
-x11-misc/gcolor2
 x11-misc/slim
 x11-misc/x11vnc
 x11-themes/gtk-engines
@@ -227,5 +229,4 @@ x11-themes/murrina-aero
 x11-themes/oxygen-molecule
 x11-themes/qtcurve-qt4
 x11-themes/redhat-cursors
-x11-themes/smplayer2-themes
 x11-themes/xcursor-themes
