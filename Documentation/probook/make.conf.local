@@ -2,7 +2,7 @@ FEATURES="sandbox -buildpkg ccache -distcc distlocks -strict -digest parallel-fe
 MAKEOPTS="-j3" #cpus*2+1
 DISTCC_DIR="/tmp/.distcc"
 
-USE="$USE -lirc sse sse2 sse3 ssse3 radeonhd radeon fglrx  -nvidia mmx -mmxext cups dri cpudetection -lirc ffmpeg laptop samba -semantic-desktop -thumbnail -handbook systemd -vdpau"
+USE="$USE -lirc sse sse2 sse3 ssse3 radeonhd radeon fglrx  -nvidia mmx -mmxext cups dri cpudetection -lirc ffmpeg laptop samba -semantic-desktop -thumbnail -handbook systemd -openrc -vdpau xvmc -bluetooth"
 INPUT_DEVICES="void evdev"
 LIRC_DEVICES=""
 VIDEO_CARDS="fglrx radeon radeonhd"
