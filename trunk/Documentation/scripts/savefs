@@ -1,1 +1,1 @@
-fsarchiver savefs -o /media/nfs/gentoo/backup/gentoo-rootfs.fsa /dev/sda2 -A -j2 --exclude=/root/Dropbox --exclude=/root/.googleearth/Cache --exclude=/root/.local/share/Trash --exclude=/root/.cpan
+fsarchiver savefs -o /media/nfs/gentoo/backup/gentoo-rootfs.fsa /dev/sda3 -A -j2 --exclude=/root/Dropbox --exclude=/root/.googleearth/Cache --exclude=/root/.local/share/Trash --exclude=/root/.cpan

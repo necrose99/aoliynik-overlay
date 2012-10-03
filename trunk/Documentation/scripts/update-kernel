@@ -26,8 +26,5 @@ genkernel $OPTIONS all
 #emerge @module-rebuild
 module-rebuild -X rebuild
 
-echo "Generating initramfs with dracut"
-dracut --force "/boot/initramfs-genkernel-$arch-$kernel" $kernel
-
-update-grub
+./update-initramfs
 

@@ -3,11 +3,8 @@ app-portage/portage **
 kde-misc/networkmanagement **
 app-cdr/k3b **
 
-x11-drivers/nvidia-drivers **
+#x11-drivers/nvidia-drivers **
 kde-misc/colibri **
-sys-kernel/genkernel **
-=kde-misc/libnm-qt-9999 **
-=kde-misc/libmm-qt-9999 **
 
 #required by foxitreader (argument)
 =app-text/foxitreader-1.1.0 **
