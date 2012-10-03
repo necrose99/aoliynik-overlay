@@ -1,2 +1,5 @@
-=net-misc/networkmanager-0.8.9997::kde
 =virtual/jdk-1.7.0
+
+#>=sys-fs/udev-187
+#>=sys-apps/systemd-44
+#>=sys-auth/pambase-20120417

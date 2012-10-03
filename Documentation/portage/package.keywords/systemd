@@ -4,10 +4,8 @@ sys-apps/dbus
 sys-fs/udev
 sys-kernel/linux-headers
 
-
 sys-auth/consolekit
 net-wireless/wpa_supplicant
-net-wireless/bluez
 net-misc/networkmanager
 net-dns/avahi
 sys-boot/plymouth **

@@ -1,5 +1,5 @@
 app-arch/p7zip rar -kde -wxwidgets
-app-cdr/k3b ffmpeg -lame -encode
+app-cdr/k3b -ffmpeg -lame -encode -mp3 -sox -flac -mad -musepack -sndfile -vcd -vorbis
 app-crypt/gnupg bzip2 ecc -static
 # move app-dicts/goldendict app-text/goldendict
 app-text/goldendict -addons
@@ -163,7 +163,7 @@ kde-base/kdeplasma-addons -exif
 
 net-p2p/ktorrent -kross -search -mediaplayer -downloadorder -magnetgenerator
 dev-libs/boost program_options thread system filesystem regex signals wave serialization -mpi graph
-app-office/libreoffice-bin -python -wiki -mysql -java -nsplugin kde
+app-office/libreoffice -python -wiki -mysql -java -nsplugin kde
 www-plugins/adobe-flash kde
 
 dev-java/lucene analyzers
@@ -196,3 +196,4 @@ media-libs/mesa g3dvl gles2
 app-office/calligra -okular
 
 x11-apps/xinit minimal
+net-libs/libpcap ipv6
