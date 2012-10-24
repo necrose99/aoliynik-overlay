@@ -9,6 +9,9 @@ kernel=`eselect kernel show|grep gentoo|awk -F/ '{print $NF}'`
 
 kernel=${kernel#linux-}
 arch=`arch`
+if [ "$arch" == "i686" ] ; then
+ arch="x86"
+fi
 
 echo "Kernel: $kernel"
 echo "Arch:   $arch"
