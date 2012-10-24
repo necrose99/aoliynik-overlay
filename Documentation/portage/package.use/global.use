@@ -197,3 +197,4 @@ app-office/calligra -okular
 
 x11-apps/xinit minimal
 net-libs/libpcap ipv6
+net-libs/glib-networking -libproxy
