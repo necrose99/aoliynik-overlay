@@ -3,3 +3,7 @@
 #>=sys-fs/udev-187
 #>=sys-apps/systemd-44
 #>=sys-auth/pambase-20120417
+
+=sys-boot/os-prober-1.56
+=dev-libs/icu-50_rc-r1
+=dev-libs/icu-50_rc
