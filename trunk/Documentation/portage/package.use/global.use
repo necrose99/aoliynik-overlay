@@ -198,3 +198,8 @@ app-office/calligra -okular
 x11-apps/xinit minimal
 net-libs/libpcap ipv6
 net-libs/glib-networking -libproxy
+media-plugins/alsa-plugins pulseaudio
+media-sound/xmms2 -server -cdda
+net-im/psi jingle crypt extras
+
+net-libs/neon -gnutls ssl
