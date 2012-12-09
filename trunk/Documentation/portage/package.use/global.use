@@ -203,3 +203,6 @@ media-sound/xmms2 -server -cdda
 net-im/psi jingle crypt extras
 
 net-libs/neon -gnutls ssl
+net-libs/telepathy-qt farstream
+net-im/pidgin -gtk -xscreensaver -ncurses -networkmanager -spell
+
