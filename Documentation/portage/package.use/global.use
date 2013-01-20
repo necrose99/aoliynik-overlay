@@ -206,3 +206,5 @@ net-libs/neon -gnutls ssl
 net-libs/telepathy-qt farstream
 net-im/pidgin -gtk -xscreensaver -ncurses -networkmanager -spell
 
+dev-python/PyQt4 script
+net-nds/openldap -gnutls ssl
