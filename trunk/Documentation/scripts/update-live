@@ -1,3 +1,3 @@
 #!/bin/sh
 
-epm -Gqa|grep 999|awk '{print "="$1}'|xargs emerge -1 --keep-going
+qlist -I -c|grep 999|awk '{print "="$1"-"$2}'|xargs emerge -1 --keep-going
