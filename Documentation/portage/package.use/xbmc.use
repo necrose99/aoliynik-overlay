@@ -1,2 +1,0 @@
-media-tv/xbmc -debug -pvr rtmp webserver airplay vaapi -projectm
-media-libs/sdl-mixer -midi
