@@ -1,5 +1,15 @@
+#!/bin/bash
+
+
 emerge --sync
 layman -S
+
+FILE=/usr/portage/profiles/base/package.use.mask
+if  cat $FILE|grep -E '^sys\-auth\/polkit systemd' ; then
+    perl -pi -e 's{^sys\-auth\/polkit\s+systemd}{#sys-auth/polkit systemd}' $FILE
+fi
+
+
 emerge -uDNtva --keep-going world
 emerge -a --depclean
 revdep-rebuild -i

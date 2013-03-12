@@ -1,2 +1,2 @@
-media-gfx/digikam thumbnails -geolocation gphoto2 video
-media-plugins/kipi-plugins -cdr -crypt
+media-gfx/digikam -thumbnails -geolocation gphoto2 -video
+media-plugins/kipi-plugins -cdr -crypt -mjpeg

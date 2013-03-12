@@ -111,7 +111,7 @@ x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3 mozilla
 x11-themes/qtcurve gtk -gtk1
 dev-vcs/git -cgi
-net-misc/networkmanager dhcpcd resolvconf -dhclient -bluetooth -ppp gnutls -nss -dhclient
+net-misc/networkmanager dhcpcd resolvconf -dhclient -bluetooth -ppp gnutls -nss -dhclient -consolekit systemd
 
 sys-fs/udev extras
 app-crypt/truecrypt -X
@@ -168,7 +168,8 @@ www-plugins/adobe-flash kde
 
 dev-java/lucene analyzers
 dev-python/PyQt4 declarative
-x11-libs/qt-svg accessibility
+# move x11-libs/qt-svg dev-qt/qtsvg
+dev-qt/qtsvg accessibility
 media-sound/deadbeef gtk cover
 # move media-sound/phonon media-libs/phonon
 media-libs/phonon xine -vlc
@@ -178,7 +179,6 @@ dev-libs/libassuan static-libs
 media-libs/libcanberra gtk
 media-libs/libmng static-libs
 app-text/ghostscript-gpl cups
-media-sound/clementine -lastfm
 
 net-firewall/wondershaper htb
 net-misc/wget -ntlm
@@ -190,21 +190,19 @@ net-fs/cifs-utils caps
 media-video/ffmpeg dirac schroedinger
 app-portage/layman git subversion mercurial 
 sys-boot/plymouth -pango
-dev-lang/fpc source
 net-p2p/transmission -kde -qt4 gtk
 media-libs/mesa g3dvl gles2
-app-office/calligra -okular
 
 x11-apps/xinit minimal
 net-libs/libpcap ipv6
 net-libs/glib-networking -libproxy
 media-plugins/alsa-plugins pulseaudio
-media-sound/xmms2 -server -cdda
-net-im/psi jingle crypt extras
 
 net-libs/neon -gnutls ssl
-net-libs/telepathy-qt farstream
-net-im/pidgin -gtk -xscreensaver -ncurses -networkmanager -spell
 
 dev-python/PyQt4 script
 net-nds/openldap -gnutls ssl
+x11-plugins/pidgin-sipe voice kerberos
+net-im/pidgin -ncurses -xscreensaver -networkmanager gtk
+
+
