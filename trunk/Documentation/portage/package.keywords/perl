@@ -1,3 +1,5 @@
 perl-core/*
 dev-perl/*
 virtual/perl-*
+=perl-gcpan/Text-xSV-0.21 **
+
