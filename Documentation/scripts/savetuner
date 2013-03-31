@@ -8,5 +8,9 @@ ssh-copy-id root@$tunerip
 scp -r root@$tunerip:/etc/tuxbox "$dest/"
 scp -r root@$tunerip:/etc/enigma2 "$dest/"
 scp -r root@$tunerip:/usr/keys "$dest/"
+scp -r root@$tunerip:/usr/share/enigma2/picon "$dest/"
+scp -r root@$tunerip:/usr/share/enigma2/piconProv "$dest/"
+scp -r root@$tunerip:/usr/share/enigma2/piconSat "$dest/"
+
 
 

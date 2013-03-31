@@ -1,12 +1,3 @@
 net-im/skype **
 app-portage/portage **
 kde-misc/networkmanagement **
-app-cdr/k3b **
-
-#x11-drivers/nvidia-drivers **
-kde-misc/colibri **
-
-#required by foxitreader (argument)
-=app-text/foxitreader-1.1.0 **
-
-sys-boot/grub **
