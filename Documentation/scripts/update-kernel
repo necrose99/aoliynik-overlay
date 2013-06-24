@@ -26,8 +26,7 @@ fi
 
 
 genkernel $OPTIONS all
-#emerge @module-rebuild
-module-rebuild -X rebuild
+emerge @module-rebuild
 
 ./update-initramfs
 

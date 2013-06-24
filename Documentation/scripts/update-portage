@@ -13,7 +13,7 @@ fi
 emerge -uDNtva --keep-going world
 emerge -a --depclean
 revdep-rebuild -i
+emerge @preserved-rebuild
 emerge -uDNtva --keep-going world
-lafilefixer --justfixit >/dev/null
 etc-update
 eix-update
