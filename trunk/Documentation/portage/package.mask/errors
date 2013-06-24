@@ -1,2 +1,4 @@
 =virtual/jdk-1.7.0
 >=www-servers/apache-2.4
+~gnome-extra/evolution-mapi-9999
+~gnome-extra/evolution-data-server-9999
