@@ -1,6 +1,6 @@
 FEATURES="sandbox -buildpkg -ccache -distcc distlocks -strict -digest parallel-fetch -splitdebug"
 
-USE="$USE -bluetooth sse sse2 sse3 ssse3 -lirc -lm_sensors -cpudetection mmx mmxext -cups -dri vdpau -pvr samba -semantic-desktop systemd -openrc -plymouth airplay pulseaudio fpm"
+USE="$USE -bluetooth sse sse2 sse3 ssse3 -lirc -lm_sensors -cpudetection mmx mmxext -cups -dri vdpau -pvr samba -semantic-desktop systemd -openrc -plymouth fpm kde"
 MAKEOPTS="-j2"
 INPUT_DEVICES="evdev"
 CAMERAS="ptp2"
