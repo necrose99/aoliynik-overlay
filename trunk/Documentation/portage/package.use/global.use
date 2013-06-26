@@ -15,7 +15,6 @@ app-text/cuneiform imagemagick
 app-text/djvu -kde -nsplugin
 app-text/poppler-bindings gtk
 dev-cpp/gtkmm accessibility
-dev-db/hsqldb java6
 dev-db/mysql -cluster big-tables -berkdb -embedded
 virtual/mysql -embedded
 
@@ -30,7 +29,6 @@ dev-perl/Catalyst-Runtime -apache -apache2
 dev-python/gnome-python-desktop -nognome rsvg wnck
 dev-python/gnome-python-extras xulrunner
 dev-python/pyrex python
-dev-util/eclipse-sdk java6
 dev-util/qt-creator subversion git debugger designer cmake
 dev-vcs/subversion -apache2 berkdb python -nowebdav -java -dso -kde
 gnome-base/gvfs -bluetooth -gphoto2
@@ -78,7 +76,6 @@ net-fs/samba  acl -ldap winbind -xml xml2 winbind async -ads syslog
 net-im/skype -qt-static
 net-libs/libsoup gnome
 net-libs/webkitgtk -svg
-net-libs/xulrunner java
 net-mail/dovecot mbox pop3d -vpopmail
 net-misc/aria2 metalink bittorrent
 net-misc/openssh sftplogging -ldap -X
@@ -121,8 +118,6 @@ sci-astronomy/celestia -theora
 x11-libs/pango X
 x11-libs/cairo X
 dev-db/sqlite -icu fts3 secure-delete
-
-dev-java/antlr java
 
 dev-util/cmake -qt4
 sys-apps/man -nls

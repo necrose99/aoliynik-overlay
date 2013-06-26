@@ -1,5 +1,7 @@
 =virtual/jdk-1.7.0
 
 >x11-drivers/ati-drivers-12.4
+=x11-drivers/ati-drivers-13.6_beta
+
 >=sys-kernel/gentoo-sources-3.4.0
 >x11-base/xorg-server-1.11.50
