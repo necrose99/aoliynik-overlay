@@ -37,7 +37,7 @@ kde-base/dolphin -thumbnail
 kde-base/konqueror -thumbnail
 kde-base/kdebase-workspace xcomposite newxkb 
 kde-base/kdebase xcomposite bzip2 -java
-kde-base/kdelibs plasma bzip2
+kde-base/kdelibs plasma bzip2 udisks
 kde-base/kdemultimedia taglib
 kde-base/kdenetwork vnc
 kde-base/knotes -kontact
@@ -137,8 +137,9 @@ dev-lang/nasm -doc
 x11-libs/libX11 -doc
 media-sound/mpd ao cue lame libmms 
 sys-kernel/dracut plymouth dmraid mdraid -lvm -gensplash
+sys-fs/lvm2 -thin
 
-sci-geosciences/googleearth qt-bundled
+sci-geosciences/googleearth -bundled-libs
 
 virtual/jpeg static-libs
 media-libs/libjpeg-turbo static-libs
@@ -197,6 +198,5 @@ dev-python/PyQt4 script
 net-nds/openldap -gnutls ssl
 x11-plugins/pidgin-sipe voice kerberos
 net-im/pidgin -ncurses -xscreensaver -networkmanager gtk
-#media-sound/pulseaudio gtk
 
 net-misc/curl curl_ssl_nss -curl_ssl_openssl
