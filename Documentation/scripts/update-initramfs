@@ -12,7 +12,7 @@ fi
 echo "Kernel version: $kernel"
 
 echo "Generating initramfs with dracut"
-dracut --force "/boot/initramfs-genkernel-$arch-$kernel" $kernel
+dracut -q --force "/boot/initramfs-genkernel-$arch-$kernel" $kernel
 
 update-grub
 
