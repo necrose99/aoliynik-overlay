@@ -200,3 +200,5 @@ x11-plugins/pidgin-sipe voice kerberos
 net-im/pidgin -ncurses -xscreensaver -networkmanager gtk
 
 net-misc/curl curl_ssl_nss -curl_ssl_openssl
+net-im/qutim oscar jabber qml
+
