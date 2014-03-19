@@ -108,7 +108,7 @@ x11-themes/gtk-engines-kde4 themes
 x11-themes/gtk-engines-qtcurve firefox3 mozilla
 x11-themes/qtcurve gtk -gtk1
 dev-vcs/git -cgi
-net-misc/networkmanager dhcpcd resolvconf -dhclient -bluetooth -ppp gnutls -nss -dhclient -consolekit systemd
+net-misc/networkmanager dhcpcd resolvconf -modemmanager -dhclient -bluetooth -ppp gnutls -nss -dhclient -consolekit systemd
 
 sys-fs/udev extras
 app-crypt/truecrypt -X
