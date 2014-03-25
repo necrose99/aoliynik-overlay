@@ -1,0 +1,11 @@
+FEATURES="sandbox -buildpkg -ccache -distcc distlocks -strict -digest parallel-fetch -splitdebug"
+
+USE="$USE -bluetooth -lirc -lm_sensors -cpudetection -cups -dri -vdpau -pvr samba systemd -openrc -plymouth fpm kde"
+MAKEOPTS="-j2"
+INPUT_DEVICES="evdev"
+CAMERAS="ptp2"
+
+CHOST="x86_64-pc-linux-gnu"
+CFLAGS="-march=core2 -O2 -pipe"
+CXXFLAGS="${CFLAGS} -fpermissive -Wno-write-strings -Wno-deprecated"
+ACCEPT_KEYWORDS="~amd64 amd64 ~amd64-linux"
