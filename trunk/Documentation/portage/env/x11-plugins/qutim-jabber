@@ -1,2 +1,0 @@
-CFLAGS="-march=i686 -O0"
-CXXFLAGS="-march=i686 -O0 -pipe -fpermissive -Wno-write-strings -Wno-deprecated"
