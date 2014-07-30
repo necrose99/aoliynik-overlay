@@ -61,7 +61,7 @@ media-video/transcode mmxb
 media-video/miro -libnotify xine -gstreamer
 virtual/ffmpeg -amr -sdl -mmx -mmxext vpx rtmp
 media-video/handbrake gtk css
-media-video/mplayer ass png -3dnowex divx4linux -esd mmx -openal -oss rtc -xmms xv xvid -xvmc -gtk dvdnav xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123 -cdparanoia -cddb
+media-video/mplayer bidi ass png -3dnowex divx4linux -esd mmx -openal -oss rtc -xmms xv xvid -xvmc -gtk dvdnav xvmc mp2 amrnb amrwb srt enca teletext aac rtmp mpg123 -cdparanoia -cddb
 sys-power/nvclock -qt3 -qt
 
 media-video/vlc dvd ffmpeg mpeg mad -wxwindows aac  a52 ogg flac theora oggvorbis matroska freetype bidi xv  gnutls stream vlm cdda vcd cdio live rtsp shout upnp -skins dts nsplugin qt4 twolame run-as-root -remoteosd -xosd -libnotify wma-fixed -ncurses -svg
@@ -186,7 +186,7 @@ media-video/ffmpeg dirac schroedinger
 app-portage/layman git subversion mercurial 
 sys-boot/plymouth -pango
 net-p2p/transmission -kde -qt4 gtk
-media-libs/mesa g3dvl gles2
+media-libs/mesa g3dvl gles2 gbm
 
 x11-apps/xinit minimal
 net-libs/libpcap ipv6
@@ -195,9 +195,8 @@ net-libs/neon -gnutls ssl
 
 dev-python/PyQt4 script
 net-nds/openldap -gnutls ssl
-x11-plugins/pidgin-sipe voice kerberos
-net-im/pidgin -ncurses -xscreensaver -networkmanager gtk
 
 net-misc/curl curl_ssl_nss -curl_ssl_openssl
-net-im/qutim oscar jabber qml
+app-text/ghostscript-gpl cups
 
+dev-db/mariadb -xml

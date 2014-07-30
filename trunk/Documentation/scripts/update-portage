@@ -17,3 +17,4 @@ emerge @preserved-rebuild
 emerge -uDNtva --keep-going world
 etc-update
 eix-update
+eix-remote update
