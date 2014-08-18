@@ -44,7 +44,7 @@ kde-base/knotes -kontact
 kde-base/krdc vnc rdp qca decibel
 kde-base/okular djvu
 kde-base/solid -bluetooth
-mail-client/thunderbird ldap moznopango -java -crypt lightning
+mail-client/thunderbird -ldap moznopango -java -crypt -lightning
 media-gfx/gimp -gtkhtml python -webkit
 media-gfx/graphicsmagick X gs jbig jp2 jpeg lcms lzw perl png tiff truetype wmf xml2
 media-gfx/splashutils fbcondecor
@@ -148,6 +148,10 @@ media-libs/lcms static-libs
 
 net-misc/remmina-plugins -vnc  ssh freerdp
 net-misc/remmina ssh freerdp
+net-misc/freerdp server pulseaudio
+media-sound/pulseaudio alsa
+media-plugins/alsa-plugins pulseaudio
+
 
 sys-apps/portage -python3 python2
 media-libs/libpng apng static-libs

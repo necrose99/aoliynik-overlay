@@ -1,6 +1,6 @@
 FEATURES="sandbox -buildpkg -ccache -distcc distlocks -strict -digest parallel-fetch -splitdebug"
 
-USE="$USE -bluetooth -lirc -lm_sensors -cpudetection -cups dri vaapi -vdpau -pvr samba systemd -openrc -plymouth fpm kde"
+USE="$USE -bluetooth -lirc -lm_sensors -cpudetection -cups dri vaapi -vdpau -pvr samba systemd -openrc -plymouth fpm kde pulseaudio"
 MAKEOPTS="-j2"
 
 VIDEO_CARDS="intel"
