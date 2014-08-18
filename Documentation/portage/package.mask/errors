@@ -1,6 +1,3 @@
 =virtual/jdk-1.7.0
 >=www-servers/apache-2.4
-~gnome-extra/evolution-mapi-9999
-~gnome-extra/evolution-data-server-9999
->=sys-kernel/gentoo-sources-3.11
 =net-misc/networkmanager-0.9.8.6

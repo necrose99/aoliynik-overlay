@@ -9,6 +9,9 @@ if  cat $FILE|grep -E '^sys\-auth\/polkit systemd' ; then
     perl -pi -e 's{^sys\-auth\/polkit\s+systemd}{#sys-auth/polkit systemd}' $FILE
 fi
 
+FILE=/usr/portage/profiles/package.mask
+grep -v 'xf86-input-evdev' $FILE > $FILE.tmp
+mv $FILE.tmp $FILE
 
 emerge -uDNtva --keep-going world
 emerge -a --depclean
