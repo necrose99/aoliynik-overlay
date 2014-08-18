@@ -148,10 +148,8 @@ media-libs/lcms static-libs
 
 net-misc/remmina-plugins -vnc  ssh freerdp
 net-misc/remmina ssh freerdp
-net-misc/freerdp server pulseaudio
+net-misc/freerdp server
 media-sound/pulseaudio alsa
-media-plugins/alsa-plugins pulseaudio
-
 
 sys-apps/portage -python3 python2
 media-libs/libpng apng static-libs
